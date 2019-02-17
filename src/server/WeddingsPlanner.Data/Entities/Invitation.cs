@@ -25,7 +25,6 @@ namespace WeddingsPlanner.Data.Entities
         /// <summary>
         /// Can be either <see cref="Cash"/> or <see cref="Gift"/>.
         /// </summary>
-        /// 
         public int PresentId { get; set; }
         public virtual Present Present { get; set; }
 
