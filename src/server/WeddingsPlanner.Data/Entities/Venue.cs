@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WeddingsPlanner.Data.Entities
 {
@@ -15,5 +16,7 @@ namespace WeddingsPlanner.Data.Entities
         public int Capacity { get; set; }
 
         public string Town { get; set; }
+
+        public virtual ICollection<WeddingVenue> WeddingVenues { get; set; } = new HashSet<WeddingVenue>();
     }
 }

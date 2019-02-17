@@ -1,13 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using WeddingsPlanner.Api.OperationFilters;
-using WeddingsPlanner.Core.Configuration;
-using WeddingsPlanner.Data.Entities;
-using WeddingsPlanner.Data.EntityFramework;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +6,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using WeddingsPlanner.Api.OperationFilters;
+using WeddingsPlanner.Core.Configuration;
+using WeddingsPlanner.Data.Entities;
+using WeddingsPlanner.Data.EntityFramework;
 
 namespace WeddingsPlanner.Api.Configuration
 {

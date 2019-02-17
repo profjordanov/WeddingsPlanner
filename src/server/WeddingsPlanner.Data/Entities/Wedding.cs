@@ -27,7 +27,7 @@ namespace WeddingsPlanner.Data.Entities
 
         public DateTime Date { get; set; }
 
-        public virtual ICollection<Venue> Venues { get; set; } = new HashSet<Venue>();
+        public virtual ICollection<WeddingVenue> WeddingVenues { get; set; } = new HashSet<WeddingVenue>();
 
         public virtual ICollection<Invitation> Invitations { get; set; } = new HashSet<Invitation>();
     }

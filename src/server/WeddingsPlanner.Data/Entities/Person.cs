@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WeddingsPlanner.Data.Enums;
@@ -72,5 +73,11 @@ namespace WeddingsPlanner.Data.Entities
         /// </example>
         [RegularExpression(EmailRegularExpression)]
         public string Email { get; set; }
+
+        public virtual ICollection<Invitation> Invitations { get; set; } = new HashSet<Invitation>();
+
+        public virtual ICollection<Wedding> Brides { get; set; } = new HashSet<Wedding>();
+
+        public virtual ICollection<Wedding> Bridegrooms { get; set; } = new HashSet<Wedding>();
     }
 }
