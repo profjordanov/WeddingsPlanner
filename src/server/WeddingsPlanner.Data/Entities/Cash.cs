@@ -1,6 +1,6 @@
 ﻿namespace WeddingsPlanner.Data.Entities
 {
-    public class Cash
+    public class Cash : Present
     {
         
     }

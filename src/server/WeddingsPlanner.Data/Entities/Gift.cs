@@ -1,6 +1,6 @@
 ﻿namespace WeddingsPlanner.Data.Entities
 {
-    public class Gift
+    public class Gift : Present
     {
         
     }

@@ -1,4 +1,4 @@
-﻿namespace WeddingsPlanner.Business.Enums
+﻿namespace WeddingsPlanner.Data.Enums
 {
     public enum PresentSize
     {
