@@ -1,5 +1,5 @@
-﻿using WeddingsPlanner.Data.EntityFramework;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using WeddingsPlanner.Data.EntityFramework;
 
 namespace WeddingsPlanner.Business.Tests
 {
