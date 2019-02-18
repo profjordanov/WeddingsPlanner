@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using WeddingsPlanner.Data.Enums;
 
 namespace WeddingsPlanner.Data.Entities
 {
+    [Table(nameof(Gift))]
     public class Gift : Present
     {
         /// <summary>
