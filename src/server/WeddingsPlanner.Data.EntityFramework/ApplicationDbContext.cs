@@ -29,6 +29,8 @@ namespace WeddingsPlanner.Data.EntityFramework
             modelBuilder.ConfigureWeddingInvitationRelations();
             modelBuilder.ConfigurePersonInvitationRelations();
             modelBuilder.ConfigureWeddingVenueRelations();
+            modelBuilder.ConfigureWeddingPersonRelations();
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

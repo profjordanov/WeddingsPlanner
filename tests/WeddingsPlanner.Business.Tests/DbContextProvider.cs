@@ -5,8 +5,15 @@ namespace WeddingsPlanner.Business.Tests
 {
     public static class DbContextProvider
     {
+        private const string TestDbConnectionString =
+            "Server=(localdb)\\MSSQLLocalDB;Database=TestWeddingsPlannerDb;" +
+            "Integrated Security=True;" +
+            "Trusted_Connection=True;" +
+            "MultipleActiveResultSets=true;";
+
         public static ApplicationDbContext GetInMemoryDbContext() =>
             new ApplicationDbContext(new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("Business.Tests").Options);
+                .UseSqlServer(connectionString:TestDbConnectionString)
+                .Options);
     }
 }

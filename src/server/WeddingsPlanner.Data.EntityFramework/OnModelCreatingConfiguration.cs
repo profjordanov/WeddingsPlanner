@@ -61,5 +61,18 @@ namespace WeddingsPlanner.Data.EntityFramework
                 .WithMany(venue => venue.WeddingVenues)
                 .HasForeignKey(weddingVenue => weddingVenue.VenueId);
         }
+
+        internal static void ConfigureWeddingPersonRelations(this ModelBuilder builder)
+        {
+            builder.Entity<Wedding>()
+                .HasOne(wedding => wedding.Bride)
+                .WithMany(person => person.Brides)
+                .HasForeignKey(wedding => wedding.BrideId);
+
+            builder.Entity<Wedding>()
+                .HasOne(wedding => wedding.Bridegroom)
+                .WithMany(person => person.Bridegrooms)
+                .HasForeignKey(wedding => wedding.BridegroomId);
+        }
     }
 }
