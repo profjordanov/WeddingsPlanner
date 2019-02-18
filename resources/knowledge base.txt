@@ -1,1 +1,49 @@
+Controller: 
+  
+[HttpPost]
+[SwaggerOperationFilter(typeof(UploadDocumentsOperationFilter))]
+public async Task<IActionResult> Upload([FromForm] UploadDocumentRequest request) =>
+    (await _documentsService.UploadDocument(CurrentCompanyContactId, request))
+    .Match<IActionResult>(Ok, Error);
+            
+OperationFilters:
 
+public class UploadDocumentsOperationFilter : IOperationFilter
+    {
+        public void Apply(Operation operation, OperationFilterContext context)
+        {
+            var fileParameter = operation
+                .Parameters
+                .FirstOrNone(p => string.Equals(p.Name, nameof(UploadDocumentRequest.File), System.StringComparison.OrdinalIgnoreCase));
+
+            fileParameter.MatchSome(parameter =>
+            {
+                operation.Parameters.Remove(parameter);
+
+                operation.Parameters.Add(new NonBodyParameter
+                {
+                    Name = "File",
+                    In = "formData",
+                    Description = "Upload File",
+                    Required = true,
+                    Type = "file"
+                });
+
+                operation.Consumes.Add("multipart/form-data");
+            });
+
+            var paygroupsParameter = operation
+                .Parameters
+                .FirstOrNone(p => string.Equals(p.Name, nameof(UploadDocumentRequest.Paygroups), StringComparison.Ordinal));
+
+            paygroupsParameter.MatchSome(parameter =>
+            {
+                if (!(parameter is NonBodyParameter nonBodyParameter))
+                    return;
+
+                nonBodyParameter.CollectionFormat = string.Empty;
+                nonBodyParameter.Extensions.Add("style", "form");
+                nonBodyParameter.Extensions.Add("explode", "false");
+            });
+        }
+    }
