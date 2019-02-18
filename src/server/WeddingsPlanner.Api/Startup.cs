@@ -43,6 +43,10 @@ namespace WeddingsPlanner.Api
             services.AddLogging(logBuilder => logBuilder.AddSerilog(dispose: true));
 
             services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IAgenciesService, AgenciesService>();
+            services.AddTransient<IAgenciesService, AgenciesService>();
+
+
             services.AddTransient<IJwtFactory, JwtFactory>();
 
             services.AddMvc(options =>

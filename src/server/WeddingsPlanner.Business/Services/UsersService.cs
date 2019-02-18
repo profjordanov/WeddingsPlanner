@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using WeddingsPlanner.Business.Extensions;
-using WeddingsPlanner.Core;
-using WeddingsPlanner.Core.Identity;
-using WeddingsPlanner.Core.Models;
-using WeddingsPlanner.Core.Services;
-using WeddingsPlanner.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Optional;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using WeddingsPlanner.Business.Extensions;
+using WeddingsPlanner.Core;
+using WeddingsPlanner.Core.Identity;
+using WeddingsPlanner.Core.Models;
+using WeddingsPlanner.Core.Services;
+using WeddingsPlanner.Data.Entities;
 
 namespace WeddingsPlanner.Business.Services
 {
