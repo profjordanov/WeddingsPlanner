@@ -47,3 +47,19 @@ public class UploadDocumentsOperationFilter : IOperationFilter
             });
         }
     }
+
+
+Model:
+    public class UploadDocumentRequest
+    {
+        [Required]
+        public IFormFile File { get; set; }
+        
+        [Required]
+        [FromQuery]
+        [ModelBinder(typeof(DelimitedArrayModelBinder))]
+        public string[] Paygroups { get; set; }
+
+        [Required]
+        public string FileType { get; set; }
+    }
