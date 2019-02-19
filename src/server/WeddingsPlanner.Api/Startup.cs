@@ -1,13 +1,4 @@
 ﻿using AutoMapper;
-using WeddingsPlanner.Api.Configuration;
-using WeddingsPlanner.Api.Filters;
-using WeddingsPlanner.Api.ModelBinders;
-using WeddingsPlanner.Business.Identity;
-using WeddingsPlanner.Business.Services;
-using WeddingsPlanner.Core.Configuration;
-using WeddingsPlanner.Core.Identity;
-using WeddingsPlanner.Core.Services;
-using WeddingsPlanner.Data.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +6,17 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using WeddingsPlanner.Api.Configuration;
+using WeddingsPlanner.Api.Filters;
+using WeddingsPlanner.Api.ModelBinders;
+using WeddingsPlanner.Business.Generators;
+using WeddingsPlanner.Business.Identity;
+using WeddingsPlanner.Business.Services;
+using WeddingsPlanner.Core.Configuration;
+using WeddingsPlanner.Core.Generators;
+using WeddingsPlanner.Core.Identity;
+using WeddingsPlanner.Core.Services;
+using WeddingsPlanner.Data.EntityFramework;
 
 namespace WeddingsPlanner.Api
 {
@@ -48,6 +50,8 @@ namespace WeddingsPlanner.Api
 
 
             services.AddTransient<IJwtFactory, JwtFactory>();
+
+            services.AddTransient<ICsvReportGenerator, CsvReportGenerator>();
 
             services.AddMvc(options =>
             {

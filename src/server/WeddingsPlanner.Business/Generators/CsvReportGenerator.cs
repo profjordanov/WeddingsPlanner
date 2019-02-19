@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using WeddingsPlanner.Core.Generators;
 using WeddingsPlanner.Core.Reports;
 
 using static System.Environment;
@@ -11,7 +12,7 @@ namespace WeddingsPlanner.Business.Generators
     /// Generates CSV Report File.
     /// <see cref="CsvReport"/>
     /// </summary>
-    public class CsvReportGenerator
+    public class CsvReportGenerator : ICsvReportGenerator
     {
         private const string CommaSeparator = ",";
 
