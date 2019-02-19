@@ -46,7 +46,7 @@ namespace WeddingsPlanner.Business.Services
             }
 
             var successfullyAddAgenciesNames =
-                resultCollection.Values().Select(agency => agency.Name).ToList();
+                resultCollection.Values().Select(agency => $"{agency.Name} successfully added!").ToList();
 
             var unsuccessfullyAddAgenciesErrs =
                 resultCollection.Exceptions().Select(error => string.Join(", ", error.Messages)).ToList();
