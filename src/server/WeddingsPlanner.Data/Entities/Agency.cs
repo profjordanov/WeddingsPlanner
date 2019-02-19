@@ -8,10 +8,12 @@ namespace WeddingsPlanner.Data.Entities
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         public int EmployeesCount { get; set; }
 
+        [Required]
         public string Town { get; set; }
 
         public virtual ICollection<Wedding> OrganizedWeddings { get; set; } = new HashSet<Wedding>();

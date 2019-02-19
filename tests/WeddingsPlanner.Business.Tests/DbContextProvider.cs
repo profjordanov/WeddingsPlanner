@@ -11,9 +11,9 @@ namespace WeddingsPlanner.Business.Tests
             "Trusted_Connection=True;" +
             "MultipleActiveResultSets=true;";
 
-        public static ApplicationDbContext GetInMemoryDbContext() =>
+        public static ApplicationDbContext GetSqlServerDbContext(string connectionString = TestDbConnectionString) =>
             new ApplicationDbContext(new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseSqlServer(connectionString:TestDbConnectionString)
+                .UseSqlServer(connectionString:connectionString)
                 .Options);
     }
 }
