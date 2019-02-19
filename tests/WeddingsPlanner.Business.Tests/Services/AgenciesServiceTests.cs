@@ -32,6 +32,40 @@ namespace WeddingsPlanner.Business.Tests.Services
 
         [Theory]
         [CustomAutoData]
+        public async Task AddAsync_Returns_None_When_Agency_Name_Is_Null(Agency agency)
+        {
+            // Arrange
+            agency.Name = null;
+
+            // Act
+            var result = await _agenciesService.AddAsync(agency);
+
+            // Assert
+            result.HasValue.ShouldBe(false);
+            result.MatchNone(error => error
+                .Messages
+                .ShouldAllBe(msg => msg == "Agency name cannot be empty!"));
+        }
+
+        [Theory]
+        [CustomAutoData]
+        public async Task AddAsync_Returns_None_When_Agency_Town_Is_Null(Agency agency)
+        {
+            // Arrange
+            agency.Town = null;
+
+            // Act
+            var result = await _agenciesService.AddAsync(agency);
+
+            // Assert
+            result.HasValue.ShouldBe(false);
+            result.MatchNone(error => error
+                .Messages
+                .ShouldAllBe(msg => msg == "Agency town cannot be empty!"));
+        }
+
+        [Theory]
+        [CustomAutoData]
         public async Task AddAsync_Works_Correctly_For_Single_Record(Agency agency)
         {
             // Arrange
@@ -44,7 +78,11 @@ namespace WeddingsPlanner.Business.Tests.Services
             // Assert
             result.HasValue.ShouldBe(true);
 
-            var lastAgency = await DbContextProvider.GetSqlServerDbContext().Agencies.LastAsync();
+            var lastAgency = await DbContextProvider
+                .GetSqlServerDbContext()
+                .Agencies
+                .LastAsync();
+
             agency.Name.ShouldBe(lastAgency.Name);
             agency.Town.ShouldBe(lastAgency.Town);
             agency.EmployeesCount.ShouldBe(lastAgency.EmployeesCount);
