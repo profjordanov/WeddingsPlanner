@@ -42,7 +42,7 @@ namespace WeddingsPlanner.Business.Services
             });
 
         private Option<Agency, Error> ValidateInputModel(Agency agency) =>
-            agency.SomeNotNull(new Error("Agency cannot be null!"))
+            agency.Some<Agency, Error>()
                 .FlatMap(ValidateName)
                 .FlatMap(ValidateTown);
 
@@ -50,14 +50,14 @@ namespace WeddingsPlanner.Business.Services
             agency.Name == null ||
             string.IsNullOrEmpty(agency.Name) ||
             string.IsNullOrWhiteSpace(agency.Name)
-                ? agency.Some<Agency, Error>()
-                : Option.None<Agency, Error>(new Error("Agency name cannot be empty!"));
+                ? Option.None<Agency, Error>(new Error("Agency name cannot be empty!")) 
+                : agency.Some<Agency, Error>();
 
         private Option<Agency, Error> ValidateTown(Agency agency) =>
             agency.Town == null ||
             string.IsNullOrEmpty(agency.Town) ||
             string.IsNullOrWhiteSpace(agency.Town)
-                ? agency.Some<Agency, Error>()
-                : Option.None<Agency, Error>(new Error("Agency town cannot be empty!"));
+                ? Option.None<Agency, Error>(new Error("Agency town cannot be empty!"))
+                : agency.Some<Agency, Error>();
     }
 }
