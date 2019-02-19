@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoFixture;
-using AutoFixture.Xunit2;
-using AutoMapper;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Moq;
 using Shouldly;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using WeddingsPlanner.Business.Services;
 using WeddingsPlanner.Business.Tests.Attributes;
 using WeddingsPlanner.Data.Entities;
@@ -38,6 +37,11 @@ namespace WeddingsPlanner.Business.Tests.Services
 
             // Assert
             result.HasValue.ShouldBe(true);
+
+            var lastAgency = await DbContextProvider.GetSqlServerDbContext().Agencies.LastAsync();
+            agency.Name.ShouldBe(lastAgency.Name);
+            agency.Town.ShouldBe(lastAgency.Town);
+            agency.EmployeesCount.ShouldBe(lastAgency.EmployeesCount);
         }
     }
 }
