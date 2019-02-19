@@ -46,7 +46,7 @@ namespace WeddingsPlanner.Api
 
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IAgenciesService, AgenciesService>();
-            services.AddTransient<IAgenciesService, AgenciesService>();
+            services.AddTransient<IOnboardingService, OnboardingService>();
 
 
             services.AddTransient<IJwtFactory, JwtFactory>();

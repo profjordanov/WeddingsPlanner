@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WeddingsPlanner.Core.Services;
 
 namespace WeddingsPlanner.Api.Controllers
 {
@@ -6,6 +7,13 @@ namespace WeddingsPlanner.Api.Controllers
     [ApiController]
     public class OnboardingController : ApiController
     {
+        private readonly IOnboardingService _onboardingService;
+
+        public OnboardingController(IOnboardingService onboardingService)
+        {
+            _onboardingService = onboardingService;
+        }
+
 
     }
 }
