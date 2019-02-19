@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using WeddingsPlanner.Api.OperationFilters;
+using WeddingsPlanner.Core.Models;
 using WeddingsPlanner.Core.Services;
 
 namespace WeddingsPlanner.Api.Controllers
@@ -13,7 +16,5 @@ namespace WeddingsPlanner.Api.Controllers
         {
             _onboardingService = onboardingService;
         }
-
-
     }
 }
