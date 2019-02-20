@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using WeddingsPlanner.Core;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Linq;
+using WeddingsPlanner.Core;
 
 namespace WeddingsPlanner.Api.Filters
 {

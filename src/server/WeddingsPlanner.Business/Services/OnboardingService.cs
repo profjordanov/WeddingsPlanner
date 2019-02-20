@@ -1,15 +1,16 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Optional;
+using Optional.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Optional.Collections;
 using WeddingsPlanner.Business.Extensions;
 using WeddingsPlanner.Business.Services._Base;
 using WeddingsPlanner.Core;
 using WeddingsPlanner.Core.Generators;
+using WeddingsPlanner.Core.Models;
 using WeddingsPlanner.Core.Reports;
 using WeddingsPlanner.Core.Services;
 using WeddingsPlanner.Data.Entities;
@@ -46,10 +47,16 @@ namespace WeddingsPlanner.Business.Services
             }
 
             var successfullyAddAgenciesNames =
-                resultCollection.Values().Select(agency => $"{agency.Name} successfully added!").ToList();
+                resultCollection
+                    .Values()
+                    .Select(agency => new JsonOnboardingReportModel($"{agency.Name} successfully added!"))
+                    .ToList();
 
             var unsuccessfullyAddAgenciesErrs =
-                resultCollection.Exceptions().Select(error => string.Join(", ", error.Messages)).ToList();
+                resultCollection
+                    .Exceptions()
+                    .Select(error => new JsonOnboardingReportModel(string.Join(", ", error.Messages)))
+                    .ToList();
 
             var reportName = $"agencies_onboarding_{file.Name}_{DateTime.Now}";
 
@@ -57,8 +64,8 @@ namespace WeddingsPlanner.Business.Services
         }
 
         private CsvReport PrepareReport(
-            IEnumerable<string> successfulMessages,
-            IEnumerable<string> unsuccessfulMessages,
+            IEnumerable<JsonOnboardingReportModel> successfulMessages,
+            IEnumerable<JsonOnboardingReportModel> unsuccessfulMessages,
             string reportName)
         {
             var allMessages = successfulMessages.Concat(unsuccessfulMessages);
