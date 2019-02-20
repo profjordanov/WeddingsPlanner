@@ -48,6 +48,7 @@ public class UploadDocumentsOperationFilter : IOperationFilter
         }
     }
 
+Swashbuckle.AspNetCore.Annotations - [SwaggerOperationFilter(typeof(UploadDocumentsOperationFilter))]
 
 Model:
     public class UploadDocumentRequest
