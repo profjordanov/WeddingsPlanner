@@ -2,9 +2,9 @@
 
 namespace WeddingsPlanner.Core.Models
 {
-    public class JsonOnboardingReportModel : IReportModel
+    public class OnboardingCsvReportModel : IReportModel
     {
-        public JsonOnboardingReportModel(string message)
+        public OnboardingCsvReportModel(string message)
         {
             Message = message;
         }

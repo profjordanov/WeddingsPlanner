@@ -11,6 +11,13 @@
             <param name="request"></param>
             <returns>CSV report file.</returns>
         </member>
+        <member name="M:WeddingsPlanner.Api.Controllers.OnboardingController.UploadVenuesByXml(WeddingsPlanner.Core.Models.UploadDocumentRequest)">
+            <summary>
+            Uploads collection of venues from xml file.
+            </summary>
+            <param name="request"></param>
+            <returns>CSV report file.</returns>
+        </member>
         <member name="M:WeddingsPlanner.Api.Controllers.UsersController.Login(WeddingsPlanner.Core.Models.LoginUserModel)">
             <summary>
             Login.

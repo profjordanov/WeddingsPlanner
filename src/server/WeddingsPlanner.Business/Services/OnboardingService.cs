@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using System.Xml.XPath;
 using WeddingsPlanner.Business.Extensions;
 using WeddingsPlanner.Business.Services._Base;
 using WeddingsPlanner.Core;
@@ -23,16 +25,19 @@ namespace WeddingsPlanner.Business.Services
     {
         private readonly IAgenciesService _agenciesService;
         private readonly ICsvReportGenerator _csvReportGenerator;
+        private readonly IVenuesService _venuesService;
 
         public OnboardingService(
             IMapper mapper,
             ApplicationDbContext dbContext,
             IAgenciesService agenciesService,
-            ICsvReportGenerator csvReportGenerator) 
+            ICsvReportGenerator csvReportGenerator, 
+            IVenuesService venuesService) 
             : base(mapper, dbContext)
         {
             _agenciesService = agenciesService;
             _csvReportGenerator = csvReportGenerator;
+            _venuesService = venuesService;
         }
 
         public async Task<CsvReport> AgenciesByJson(IFormFile file)
@@ -49,23 +54,57 @@ namespace WeddingsPlanner.Business.Services
             var successfullyAddAgenciesNames =
                 resultCollection
                     .Values()
-                    .Select(agency => new JsonOnboardingReportModel($"{agency.Name} successfully added!"))
+                    .Select(agency => new OnboardingCsvReportModel($"{agency.Name} successfully added!"))
                     .ToList();
 
             var unsuccessfullyAddAgenciesErrs =
                 resultCollection
                     .Exceptions()
-                    .Select(error => new JsonOnboardingReportModel(string.Join(", ", error.Messages)))
+                    .Select(error => new OnboardingCsvReportModel(string.Join(", ", error.Messages)))
                     .ToList();
 
             var reportName = $"agencies_onboarding_{file.Name}_{DateTime.Now}";
 
             return PrepareReport(successfullyAddAgenciesNames, unsuccessfullyAddAgenciesErrs, reportName);
+
+        }
+
+        public async Task<CsvReport> VenuesByXml(IFormFile file)
+        {
+            var xml = XDocument.Parse(await file.ReadAsStringAsync());
+            var venues = xml.XPathSelectElements("venues/venue");
+
+            var resultCollection = new List<Option<Venue, Error>>();
+            foreach (var venue in venues)
+            {
+                var name = venue.Attribute("name")?.Value;
+                var capacity = Convert.ToInt32(venue.XPathSelectElement("capacity")?.Value);
+                var town = venue.XPathSelectElement("town")?.Value;
+
+                var entity = new Venue(name, capacity, town);
+                resultCollection.Add(await _venuesService.AddAsync(entity));
+            }
+
+            var successfullyAddAgenciesNames =
+                resultCollection
+                    .Values()
+                    .Select(venue => new OnboardingCsvReportModel($"{venue.Name} successfully added!"))
+                    .ToList();
+
+            var unsuccessfullyAddAgenciesErrs =
+                resultCollection
+                    .Exceptions()
+                    .Select(error => new OnboardingCsvReportModel(string.Join(", ", error.Messages)))
+                    .ToList();
+
+            var reportName = $"venues_onboarding_{file.Name}_{DateTime.Now}";
+
+            return PrepareReport(successfullyAddAgenciesNames, unsuccessfullyAddAgenciesErrs, reportName);
         }
 
         private CsvReport PrepareReport(
-            IEnumerable<JsonOnboardingReportModel> successfulMessages,
-            IEnumerable<JsonOnboardingReportModel> unsuccessfulMessages,
+            IEnumerable<OnboardingCsvReportModel> successfulMessages,
+            IEnumerable<OnboardingCsvReportModel> unsuccessfulMessages,
             string reportName)
         {
             var allMessages = successfulMessages.Concat(unsuccessfulMessages);

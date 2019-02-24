@@ -30,5 +30,18 @@ namespace WeddingsPlanner.Api.Controllers
             var result = await _onboardingService.AgenciesByJson(request.File);
             return File(result.Data, "text/csv", result.FileName);
         }
+
+        /// <summary>
+        /// Uploads collection of venues from xml file.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>CSV report file.</returns>
+        [HttpPost("xml-venues")]
+        [SwaggerOperationFilter(typeof(UploadDocumentsOperationFilter))]
+        public async Task<IActionResult> UploadVenuesByXml([FromForm] UploadDocumentRequest request)
+        {
+            var result = await _onboardingService.VenuesByXml(request.File);
+            return File(result.Data, "text/csv", result.FileName);
+        }
     }
 }

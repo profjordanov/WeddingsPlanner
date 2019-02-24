@@ -1,0 +1,1512 @@
+2019-02-24T20:34:47.6036499+02:00 0HLKQGR0D91GS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-02-24T20:34:47.6344216+02:00 0HLKQGR0D91GS:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-02-24T20:34:47.7372249+02:00 0HLKQGR0D91GS:00000001 [INF] Request finished in 140.9356ms 200 text/html (791a596a)
+2019-02-24T20:34:48.4114218+02:00 0HLKQGR0D91GS:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-02-24T20:34:48.4900156+02:00 0HLKQGR0D91GR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon-32x32.png   (ca22a1cb)
+2019-02-24T20:34:48.5254074+02:00 0HLKQGR0D91GR:00000001 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2019-02-24T20:34:48.5257276+02:00 0HLKQGR0D91GR:00000001 [INF] Request finished in 35.7365ms 200 image/png (791a596a)
+2019-02-24T20:34:48.9887956+02:00 0HLKQGR0D91GS:00000002 [INF] Request finished in 577.7641ms 200 application/json;charset=utf-8 (791a596a)
+2019-02-24T20:35:09.8027841+02:00 0HLKQGR0D91GS:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Onboarding/json-agencies multipart/form-data; boundary=----WebKitFormBoundaryCbgbcZqkNFWBuSB8 5490 (ca22a1cb)
+2019-02-24T20:35:09.9325062+02:00 0HLKQGR0D91GS:00000003 [INF] Route matched with "{action = \"UploadAgenciesByJson\", controller = \"Onboarding\"}". Executing action "WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson (WeddingsPlanner.Api)" (a44c0341)
+2019-02-24T20:35:10.0239778+02:00 0HLKQGR0D91GS:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.UploadDocumentRequest"]) - Validation state: Valid (4e3479ed)
+2019-02-24T20:35:10.0662922+02:00 0HLKQGR0D91GS:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-02-24T20:35:10.4471260+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("17"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5549246+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5601598+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5621549+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5640707+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5663493+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5683398+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5707639+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5737904+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5768695+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5791042+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5815320+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5837863+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5859231+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5879716+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5902371+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5929188+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5964541+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.5986731+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6008633+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6032997+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6125449+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6154099+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6179716+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6204442+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6227478+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6249595+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6277009+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6303201+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6347376+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6377251+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6401430+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6427857+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6453026+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6476947+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6502211+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6536893+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6574901+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6598743+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6624619+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6651892+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6677924+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6704130+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6741792+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6770976+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6799071+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6828588+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6853582+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6879700+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6907881+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6949944+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.6979477+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7003977+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7033064+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7059869+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7085124+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7112845+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7161886+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7192295+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7221414+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7247019+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7286316+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7328736+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7372788+02:00 0HLKQGR0D91GS:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:35:10.7837949+02:00 0HLKQGR0D91GS:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.FileContentResult" in 753.5742ms. (50a9e262)
+2019-02-24T20:35:10.8075520+02:00 0HLKQGR0D91GS:00000003 [INF] Executing "Microsoft.AspNetCore.Mvc.FileContentResult", sending file with download name '"agencies_onboarding_File_2/24/2019 8:35:10 PM.csv"' ... (3ade02d2)
+2019-02-24T20:35:10.8291153+02:00 0HLKQGR0D91GS:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson (WeddingsPlanner.Api)" in 889.8639ms (afa2e885)
+2019-02-24T20:35:10.8411305+02:00 0HLKQGR0D91GS:00000003 [INF] Request finished in 1038.3357ms 200 text/csv (791a596a)
+2019-02-24T20:38:00.0220259+02:00 0HLKQGSPQGD6P:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-02-24T20:38:00.0566148+02:00 0HLKQGSPQGD6P:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-02-24T20:38:00.1519951+02:00 0HLKQGSPQGD6P:00000001 [INF] Request finished in 134.6024ms 200 text/html (791a596a)
+2019-02-24T20:38:00.5525905+02:00 0HLKQGSPQGD6P:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-02-24T20:38:00.9270824+02:00 0HLKQGSPQGD6P:00000002 [INF] Request finished in 374.6574ms 200 application/json;charset=utf-8 (791a596a)
+2019-02-24T20:38:15.5409106+02:00 0HLKQGSPQGD6P:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Onboarding/json-agencies multipart/form-data; boundary=----WebKitFormBoundaryiDOKuHpB8CxRfEsv 5490 (ca22a1cb)
+2019-02-24T20:38:15.6873178+02:00 0HLKQGSPQGD6P:00000003 [INF] Route matched with "{action = \"UploadAgenciesByJson\", controller = \"Onboarding\"}". Executing action "WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson (WeddingsPlanner.Api)" (a44c0341)
+2019-02-24T20:38:15.7846661+02:00 0HLKQGSPQGD6P:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.UploadDocumentRequest"]) - Validation state: Valid (4e3479ed)
+2019-02-24T20:38:15.8264376+02:00 0HLKQGSPQGD6P:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-02-24T20:38:16.2390532+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("22"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3265556+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3342569+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3364212+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3385108+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3407351+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3429308+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3450014+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3474962+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3536585+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3558977+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3581060+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3605264+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3630224+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3654227+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3708925+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3732082+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3756910+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3782717+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3806135+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3827093+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3849804+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3907853+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3932636+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3958266+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.3981981+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4007853+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4033364+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4057921+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4126283+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4156437+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4180830+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4205231+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4232714+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4256626+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4312389+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4340654+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4364450+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4389127+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4451243+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4508551+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4538073+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4566348+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4593199+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4620087+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4649143+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4709188+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4736733+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4763969+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4792825+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4820230+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4849155+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4909266+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4943908+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.4972521+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5001755+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5030298+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5061504+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5119478+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5150643+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5180304+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5209459+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5237924+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5266813+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T20:38:16.5752217+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.FileContentResult" in 779.8619ms. (50a9e262)
+2019-02-24T20:38:16.5999802+02:00 0HLKQGSPQGD6P:00000003 [INF] Executing "Microsoft.AspNetCore.Mvc.FileContentResult", sending file with download name '"agencies_onboarding_File_2/24/2019 8:38:16 PM.csv"' ... (3ade02d2)
+2019-02-24T20:38:16.6220978+02:00 0HLKQGSPQGD6P:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson (WeddingsPlanner.Api)" in 927.4608ms (afa2e885)
+2019-02-24T20:38:16.6340801+02:00 0HLKQGSPQGD6P:00000003 [INF] Request finished in 1093.2537ms 200 text/csv (791a596a)
+2019-02-24T20:59:24.6001389+02:00 0HLKQH8OLL5DD:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-02-24T20:59:24.6241443+02:00 0HLKQH8OLL5DD:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-02-24T20:59:24.7574317+02:00 0HLKQH8OLL5DD:00000001 [INF] Request finished in 162.7191ms 200 text/html (791a596a)
+2019-02-24T20:59:25.2885765+02:00 0HLKQH8OLL5DD:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-02-24T20:59:25.9042695+02:00 0HLKQH8OLL5DD:00000002 [INF] Request finished in 615.8097ms 200 application/json;charset=utf-8 (791a596a)
+2019-02-24T21:00:08.0394226+02:00 0HLKQH8OLL5DD:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Onboarding/xml-venues multipart/form-data; boundary=----WebKitFormBoundarybaUMY63TzUIuowuY 8018 (ca22a1cb)
+2019-02-24T21:00:08.1717896+02:00 0HLKQH8OLL5DD:00000003 [INF] Route matched with "{action = \"UploadVenuesByXml\", controller = \"Onboarding\"}". Executing action "WeddingsPlanner.Api.Controllers.OnboardingController.UploadVenuesByXml (WeddingsPlanner.Api)" (a44c0341)
+2019-02-24T21:00:08.2621767+02:00 0HLKQH8OLL5DD:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.OnboardingController.UploadVenuesByXml (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.UploadDocumentRequest"]) - Validation state: Valid (4e3479ed)
+2019-02-24T21:00:08.3077826+02:00 0HLKQH8OLL5DD:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-02-24T21:00:08.7207754+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("21"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8145654+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8191021+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8214033+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8258455+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8284207+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8305872+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8326513+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8348046+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8372024+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8400049+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8439072+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8463883+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8486575+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8512961+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8536150+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8565240+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8590039+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8630318+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8657773+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8681931+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8706123+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8731201+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8764915+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8789254+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8824323+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8855574+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8885079+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8909497+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8933721+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8956852+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.8983559+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9012447+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9062457+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9091798+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9119153+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9144993+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9173342+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9200152+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9246353+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9277028+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9308757+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9343633+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9372184+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9399091+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9443879+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9472077+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9509230+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9539305+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9565880+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9593035+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9634662+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9666702+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9862046+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9928408+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:08.9986985+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0081606+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0108596+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0136425+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0166315+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0195397+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0243715+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0281068+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0310380+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0338895+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0375439+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0409928+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0467368+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0507450+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0539301+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0573577+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0612032+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0661298+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0692143+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0723238+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0755546+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0785362+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0821224+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0871366+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0902860+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0934111+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.0965239+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Venues] ([Capacity], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Venues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-02-24T21:00:09.1440851+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.OnboardingController.UploadVenuesByXml (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.FileContentResult" in 872.3681ms. (50a9e262)
+2019-02-24T21:00:09.1648938+02:00 0HLKQH8OLL5DD:00000003 [INF] Executing "Microsoft.AspNetCore.Mvc.FileContentResult", sending file with download name '"venues_onboarding_File_2/24/2019 9:00:09 PM.csv"' ... (3ade02d2)
+2019-02-24T21:00:09.1863016+02:00 0HLKQH8OLL5DD:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.OnboardingController.UploadVenuesByXml (WeddingsPlanner.Api)" in 1006.1808ms (afa2e885)
+2019-02-24T21:00:09.1953564+02:00 0HLKQH8OLL5DD:00000003 [INF] Request finished in 1156.0168ms 200 text/csv (791a596a)
