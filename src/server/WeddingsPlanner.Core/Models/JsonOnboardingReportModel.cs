@@ -1,6 +1,8 @@
-﻿namespace WeddingsPlanner.Core.Models
+﻿using WeddingsPlanner.Core.Generators;
+
+namespace WeddingsPlanner.Core.Models
 {
-    public class JsonOnboardingReportModel
+    public class JsonOnboardingReportModel : IReportModel
     {
         public JsonOnboardingReportModel(string message)
         {

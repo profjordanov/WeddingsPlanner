@@ -4,6 +4,13 @@
         <name>WeddingsPlanner.Api</name>
     </assembly>
     <members>
+        <member name="M:WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson(WeddingsPlanner.Core.Models.UploadDocumentRequest)">
+            <summary>
+            Uploads collection of agencies from json file.
+            </summary>
+            <param name="request"></param>
+            <returns>CSV report</returns>
+        </member>
         <member name="M:WeddingsPlanner.Api.Controllers.UsersController.Login(WeddingsPlanner.Core.Models.LoginUserModel)">
             <summary>
             Login.

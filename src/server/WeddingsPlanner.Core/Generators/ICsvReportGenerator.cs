@@ -5,6 +5,7 @@ namespace WeddingsPlanner.Core.Generators
 {
     public interface ICsvReportGenerator
     {
-        CsvReport GenerateReport<T>(IEnumerable<T> records, string reportName);
+        CsvReport GenerateReport<T>(IEnumerable<T> records, string reportName)
+            where T : IReportModel;
     }
 }
