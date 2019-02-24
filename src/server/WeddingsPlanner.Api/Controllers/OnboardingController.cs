@@ -22,7 +22,7 @@ namespace WeddingsPlanner.Api.Controllers
         /// Uploads collection of agencies from json file.
         /// </summary>
         /// <param name="request"></param>
-        /// <returns>CSV report</returns>
+        /// <returns>CSV report file.</returns>
         [HttpPost("json-agencies")]
         [SwaggerOperationFilter(typeof(UploadDocumentsOperationFilter))]
         public async Task<IActionResult> UploadAgenciesByJson([FromForm] UploadDocumentRequest request)
