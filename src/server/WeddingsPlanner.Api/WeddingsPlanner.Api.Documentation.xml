@@ -9,7 +9,7 @@
             Uploads collection of agencies from json file.
             </summary>
             <param name="request"></param>
-            <returns>CSV report</returns>
+            <returns>CSV report file.</returns>
         </member>
         <member name="M:WeddingsPlanner.Api.Controllers.UsersController.Login(WeddingsPlanner.Core.Models.LoginUserModel)">
             <summary>
