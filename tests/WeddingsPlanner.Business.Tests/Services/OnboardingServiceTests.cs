@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Moq;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using WeddingsPlanner.Business.Services;
 using WeddingsPlanner.Core.Generators;
@@ -34,16 +35,31 @@ namespace WeddingsPlanner.Business.Tests.Services
                 _venuesServiceMock.Object);
         }
 
-        [Fact(Skip = "...")]
+        [Fact]
         public async Task xx()
         {
             // Arrange
             const string resourceName = "WeddingsPlanner.Business.Tests.EmbeddedResource.agencies.json";
             const string fileName = "agencies.json";
-            var iFormFile = MockIFormFileByEmbeddedResource(resourceName, fileName);
+            //var iFormFile = MockIFormFileByEmbeddedResource(resourceName, fileName);
+
+            var file = new Mock<IFormFile>();
+            var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
+            var ms = new MemoryStream();
+            var writer = new StreamWriter(ms);
+            writer.Write(resourceStream);
+            writer.Flush();
+            ms.Position = 0;
+            file.Setup(f => f.FileName).Returns(fileName).Verifiable();
+            file.Setup(_ => _.CopyToAsync(It.IsAny<Stream>(), It.IsAny<CancellationToken>()))
+                .Returns((Stream stream, CancellationToken token) => ms.CopyToAsync(stream))
+                .Verifiable();
+            file.Setup(formFile => formFile.OpenReadStream())
+                .Returns(resourceStream)
+                .Verifiable();
 
             // Act
-            var result = _onboardingService.AgenciesByJson(iFormFile);
+            var result = await _onboardingService.AgenciesByJson(file.Object);
 
         }
 
