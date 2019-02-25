@@ -22,6 +22,7 @@ namespace WeddingsPlanner.Business.Generators
         /// </summary>
         /// <returns>CSV Report struct.</returns>
         public CsvReport GenerateReport<T>(IEnumerable<T> records, string reportName)
+            where T : IReportModel
         {
             var properties = typeof(T).GetProperties(); // all properties of current object
             var headers = properties.Select(p => p.Name); // the first row of the report will be object's properties names

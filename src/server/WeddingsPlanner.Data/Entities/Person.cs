@@ -46,6 +46,7 @@ namespace WeddingsPlanner.Data.Entities
                 {
                     return null;
                 }
+
                 var now = DateTime.Now;
                 var age = now.Year - ((DateTime)Birthdate).Year;
 

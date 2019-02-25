@@ -1,9 +1,9 @@
-﻿using System.IO;
-using System.Reflection;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Moq;
+using System.IO;
+using System.Reflection;
+using System.Threading.Tasks;
 using WeddingsPlanner.Business.Services;
 using WeddingsPlanner.Core.Generators;
 using WeddingsPlanner.Core.Services;
@@ -15,23 +15,26 @@ namespace WeddingsPlanner.Business.Tests.Services
     {
         private readonly OnboardingService _onboardingService;
 
+        private readonly ICsvReportGenerator _csvReportGenerator;
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<IAgenciesService> _agenciesServiceMock;
-        private readonly ICsvReportGenerator _csvReportGenerator;
+        private readonly Mock<IVenuesService> _venuesServiceMock;
 
         public OnboardingServiceTests()
         {
             _mapperMock = new Mock<IMapper>();
             _agenciesServiceMock = new Mock<IAgenciesService>();
+            _venuesServiceMock = new Mock<IVenuesService>();
 
             _onboardingService = new OnboardingService(
                 _mapperMock.Object,
                 DbContextProvider.GetSqlServerDbContext(),
                 _agenciesServiceMock.Object,
-                _csvReportGenerator);
+                _csvReportGenerator,
+                _venuesServiceMock.Object);
         }
 
-        [Fact]
+        [Fact(Skip = "...")]
         public async Task xx()
         {
             // Arrange

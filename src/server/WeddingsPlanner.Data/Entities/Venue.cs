@@ -5,6 +5,13 @@ namespace WeddingsPlanner.Data.Entities
 {
     public class Venue
     {
+        public Venue(string name, int capacity, string town)
+        {
+            Name = name;
+            Capacity = capacity;
+            Town = town;
+        }
+
         [Key]
         public int Id { get; set; }
 

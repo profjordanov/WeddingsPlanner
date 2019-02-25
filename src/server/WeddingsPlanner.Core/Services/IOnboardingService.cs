@@ -7,5 +7,6 @@ namespace WeddingsPlanner.Core.Services
     public interface IOnboardingService
     {
         Task<CsvReport> AgenciesByJson(IFormFile file);
+        Task<CsvReport> VenuesByXml(IFormFile file);
     }
 }

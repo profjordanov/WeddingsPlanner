@@ -21,14 +21,14 @@ namespace WeddingsPlanner.Business.Services
         {
         }
 
-        public async Task<Option<Agency, Error>> AddAsync(Agency agency) =>
-            await ValidateInputModel(agency).FlatMapAsync(async agencyToMap =>
+        public Task<Option<Agency, Error>> AddAsync(Agency agency) =>
+            ValidateInputModel(agency).FlatMapAsync(async agencyToMap =>
             {
                 try
                 {
-                    await DbContext.Agencies.AddAsync(agencyToMap);
+                    var entry = await DbContext.Agencies.AddAsync(agencyToMap);
                     await DbContext.SaveChangesAsync();
-                    return agencyToMap.Some<Agency, Error>();
+                    return entry.Entity.Some<Agency, Error>();
                 }
                 catch (Exception e)
                 {
@@ -47,14 +47,12 @@ namespace WeddingsPlanner.Business.Services
                 .FlatMap(ValidateTown);
 
         private Option<Agency, Error> ValidateName(Agency agency) =>
-            agency.Name == null ||
             string.IsNullOrEmpty(agency.Name) ||
             string.IsNullOrWhiteSpace(agency.Name)
                 ? Option.None<Agency, Error>(new Error("Agency name cannot be empty!")) 
                 : agency.Some<Agency, Error>();
 
         private Option<Agency, Error> ValidateTown(Agency agency) =>
-            agency.Town == null ||
             string.IsNullOrEmpty(agency.Town) ||
             string.IsNullOrWhiteSpace(agency.Town)
                 ? Option.None<Agency, Error>(new Error("Agency town cannot be empty!"))
