@@ -4,6 +4,11 @@
         <name>WeddingsPlanner.Api</name>
     </assembly>
     <members>
+        <member name="T:WeddingsPlanner.Api.Controllers.OnboardingController">
+            <summary>
+            Controller for uploading collection of entities from file.
+            </summary>
+        </member>
         <member name="M:WeddingsPlanner.Api.Controllers.OnboardingController.UploadAgenciesByJson(WeddingsPlanner.Core.Models.UploadDocumentRequest)">
             <summary>
             Uploads collection of agencies from json file.

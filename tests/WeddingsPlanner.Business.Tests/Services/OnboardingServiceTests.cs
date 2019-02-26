@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Moq;
+using Shouldly;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using Shouldly;
 using WeddingsPlanner.Business.Generators;
 using WeddingsPlanner.Business.Services;
 using WeddingsPlanner.Core.Generators;
@@ -15,6 +15,11 @@ using Xunit;
 
 namespace WeddingsPlanner.Business.Tests.Services
 {
+    /// <summary>
+    /// SQL Server Database Integration Tests
+    /// for <see cref="OnboardingService"/>.
+    /// </summary>
+    /// <seealso cref="OnboardingController"/>
     public class OnboardingServiceTests
     {
         private readonly OnboardingService _onboardingService;
@@ -66,7 +71,7 @@ namespace WeddingsPlanner.Business.Tests.Services
                 .ShouldAllBe(row => row.Contains("successfully added!")));
         }
 
-        private IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)
+        private static IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)
         {
             var file = new Mock<IFormFile>();
             var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);

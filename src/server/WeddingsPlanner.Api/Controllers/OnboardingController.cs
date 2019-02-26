@@ -1,6 +1,6 @@
-﻿using System.Net;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Net;
 using System.Threading.Tasks;
 using WeddingsPlanner.Api.Controllers._Base;
 using WeddingsPlanner.Api.OperationFilters;
@@ -11,6 +11,9 @@ using WeddingsPlanner.Core.Services;
 
 namespace WeddingsPlanner.Api.Controllers
 {
+    /// <summary>
+    /// Controller for uploading collection of entities from file.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class OnboardingController : ApiController
