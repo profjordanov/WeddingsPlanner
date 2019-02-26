@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Http;
 using Moq;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using Shouldly;
+using WeddingsPlanner.Business.Generators;
 using WeddingsPlanner.Business.Services;
 using WeddingsPlanner.Core.Generators;
 using WeddingsPlanner.Core.Services;
@@ -16,33 +19,52 @@ namespace WeddingsPlanner.Business.Tests.Services
     {
         private readonly OnboardingService _onboardingService;
 
-        private readonly ICsvReportGenerator _csvReportGenerator;
         private readonly Mock<IMapper> _mapperMock;
-        private readonly Mock<IAgenciesService> _agenciesServiceMock;
-        private readonly Mock<IVenuesService> _venuesServiceMock;
+
+        private readonly ICsvReportGenerator _csvReportGenerator;
+        private readonly IAgenciesService _agenciesService;
+        private readonly IVenuesService _venuesService;
 
         public OnboardingServiceTests()
         {
             _mapperMock = new Mock<IMapper>();
-            _agenciesServiceMock = new Mock<IAgenciesService>();
-            _venuesServiceMock = new Mock<IVenuesService>();
+
+            _csvReportGenerator = new CsvReportGenerator();
+
+            _agenciesService = new AgenciesService(
+                _mapperMock.Object,
+                DbContextProvider.GetSqlServerDbContext());
+
+            _venuesService = new VenuesService(
+                _mapperMock.Object,
+                DbContextProvider.GetSqlServerDbContext());
 
             _onboardingService = new OnboardingService(
                 _mapperMock.Object,
                 DbContextProvider.GetSqlServerDbContext(),
-                _agenciesServiceMock.Object,
+                _agenciesService,
                 _csvReportGenerator,
-                _venuesServiceMock.Object);
+                _venuesService);
         }
 
         [Fact]
-        public async Task xx()
+        public async Task AgenciesByJson_Returns_Correct_Data()
         {
             // Arrange
             const string resourceName = "WeddingsPlanner.Business.Tests.EmbeddedResource.agencies.json";
             const string fileName = "agencies.json";
-            //var iFormFile = MockIFormFileByEmbeddedResource(resourceName, fileName);
+            var iFormFile = MockIFormFileByEmbeddedResource(resourceName, fileName);
 
+            // Act
+            var result = await _onboardingService.AgenciesByJson(iFormFile);
+
+            // Asset
+            var allButTheHeader = result.AllRows.Skip(1);
+            allButTheHeader.ShouldAllBe(row => row.Contains("successfully added!"));
+        }
+
+        private IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)
+        {
             var file = new Mock<IFormFile>();
             var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
             var ms = new MemoryStream();
@@ -58,38 +80,7 @@ namespace WeddingsPlanner.Business.Tests.Services
                 .Returns(resourceStream)
                 .Verifiable();
 
-            // Act
-            var result = await _onboardingService.AgenciesByJson(file.Object);
-
-        }
-
-        private IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)
-        {
-            var fileMock = new Mock<IFormFile>();
-
-            var assembly = Assembly.GetExecutingAssembly();
-
-            string result;
-            using (var stream = assembly.GetManifestResourceStream(resourceName))
-            {
-                using (var reader = new StreamReader(stream))
-                {
-                    result = reader.ReadToEnd();
-                }
-            }
-
-            using (var ms = new MemoryStream())
-            {
-                using (var writer = new StreamWriter(ms))
-                {
-                    writer.Write(result);
-                }
-
-                fileMock.Setup(_ => _.OpenReadStream()).Returns(ms);
-                fileMock.Setup(_ => _.FileName).Returns(fileName);
-                fileMock.Setup(_ => _.Length).Returns(ms.Length);
-                return fileMock.Object;
-            }
+            return file.Object;
         }
     }
 }
