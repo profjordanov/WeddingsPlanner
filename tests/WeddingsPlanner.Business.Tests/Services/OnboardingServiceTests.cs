@@ -71,6 +71,25 @@ namespace WeddingsPlanner.Business.Tests.Services
                 .ShouldAllBe(row => row.Contains("successfully added!")));
         }
 
+        [Fact]
+        public async Task AgenciesByJson_Returns_Error_For_Invalid_Json_File()
+        {
+            // Arrange
+            const string fileName = "invalid_agencies.json";
+            const string resourceName = "WeddingsPlanner.Business.Tests.EmbeddedResource." + fileName;
+            var iFormFile = MockIFormFileByEmbeddedResource(resourceName, fileName);
+
+            // Act
+            var result = await _onboardingService.AgenciesByJson(iFormFile);
+
+            // Asset
+            result.HasValue.ShouldBe(false);
+            result.MatchNone(error => error
+                .Messages
+                .ShouldAllBe(msg => msg == "Something went wrong while deserializing the file! " +
+                                    "Please, check for any mistakes."));
+        }
+
         private static IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)
         {
             var file = new Mock<IFormFile>();

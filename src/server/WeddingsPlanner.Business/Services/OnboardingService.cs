@@ -75,7 +75,7 @@ namespace WeddingsPlanner.Business.Services
             {
                 Debug.Write(ex.Message);
                 return Option.None<CsvReport, Error>(
-                    new Error("Something went wrong while deserializing the file!" +
+                    new Error("Something went wrong while deserializing the file! " +
                               "Please, check for any mistakes."));
             }
 
