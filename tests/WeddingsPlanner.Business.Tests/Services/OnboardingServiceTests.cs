@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Moq;
+using Shouldly;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
+using WeddingsPlanner.Business.Generators;
 using WeddingsPlanner.Business.Services;
 using WeddingsPlanner.Core.Generators;
 using WeddingsPlanner.Core.Services;
@@ -11,31 +15,51 @@ using Xunit;
 
 namespace WeddingsPlanner.Business.Tests.Services
 {
+    /// <summary>
+    /// SQL Server Database Integration Tests
+    /// for <see cref="OnboardingService"/>.
+    /// </summary>
+    /// <seealso cref="OnboardingController"/>
     public class OnboardingServiceTests
     {
         private readonly OnboardingService _onboardingService;
 
-        private readonly ICsvReportGenerator _csvReportGenerator;
         private readonly Mock<IMapper> _mapperMock;
-        private readonly Mock<IAgenciesService> _agenciesServiceMock;
-        private readonly Mock<IVenuesService> _venuesServiceMock;
+
+        private readonly ICsvReportGenerator _csvReportGenerator;
+        private readonly IAgenciesService _agenciesService;
+        private readonly IVenuesService _venuesService;
+        private readonly IPeopleService _peopleService;
 
         public OnboardingServiceTests()
         {
             _mapperMock = new Mock<IMapper>();
-            _agenciesServiceMock = new Mock<IAgenciesService>();
-            _venuesServiceMock = new Mock<IVenuesService>();
+
+            _csvReportGenerator = new CsvReportGenerator();
+
+            _agenciesService = new AgenciesService(
+                _mapperMock.Object,
+                DbContextProvider.GetSqlServerDbContext());
+
+            _venuesService = new VenuesService(
+                _mapperMock.Object,
+                DbContextProvider.GetSqlServerDbContext());
+
+            _peopleService = new PeopleService(
+                _mapperMock.Object,
+                DbContextProvider.GetSqlServerDbContext());
 
             _onboardingService = new OnboardingService(
                 _mapperMock.Object,
                 DbContextProvider.GetSqlServerDbContext(),
-                _agenciesServiceMock.Object,
+                _agenciesService,
                 _csvReportGenerator,
-                _venuesServiceMock.Object);
+                _venuesService,
+                _peopleService);
         }
 
-        [Fact(Skip = "...")]
-        public async Task xx()
+        [Fact]
+        public async Task AgenciesByJson_Returns_Correct_Data()
         {
             // Arrange
             const string resourceName = "WeddingsPlanner.Business.Tests.EmbeddedResource.agencies.json";
@@ -43,37 +67,53 @@ namespace WeddingsPlanner.Business.Tests.Services
             var iFormFile = MockIFormFileByEmbeddedResource(resourceName, fileName);
 
             // Act
-            var result = _onboardingService.AgenciesByJson(iFormFile);
+            var result = await _onboardingService.AgenciesByJson(iFormFile);
 
+            // Asset
+            result.HasValue.ShouldBe(true);
+            result.MatchSome(report => report
+                .AllRows
+                .Skip(1)
+                .ShouldAllBe(row => row.Contains("successfully added!")));
         }
 
-        private IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)
+        [Fact]
+        public async Task AgenciesByJson_Returns_Error_For_Invalid_Json_File()
         {
-            var fileMock = new Mock<IFormFile>();
+            // Arrange
+            const string fileName = "invalid_agencies.json";
+            const string resourceName = "WeddingsPlanner.Business.Tests.EmbeddedResource." + fileName;
+            var iFormFile = MockIFormFileByEmbeddedResource(resourceName, fileName);
 
-            var assembly = Assembly.GetExecutingAssembly();
+            // Act
+            var result = await _onboardingService.AgenciesByJson(iFormFile);
 
-            string result;
-            using (var stream = assembly.GetManifestResourceStream(resourceName))
-            {
-                using (var reader = new StreamReader(stream))
-                {
-                    result = reader.ReadToEnd();
-                }
-            }
+            // Asset
+            result.HasValue.ShouldBe(false);
+            result.MatchNone(error => error
+                .Messages
+                .ShouldAllBe(msg => msg == "Something went wrong while deserializing the file! " +
+                                    "Please, check for any mistakes."));
+        }
 
-            using (var ms = new MemoryStream())
-            {
-                using (var writer = new StreamWriter(ms))
-                {
-                    writer.Write(result);
-                }
+        private static IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)
+        {
+            var file = new Mock<IFormFile>();
+            var resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
+            var ms = new MemoryStream();
+            var writer = new StreamWriter(ms);
+            writer.Write(resourceStream);
+            writer.Flush();
+            ms.Position = 0;
+            file.Setup(f => f.FileName).Returns(fileName).Verifiable();
+            file.Setup(_ => _.CopyToAsync(It.IsAny<Stream>(), It.IsAny<CancellationToken>()))
+                .Returns((Stream stream, CancellationToken token) => ms.CopyToAsync(stream))
+                .Verifiable();
+            file.Setup(formFile => formFile.OpenReadStream())
+                .Returns(resourceStream)
+                .Verifiable();
 
-                fileMock.Setup(_ => _.OpenReadStream()).Returns(ms);
-                fileMock.Setup(_ => _.FileName).Returns(fileName);
-                fileMock.Setup(_ => _.Length).Returns(ms.Length);
-                return fileMock.Object;
-            }
+            return file.Object;
         }
     }
 }

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="EmbeddedResource\agencies.json" />
+    <None Remove="EmbeddedResource\invalid_agencies.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,9 @@
 
   <ItemGroup>
     <EmbeddedResource Include="EmbeddedResource\agencies.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmbeddedResource\invalid_agencies.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

@@ -48,6 +48,8 @@ namespace WeddingsPlanner.Api
             services.AddTransient<IAgenciesService, AgenciesService>();
             services.AddTransient<IOnboardingService, OnboardingService>();
             services.AddTransient<IVenuesService, VenuesService>();
+            services.AddTransient<IPeopleService, PeopleService>();
+
 
             services.AddTransient<IJwtFactory, JwtFactory>();
 
@@ -67,6 +69,7 @@ namespace WeddingsPlanner.Api
             if (env.IsDevelopment())
             {
                 dbContext.Database.EnsureCreated();
+                app.UseDeveloperExceptionPage();
             }
             else
             {
@@ -76,7 +79,7 @@ namespace WeddingsPlanner.Api
             loggerFactory.AddLogging(Configuration.GetSection("Logging"));
 
             app.UseHttpsRedirection();
-            app.UseSwagger("My Web API.");
+            app.UseSwagger("Weddings Planner API.");
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseMvc();

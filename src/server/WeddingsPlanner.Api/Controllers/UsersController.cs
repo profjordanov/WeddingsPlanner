@@ -4,6 +4,7 @@ using WeddingsPlanner.Core;
 using WeddingsPlanner.Core.Models;
 using WeddingsPlanner.Core.Services;
 using Microsoft.AspNetCore.Mvc;
+using WeddingsPlanner.Api.Controllers._Base;
 
 namespace WeddingsPlanner.Api.Controllers
 {
