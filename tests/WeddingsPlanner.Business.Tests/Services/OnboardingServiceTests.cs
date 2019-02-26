@@ -59,8 +59,11 @@ namespace WeddingsPlanner.Business.Tests.Services
             var result = await _onboardingService.AgenciesByJson(iFormFile);
 
             // Asset
-            var allButTheHeader = result.AllRows.Skip(1);
-            allButTheHeader.ShouldAllBe(row => row.Contains("successfully added!"));
+            result.HasValue.ShouldBe(true);
+            result.MatchSome(report => report
+                .AllRows
+                .Skip(1)
+                .ShouldAllBe(row => row.Contains("successfully added!")));
         }
 
         private IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)

@@ -4,6 +4,7 @@ using Optional;
 using Optional.Collections;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -40,32 +41,43 @@ namespace WeddingsPlanner.Business.Services
             _venuesService = venuesService;
         }
 
-        public async Task<CsvReport> AgenciesByJson(IFormFile file)
+        public async Task<Option<CsvReport, Error>> AgenciesByJson(IFormFile file)
         {
             var json = await file.ReadAsStringAsync();
-            var agencies = DeserializeObject<IEnumerable<Agency>>(json);
-
-            var resultCollection = new List<Option<Agency, Error>>();
-            foreach (var agency in agencies)
+            try
             {
-                resultCollection.Add(await _agenciesService.AddAsync(agency));
+                var agencies = DeserializeObject<IEnumerable<Agency>>(json);
+
+                var resultCollection = new List<Option<Agency, Error>>();
+                foreach (var agency in agencies)
+                {
+                    resultCollection.Add(await _agenciesService.AddAsync(agency));
+                }
+
+                var successfullyAddAgenciesNames =
+                    resultCollection
+                        .Values()
+                        .Select(agency => new OnboardingCsvReportModel($"{agency.Name} successfully added!"))
+                        .ToList();
+
+                var unsuccessfullyAddAgenciesErrs =
+                    resultCollection
+                        .Exceptions()
+                        .Select(error => new OnboardingCsvReportModel(string.Join(", ", error.Messages)))
+                        .ToList();
+
+                var reportName = $"agencies_onboarding_{file.Name}_{DateTime.Now}";
+
+                return PrepareReport(successfullyAddAgenciesNames, unsuccessfullyAddAgenciesErrs, reportName)
+                    .Some<CsvReport, Error>();
             }
-
-            var successfullyAddAgenciesNames =
-                resultCollection
-                    .Values()
-                    .Select(agency => new OnboardingCsvReportModel($"{agency.Name} successfully added!"))
-                    .ToList();
-
-            var unsuccessfullyAddAgenciesErrs =
-                resultCollection
-                    .Exceptions()
-                    .Select(error => new OnboardingCsvReportModel(string.Join(", ", error.Messages)))
-                    .ToList();
-
-            var reportName = $"agencies_onboarding_{file.Name}_{DateTime.Now}";
-
-            return PrepareReport(successfullyAddAgenciesNames, unsuccessfullyAddAgenciesErrs, reportName);
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message);
+                return Option.None<CsvReport, Error>(
+                    new Error("Something went wrong while deserializing the file!" +
+                              "Please, check for any mistakes."));
+            }
 
         }
 

@@ -8,8 +8,10 @@
             <summary>
             Uploads collection of agencies from json file.
             </summary>
-            <param name="request"></param>
-            <returns>CSV report file.</returns>
+            <param name="request">File request</param>
+            <returns>Either CSV report file or an error.</returns>
+            <response code="200">If the file has been uploaded successfully.</response>
+            <response code="400">If the file don't match/don't meet the requirements.</response>
         </member>
         <member name="M:WeddingsPlanner.Api.Controllers.OnboardingController.UploadVenuesByXml(WeddingsPlanner.Core.Models.UploadDocumentRequest)">
             <summary>
