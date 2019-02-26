@@ -8,6 +8,9 @@ namespace WeddingsPlanner.Core.Services
     public interface IOnboardingService
     {
         Task<Option<CsvReport, Error>> AgenciesByJson(IFormFile file);
+
         Task<CsvReport> VenuesByXml(IFormFile file);
+
+        Task<Option<CsvReport, Error>> PeopleByJson(IFormFile file);
     }
 }

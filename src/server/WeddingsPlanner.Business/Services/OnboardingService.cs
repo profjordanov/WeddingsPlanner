@@ -9,11 +9,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Newtonsoft.Json;
 using WeddingsPlanner.Business.Extensions;
 using WeddingsPlanner.Business.Services._Base;
 using WeddingsPlanner.Core;
 using WeddingsPlanner.Core.Generators;
 using WeddingsPlanner.Core.Models;
+using WeddingsPlanner.Core.Models.Onboarding;
 using WeddingsPlanner.Core.Reports;
 using WeddingsPlanner.Core.Services;
 using WeddingsPlanner.Data.Entities;
@@ -27,18 +29,21 @@ namespace WeddingsPlanner.Business.Services
         private readonly IAgenciesService _agenciesService;
         private readonly ICsvReportGenerator _csvReportGenerator;
         private readonly IVenuesService _venuesService;
+        private readonly IPeopleService _peopleService;
 
         public OnboardingService(
             IMapper mapper,
             ApplicationDbContext dbContext,
             IAgenciesService agenciesService,
             ICsvReportGenerator csvReportGenerator, 
-            IVenuesService venuesService) 
+            IVenuesService venuesService,
+            IPeopleService peopleService) 
             : base(mapper, dbContext)
         {
             _agenciesService = agenciesService;
             _csvReportGenerator = csvReportGenerator;
             _venuesService = venuesService;
+            _peopleService = peopleService;
         }
 
         public async Task<Option<CsvReport, Error>> AgenciesByJson(IFormFile file)
@@ -66,14 +71,14 @@ namespace WeddingsPlanner.Business.Services
                         .Select(error => new OnboardingCsvReportModel(string.Join(", ", error.Messages)))
                         .ToList();
 
-                var reportName = $"agencies_onboarding_{file.Name}_{DateTime.Now}";
+                var reportName = $"agencies-onboarding-{file.Name}-{DateTime.Now.Date}";
 
                 return PrepareReport(successfullyAddAgenciesNames, unsuccessfullyAddAgenciesErrs, reportName)
                     .Some<CsvReport, Error>();
             }
             catch (Exception ex)
             {
-                Debug.Write(ex.Message);
+                Debug.WriteLine(ex.Message);
                 return Option.None<CsvReport, Error>(
                     new Error("Something went wrong while deserializing the file! " +
                               "Please, check for any mistakes."));
@@ -97,21 +102,70 @@ namespace WeddingsPlanner.Business.Services
                 resultCollection.Add(await _venuesService.AddAsync(entity));
             }
 
-            var successfullyAddAgenciesNames =
+            var successfullyAddVenuesNames =
                 resultCollection
                     .Values()
                     .Select(venue => new OnboardingCsvReportModel($"{venue.Name} successfully added!"))
                     .ToList();
 
-            var unsuccessfullyAddAgenciesErrs =
+            var unsuccessfullyAddVenuesErrs =
                 resultCollection
                     .Exceptions()
                     .Select(error => new OnboardingCsvReportModel(string.Join(", ", error.Messages)))
                     .ToList();
 
-            var reportName = $"venues_onboarding_{file.Name}_{DateTime.Now}";
+            var reportName = $"venues-onboarding-{file.Name}-{DateTime.Now.Date}";
 
-            return PrepareReport(successfullyAddAgenciesNames, unsuccessfullyAddAgenciesErrs, reportName);
+            return PrepareReport(successfullyAddVenuesNames, unsuccessfullyAddVenuesErrs, reportName);
+        }
+
+        public async Task<Option<CsvReport, Error>> PeopleByJson(IFormFile file)
+        {
+            var json = await file.ReadAsStringAsync();
+            try
+            {
+                var peopleDto = DeserializeObject<IEnumerable<PersonOnboardingModel>>(json);
+                var resultCollection = new List<Option<Person, Error>>();
+                foreach (var model in peopleDto)
+                {
+                    var person = new Person
+                    {
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        MiddleNameInitial = model.MiddleInitial,
+                        Gender = model.Gender,
+                        Birthdate = model.Birthday,
+                        Phone = model.Phone,
+                        Email = model.Email
+                    };
+
+                    resultCollection.Add(await _peopleService.AddAsync(person));
+                }
+
+                var successfullyAddPeopleNames =
+                    resultCollection
+                        .Values()
+                        .Select(person => new OnboardingCsvReportModel($"{person.FullName} successfully added!"))
+                        .ToList();
+
+                var unsuccessfullyAddPeopleErrs =
+                    resultCollection
+                        .Exceptions()
+                        .Select(error => new OnboardingCsvReportModel(string.Join(", ", error.Messages)))
+                        .ToList();
+
+                var reportName = $"people-onboarding-{file.Name}-{DateTime.Now.Date}";
+
+                return PrepareReport(successfullyAddPeopleNames, unsuccessfullyAddPeopleErrs, reportName)
+                    .Some<CsvReport, Error>();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return Option.None<CsvReport, Error>(
+                    new Error("Something went wrong while deserializing the file! " +
+                              "Please, check for any mistakes."));
+            }
         }
 
         private CsvReport PrepareReport(
