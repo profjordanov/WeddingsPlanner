@@ -96,6 +96,26 @@ namespace WeddingsPlanner.Business.Tests.Services
                                     "Please, check for any mistakes."));
         }
 
+        [Fact]
+        public async Task PeopleByJson_Returns_Correct_Data()
+        {
+            // Arrange
+            const string fileName = "people.json";
+            const string resourceName = "WeddingsPlanner.Business.Tests.EmbeddedResource." + fileName;
+            var iFormFile = MockIFormFileByEmbeddedResource(resourceName, fileName);
+
+            // Act
+            var result = await _onboardingService.PeopleByJson(iFormFile);
+
+            // Asset
+            result.HasValue.ShouldBe(true);
+            result.MatchSome(report => report
+                .AllRows
+                .Skip(1)
+                .Take(5)
+                .ShouldAllBe(row => row.Contains("successfully added!")));
+        }
+
         private static IFormFile MockIFormFileByEmbeddedResource(string resourceName, string fileName)
         {
             var file = new Mock<IFormFile>();
