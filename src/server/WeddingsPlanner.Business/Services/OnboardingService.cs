@@ -198,7 +198,7 @@ namespace WeddingsPlanner.Business.Services
 
                     if (bride == null || bridegroom == null || model.Date == default(DateTime) || agency == null)
                     {
-                        return Option.None<CsvReport, Error>(new Error("Invalid data provided."));
+                        resultCollection.Add(Option.None<Wedding, Error>(new Error("Invalid data provided.")));
                     }
 
                     var wedding = new Wedding(bride, bridegroom, model.Date, agency);
@@ -221,12 +221,10 @@ namespace WeddingsPlanner.Business.Services
                                     Family = guest.Family
                                 });
                             }
-
                         }
                     }
 
                     resultCollection.Add(await _weddingsService.AddAsync(wedding));
-
                 }
 
                 var successfullyAddWeddingNames =
@@ -246,10 +244,12 @@ namespace WeddingsPlanner.Business.Services
                 return PrepareReport(successfullyAddWeddingNames, unsuccessfullyAddWeddingErrs, reportName)
                     .Some<CsvReport, Error>();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine(e);
-                throw;
+                Debug.WriteLine(ex.Message);
+                return Option.None<CsvReport, Error>(
+                    new Error("Something went wrong while deserializing the file! " +
+                              "Please, check for any mistakes."));
             }
         }
 
