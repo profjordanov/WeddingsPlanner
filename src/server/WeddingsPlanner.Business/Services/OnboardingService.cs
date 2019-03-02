@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using WeddingsPlanner.Business.Extensions;
 using WeddingsPlanner.Business.Services._Base;
@@ -30,6 +31,7 @@ namespace WeddingsPlanner.Business.Services
         private readonly ICsvReportGenerator _csvReportGenerator;
         private readonly IVenuesService _venuesService;
         private readonly IPeopleService _peopleService;
+        private readonly IWeddingsService _weddingsService;
 
         public OnboardingService(
             IMapper mapper,
@@ -37,13 +39,15 @@ namespace WeddingsPlanner.Business.Services
             IAgenciesService agenciesService,
             ICsvReportGenerator csvReportGenerator, 
             IVenuesService venuesService,
-            IPeopleService peopleService) 
+            IPeopleService peopleService, 
+            IWeddingsService weddingsService) 
             : base(mapper, dbContext)
         {
             _agenciesService = agenciesService;
             _csvReportGenerator = csvReportGenerator;
             _venuesService = venuesService;
             _peopleService = peopleService;
+            _weddingsService = weddingsService;
         }
 
         public async Task<Option<CsvReport, Error>> AgenciesByJson(IFormFile file)
@@ -157,6 +161,88 @@ namespace WeddingsPlanner.Business.Services
                 var reportName = $"people-onboarding-{file.Name}-{DateTime.Now.Date}";
 
                 return PrepareReport(successfullyAddPeopleNames, unsuccessfullyAddPeopleErrs, reportName)
+                    .Some<CsvReport, Error>();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return Option.None<CsvReport, Error>(
+                    new Error("Something went wrong while deserializing the file! " +
+                              "Please, check for any mistakes."));
+            }
+        }
+
+        public async Task<Option<CsvReport, Error>> WeddingsByJson(IFormFile file)
+        {
+            var json = await file.ReadAsStringAsync();
+            try
+            {
+                var weddingsDto = DeserializeObject<IEnumerable<WeddingOnboardingModel>>(json);
+                var resultCollection = new List<Option<Wedding, Error>>();
+                foreach (var model in weddingsDto)
+                {
+                    var bride = await DbContext
+                        .People
+                        .Where(person => person.FullName == model.Bride)
+                        .FirstOrDefaultAsync();
+
+                    var bridegroom = await DbContext
+                        .People
+                        .Where(person => person.FullName == model.Bridegroom)
+                        .FirstOrDefaultAsync();
+
+                    var agency = await DbContext
+                        .Agencies
+                        .Where(agenc => agenc.Name == model.Agency)
+                        .FirstOrDefaultAsync();
+
+                    if (bride == null || bridegroom == null || model.Date == default(DateTime) || agency == null)
+                    {
+                        resultCollection.Add(Option.None<Wedding, Error>(new Error("Invalid data provided.")));
+                        break;
+                    }
+
+                    var wedding = new Wedding(bride, bridegroom, model.Date, agency);
+
+                    if (model.Guests != null)
+                    {
+                        foreach (var guest in model.Guests)
+                        {
+                            var personEntity = await DbContext
+                                .People
+                                .Where(person => person.FullName == guest.Name)
+                                .FirstOrDefaultAsync();
+
+                            if (personEntity != null)
+                            {
+                                wedding.Invitations.Add(new Invitation()
+                                {
+                                    Guest = personEntity,
+                                    IsAttending = guest.Rsvp,
+                                    Family = guest.Family
+                                });
+                            }
+                        }
+                    }
+
+                    resultCollection.Add(await _weddingsService.AddAsync(wedding));
+                }
+
+                var successfullyAddWeddingNames =
+                    resultCollection
+                        .Values()
+                        .Select(wedding => new OnboardingCsvReportModel($"{wedding.Bride}/{wedding.Bridegroom} successfully added!"))
+                        .ToList();
+
+                var unsuccessfullyAddWeddingErrs =
+                    resultCollection
+                        .Exceptions()
+                        .Select(error => new OnboardingCsvReportModel(string.Join(", ", error.Messages)))
+                        .ToList();
+
+                var reportName = $"wedding-onboarding-{file.Name}-{DateTime.Now.Date}";
+
+                return PrepareReport(successfullyAddWeddingNames, unsuccessfullyAddWeddingErrs, reportName)
                     .Some<CsvReport, Error>();
             }
             catch (Exception ex)

@@ -12,5 +12,7 @@ namespace WeddingsPlanner.Core.Services
         Task<CsvReport> VenuesByXml(IFormFile file);
 
         Task<Option<CsvReport, Error>> PeopleByJson(IFormFile file);
+
+        Task<Option<CsvReport, Error>> WeddingsByJson(IFormFile file);
     }
 }

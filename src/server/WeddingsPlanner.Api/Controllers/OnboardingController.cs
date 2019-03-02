@@ -56,6 +56,21 @@ namespace WeddingsPlanner.Api.Controllers
             .Match(CsvReport, Error);
 
         /// <summary>
+        /// Uploads collection of weddings from json file.
+        /// </summary>
+        /// <param name="request">File request</param>
+        /// <returns>Either CSV report file or an error.</returns>
+        /// <response code="200">If the file has been uploaded successfully.</response>
+        /// <response code="400">If the file don't match/don't meet the requirements.</response>
+        [HttpPost("json-weddings")]
+        [ProducesResponseType(typeof(CsvReport), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
+        [SwaggerOperationFilter(typeof(UploadDocumentsOperationFilter))]
+        public async Task<IActionResult> UploadWeddingsByJson([FromForm] UploadDocumentRequest request) =>
+            (await _onboardingService.WeddingsByJson(request.File))
+            .Match(CsvReport, Error);
+
+        /// <summary>
         /// Uploads collection of venues from xml file.
         /// </summary>
         /// <param name="request"></param>
