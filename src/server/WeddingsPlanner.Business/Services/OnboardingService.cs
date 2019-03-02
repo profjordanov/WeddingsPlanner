@@ -199,6 +199,7 @@ namespace WeddingsPlanner.Business.Services
                     if (bride == null || bridegroom == null || model.Date == default(DateTime) || agency == null)
                     {
                         resultCollection.Add(Option.None<Wedding, Error>(new Error("Invalid data provided.")));
+                        break;
                     }
 
                     var wedding = new Wedding(bride, bridegroom, model.Date, agency);
