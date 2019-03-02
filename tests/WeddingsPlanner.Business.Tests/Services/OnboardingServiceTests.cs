@@ -30,6 +30,7 @@ namespace WeddingsPlanner.Business.Tests.Services
         private readonly IAgenciesService _agenciesService;
         private readonly IVenuesService _venuesService;
         private readonly IPeopleService _peopleService;
+        private readonly IWeddingsService _weddingsService;
 
         public OnboardingServiceTests()
         {
@@ -49,13 +50,18 @@ namespace WeddingsPlanner.Business.Tests.Services
                 _mapperMock.Object,
                 DbContextProvider.GetSqlServerDbContext());
 
+            _weddingsService = new WeddingsService(
+                _mapperMock.Object, 
+                DbContextProvider.GetSqlServerDbContext());
+
             _onboardingService = new OnboardingService(
                 _mapperMock.Object,
                 DbContextProvider.GetSqlServerDbContext(),
                 _agenciesService,
                 _csvReportGenerator,
                 _venuesService,
-                _peopleService);
+                _peopleService,
+                _weddingsService);
         }
 
         [Fact]

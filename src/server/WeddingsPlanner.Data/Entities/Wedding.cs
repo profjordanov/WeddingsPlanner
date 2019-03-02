@@ -7,6 +7,14 @@ namespace WeddingsPlanner.Data.Entities
 {
     public class Wedding
     {
+        public Wedding(Person bride, Person bridegroom, DateTime date, Agency agency)
+        {
+            Bride = bride;
+            Bridegroom = bridegroom;
+            Date = date;
+            Agency = agency;
+        }
+
         [Key]
         public int Id { get; set; }
 

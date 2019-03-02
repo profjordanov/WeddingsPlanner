@@ -49,7 +49,7 @@ namespace WeddingsPlanner.Api
             services.AddTransient<IOnboardingService, OnboardingService>();
             services.AddTransient<IVenuesService, VenuesService>();
             services.AddTransient<IPeopleService, PeopleService>();
-
+            services.AddTransient<IWeddingsService, WeddingsService>();
 
             services.AddTransient<IJwtFactory, JwtFactory>();
 
