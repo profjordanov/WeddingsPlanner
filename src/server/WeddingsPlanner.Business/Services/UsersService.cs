@@ -37,13 +37,10 @@ namespace WeddingsPlanner.Business.Services
                 .FilterAsync(async user => await UserManager.CheckPasswordAsync(user, model.Password));
 
             return loginResult.Match(
-                user =>
+                user => new JwtModel
                 {
-                    return new JwtModel
-                    {
-                        TokenString = JwtFactory.GenerateEncodedToken(user.Id, user.Email, new List<Claim>())
-                    }.Some<JwtModel, Error>();
-                },
+                    TokenString = JwtFactory.GenerateEncodedToken(user.Id, user.Email, new List<Claim>())
+                }.Some<JwtModel, Error>(),
                 () => Option.None<JwtModel, Error>(new Error("Invalid credentials.")));
         }
 
