@@ -4,6 +4,12 @@
         <name>WeddingsPlanner.Api</name>
     </assembly>
     <members>
+        <member name="M:WeddingsPlanner.Api.Controllers.AgenciesController.GetAll">
+            <summary>
+            Gets all agencies.
+            </summary>
+            <returns>collection of agencies/</returns>
+        </member>
         <member name="T:WeddingsPlanner.Api.Controllers.OnboardingController">
             <summary>
             Controller for uploading collection of entities from file.

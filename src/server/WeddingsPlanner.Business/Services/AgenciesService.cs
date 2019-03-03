@@ -2,10 +2,15 @@
 using Optional;
 using Optional.Async;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using WeddingsPlanner.Business.Services._Base;
 using WeddingsPlanner.Core;
+using WeddingsPlanner.Core.Models.Agencies;
 using WeddingsPlanner.Core.Services;
 using WeddingsPlanner.Data.Entities;
 using WeddingsPlanner.Data.EntityFramework;
@@ -20,6 +25,21 @@ namespace WeddingsPlanner.Business.Services
             : base(mapper, dbContext)
         {
         }
+
+        public async Task<IEnumerable<AgencyServiceModel>> GetAgenciesOrderedAsync(
+            CancellationToken cancellationToken) =>
+            DbContext
+                .Agencies
+                .OrderByDescending(agency => agency.EmployeesCount)
+                .ThenBy(agency => agency.Name)
+                .Select(agency => new AgencyServiceModel
+                {
+                    Name = agency.Name,
+                    Town = agency.Town,
+                    EmployeesCount = agency.EmployeesCount
+                })
+                .AsParallel()
+                .WithCancellation(cancellationToken);
 
         public Task<Option<Agency, Error>> AddAsync(Agency agency) =>
             ValidateInputModel(agency).FlatMapAsync(async agencyToMap =>
