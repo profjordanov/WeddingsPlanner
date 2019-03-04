@@ -14,16 +14,15 @@ namespace WeddingsPlanner.Api.ModelBinders
                 throw new ArgumentNullException(nameof(context));
             }
 
-            if (context.Metadata.ModelType.GetTypeInfo().IsGenericType &&
-                context.Metadata.ModelType.GetGenericTypeDefinition() == typeof(Option<>))
+            if (!context.Metadata.ModelType.GetTypeInfo().IsGenericType ||
+                context.Metadata.ModelType.GetGenericTypeDefinition() != typeof(Option<>))
             {
-                var types = context.Metadata.ModelType.GetGenericArguments();
-                var obj = typeof(OptionModelBinder<>).MakeGenericType(types);
-
-                return (IModelBinder)Activator.CreateInstance(obj);
+                return null;
             }
+            var types = context.Metadata.ModelType.GetGenericArguments();
+            var obj = typeof(OptionModelBinder<>).MakeGenericType(types);
 
-            return null;
+            return (IModelBinder)Activator.CreateInstance(obj);
         }
     }
 }

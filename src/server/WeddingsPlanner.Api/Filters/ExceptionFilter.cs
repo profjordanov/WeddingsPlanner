@@ -1,8 +1,8 @@
-﻿using System.Net;
-using WeddingsPlanner.Core;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Net;
+using WeddingsPlanner.Core;
 
 namespace WeddingsPlanner.Api.Filters
 {
@@ -17,7 +17,7 @@ namespace WeddingsPlanner.Api.Filters
 
         public void OnException(ExceptionContext context)
         {
-            var status = (int)HttpStatusCode.InternalServerError;
+            const int status = (int)HttpStatusCode.InternalServerError;
 
             var result = _hostingEnvironment.IsDevelopment() ?
                 new JsonResult(context.Exception) :

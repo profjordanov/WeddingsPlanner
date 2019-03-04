@@ -13,15 +13,17 @@ namespace WeddingsPlanner.Api.Filters
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            if (!context.ModelState.IsValid)
+            if (context.ModelState.IsValid)
             {
-                var errors = context
-                    .ModelState
-                    .Values
-                    .SelectMany(v => v.Errors.Select(e => e.ErrorMessage));
-
-                context.Result = new BadRequestObjectResult(new Error(errors));
+                return;
             }
+
+            var errors = context
+                .ModelState
+                .Values
+                .SelectMany(v => v.Errors.Select(e => e.ErrorMessage));
+
+            context.Result = new BadRequestObjectResult(new Error(errors));
         }
     }
 }
