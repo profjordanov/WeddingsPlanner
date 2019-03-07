@@ -10,6 +10,15 @@
             </summary>
             <returns>collection of agencies/</returns>
         </member>
+        <member name="M:WeddingsPlanner.Api.Controllers.AgenciesController.Post(WeddingsPlanner.Data.Entities.Agency)">
+            <summary>
+            Creates an agency.
+            </summary>
+            <param name="agency"><seealso cref="T:WeddingsPlanner.Data.Entities.Agency"/></param>
+            <returns><seealso cref="T:WeddingsPlanner.Data.Entities.Agency"/></returns>
+            <response code="201">An agency was created.</response>
+            <response code="400">Invalid agency name or town.</response>
+        </member>
         <member name="T:WeddingsPlanner.Api.Controllers.OnboardingController">
             <summary>
             Controller for uploading collection of entities from file.

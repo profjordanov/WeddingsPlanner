@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WeddingsPlanner.Business.Services._Base;
 using WeddingsPlanner.Core;
 using WeddingsPlanner.Core.Models.Agencies;
@@ -59,6 +60,26 @@ namespace WeddingsPlanner.Business.Services
                     return Option.None<Agency, Error>(new Error(errMsg));
                 }
             });
+
+        public Task<Option<Agency, Error>> UpdateAsync(Agency agencyToUpdate) =>
+            ValidateInputModelAsync(agencyToUpdate).FlatMapAsync(async agencyToValidate =>
+                await EnsureExistsAsync(agencyToValidate).FlatMapAsync(async agency =>
+                    {
+                        agency.Name = agencyToUpdate.Name;
+                        agency.Town = agencyToUpdate.Town;
+                        DbContext.Agencies.Update(agency);
+                        await DbContext.SaveChangesAsync();
+                        return agency.Some<Agency, Error>();
+                    }));
+
+        private Task<Option<Agency, Error>> EnsureExistsAsync(Agency agency) =>
+            DbContext
+                .Agencies
+                .SingleOrDefaultAsync(currentAgency => currentAgency.Id == agency.Id)
+                .SomeNotNull(new Error($"{nameof(Agency)} with ID:{agency.Id} do not exists!"));
+
+        private Task<Option<Agency, Error>> ValidateInputModelAsync(Agency agency) =>
+            Task.Run(() => ValidateInputModel(agency));
 
         private Option<Agency, Error> ValidateInputModel(Agency agency) =>
             agency.Some<Agency, Error>()
