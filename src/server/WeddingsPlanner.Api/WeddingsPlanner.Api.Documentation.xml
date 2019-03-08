@@ -10,6 +10,14 @@
             </summary>
             <returns>collection of agencies/</returns>
         </member>
+        <member name="M:WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle(System.Int32)">
+            <summary>
+            Gets <see cref="T:WeddingsPlanner.Data.Entities.Agency"/> by ID.
+            </summary>
+            <param name="agencyId"></param>
+            <response code="200">Valid ID.</response>
+            <response code="400">Invalid ID.</response>
+        </member>
         <member name="M:WeddingsPlanner.Api.Controllers.AgenciesController.Post(WeddingsPlanner.Data.Entities.Agency)">
             <summary>
             Creates an agency.
@@ -29,6 +37,17 @@
             <response code="400">
             Cannot find agency with current ID or
             invalid agency name or town.
+            </response>
+        </member>
+        <member name="M:WeddingsPlanner.Api.Controllers.AgenciesController.Delete(WeddingsPlanner.Data.Entities.Agency)">
+            <summary>
+            Deletes an <see cref="T:WeddingsPlanner.Data.Entities.Agency"/>.
+            </summary>
+            <param name="agency"></param>
+            <returns>Deleted agancy.</returns>
+            <response code="200">An agency was deleted.</response>
+            <response code="400">
+            Cannot find agency with current ID or name and town.
             </response>
         </member>
         <member name="T:WeddingsPlanner.Api.Controllers.OnboardingController">
