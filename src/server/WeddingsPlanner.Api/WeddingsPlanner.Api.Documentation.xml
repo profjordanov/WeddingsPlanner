@@ -19,6 +19,18 @@
             <response code="201">An agency was created.</response>
             <response code="400">Invalid agency name or town.</response>
         </member>
+        <member name="M:WeddingsPlanner.Api.Controllers.AgenciesController.Put(WeddingsPlanner.Data.Entities.Agency)">
+            <summary>
+            Updates an agency.
+            </summary>
+            <param name="agency"><seealso cref="T:WeddingsPlanner.Data.Entities.Agency"/></param>
+            <returns>updated agency.</returns>
+            <response code="200">An agency was update.</response>
+            <response code="400">
+            Cannot find agency with current ID or
+            invalid agency name or town.
+            </response>
+        </member>
         <member name="T:WeddingsPlanner.Api.Controllers.OnboardingController">
             <summary>
             Controller for uploading collection of entities from file.

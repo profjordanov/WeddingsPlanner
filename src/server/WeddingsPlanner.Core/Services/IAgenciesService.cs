@@ -14,6 +14,10 @@ namespace WeddingsPlanner.Core.Services
         Task<IEnumerable<AgencyServiceModel>> GetAgenciesOrderedAsync(
             CancellationToken cancellationToken);
 
+        Task<Option<Agency, Error>> GetSingleAsync(int id);
+
         Task<Option<Agency, Error>> UpdateAsync(Agency agencyToUpdate);
+
+        Task<Option<Agency, Error>> DeleteAsync(Agency agencyToDelete);
     }
 }

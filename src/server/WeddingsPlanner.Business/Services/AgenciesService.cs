@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Optional;
 using Optional.Async;
 using System;
@@ -7,14 +8,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using WeddingsPlanner.Business.Services._Base;
 using WeddingsPlanner.Core;
 using WeddingsPlanner.Core.Models.Agencies;
 using WeddingsPlanner.Core.Services;
 using WeddingsPlanner.Data.Entities;
 using WeddingsPlanner.Data.EntityFramework;
-
 using static System.Environment;
 
 namespace WeddingsPlanner.Business.Services
@@ -41,6 +40,9 @@ namespace WeddingsPlanner.Business.Services
                 .AsParallel()
                 .WithCancellation(cancellationToken);
 
+        public Task<Option<Agency, Error>> GetSingleAsync(int id) =>
+            EnsureExistsByIdAsync(id).FlatMapAsync(async agency => agency.Some<Agency, Error>());
+
         public Task<Option<Agency, Error>> AddAsync(Agency agency) =>
             ValidateInputModel(agency).FlatMapAsync(async agencyToMap =>
             {
@@ -63,7 +65,7 @@ namespace WeddingsPlanner.Business.Services
 
         public Task<Option<Agency, Error>> UpdateAsync(Agency agencyToUpdate) =>
             ValidateInputModelAsync(agencyToUpdate).FlatMapAsync(async agencyToValidate =>
-                await EnsureExistsAsync(agencyToValidate).FlatMapAsync(async agency =>
+                await EnsureExistsByModelIdAsync(agencyToValidate).FlatMapAsync(async agency =>
                     {
                         agency.Name = agencyToUpdate.Name;
                         agency.Town = agencyToUpdate.Town;
@@ -72,11 +74,33 @@ namespace WeddingsPlanner.Business.Services
                         return agency.Some<Agency, Error>();
                     }));
 
+        public Task<Option<Agency, Error>> DeleteAsync(Agency agencyToDelete) =>
+            EnsureExistsAsync(agencyToDelete).FlatMapAsync(async agency =>
+            {
+                DbContext.Agencies.Remove(agency);
+                await DbContext.SaveChangesAsync();
+                return agency.Some<Agency, Error>();
+            });
+
         private Task<Option<Agency, Error>> EnsureExistsAsync(Agency agency) =>
+            DbContext
+                .Agencies
+                .SingleOrDefaultAsync(currentAgency => currentAgency.Id == agency.Id &&
+                                                       currentAgency.Name == agency.Name &&
+                                                       currentAgency.Town == agency.Town)
+                .SomeNotNull(new Error($"Such an {nameof(Agency)} do not exists!"));
+
+        private Task<Option<Agency, Error>> EnsureExistsByModelIdAsync(Agency agency) =>
             DbContext
                 .Agencies
                 .SingleOrDefaultAsync(currentAgency => currentAgency.Id == agency.Id)
                 .SomeNotNull(new Error($"{nameof(Agency)} with ID:{agency.Id} do not exists!"));
+
+        private Task<Option<Agency, Error>> EnsureExistsByIdAsync(int agencyId) =>
+            DbContext
+                .Agencies
+                .SingleOrDefaultAsync(currentAgency => currentAgency.Id == agencyId)
+                .SomeNotNull(new Error($"{nameof(Agency)} with ID:{agencyId} do not exists!"));
 
         private Task<Option<Agency, Error>> ValidateInputModelAsync(Agency agency) =>
             Task.Run(() => ValidateInputModel(agency));
