@@ -33,6 +33,20 @@ namespace WeddingsPlanner.Api.Controllers
             Ok(await _agenciesService.GetAgenciesOrderedAsync(CancellationToken.None));
 
         /// <summary>
+        /// Gets <see cref="Agency"/> by ID.
+        /// </summary>
+        /// <param name="agencyId"></param>
+        /// <response code="200">Valid ID.</response>
+        /// <response code="400">Invalid ID.</response>
+        [HttpGet]
+        [Route("single/{agencyId}")]
+        [ProducesResponseType(typeof(Agency), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetSingle([FromRoute] int agencyId) =>
+            (await _agenciesService.GetSingleAsync(agencyId))
+            .Match(Ok, Error);
+
+        /// <summary>
         /// Creates an agency.
         /// </summary>
         /// <param name="agency"><seealso cref="Agency"/></param>
@@ -46,5 +60,37 @@ namespace WeddingsPlanner.Api.Controllers
             (await _agenciesService.AddAsync(agency))
             .Match(createdAgency => CreatedAtAction(nameof(Post), createdAgency), Error);
 
+        /// <summary>
+        /// Updates an agency.
+        /// </summary>
+        /// <param name="agency"><seealso cref="Agency"/></param>
+        /// <returns>updated agency.</returns>
+        /// <response code="200">An agency was update.</response>
+        /// <response code="400">
+        /// Cannot find agency with current ID or
+        /// invalid agency name or town.
+        /// </response>
+        [HttpPut]
+        [ProducesResponseType(typeof(Agency), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Put([FromBody] Agency agency) =>
+            (await _agenciesService.UpdateAsync(agency))
+            .Match(updatedAgency => Ok(new { updatedAgency }), Error);
+
+        /// <summary>
+        /// Deletes an <see cref="Agency"/>.
+        /// </summary>
+        /// <param name="agency"></param>
+        /// <returns>Deleted agancy.</returns>
+        /// <response code="200">An agency was deleted.</response>
+        /// <response code="400">
+        /// Cannot find agency with current ID or name and town.
+        /// </response>
+        [HttpDelete]
+        [ProducesResponseType(typeof(Agency), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int) HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Delete([FromBody] Agency agency) =>
+            (await _agenciesService.DeleteAsync(agency))
+            .Match(Ok, Error);
     }
 }
