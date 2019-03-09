@@ -1,0 +1,37 @@
+2019-03-09T08:54:37.7724611+02:00 0HLL4BGC606K4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-09T08:54:37.8027717+02:00 0HLL4BGC606K4:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-09T08:54:37.9731198+02:00 0HLL4BGC606K4:00000001 [INF] Request finished in 206.9384ms 200 text/html (791a596a)
+2019-03-09T08:54:38.5727953+02:00 0HLL4BGC606K4:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-09T08:54:39.2886904+02:00 0HLL4BGC606K4:00000002 [INF] Request finished in 715.9328ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-09T08:59:34.7189113+02:00 0HLL4BJ4NDJ68:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-09T08:59:34.7505130+02:00 0HLL4BJ4NDJ68:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-09T08:59:34.9075152+02:00 0HLL4BJ4NDJ68:00000001 [INF] Request finished in 193.8018ms 200 text/html (791a596a)
+2019-03-09T08:59:35.4435447+02:00 0HLL4BJ4NDJ68:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-09T08:59:36.0437282+02:00 0HLL4BJ4NDJ68:00000002 [INF] Request finished in 600.3145ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-09T09:00:06.7252272+02:00 0HLL4BJ4NDJ68:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Agencies application/json-patch+json 65 (ca22a1cb)
+2019-03-09T09:00:06.8658622+02:00 0HLL4BJ4NDJ68:00000003 [INF] Route matched with "{action = \"Post\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:00:06.9710298+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Data.Entities.Agency"]) - Validation state: Valid (4e3479ed)
+2019-03-09T09:00:07.0103422+02:00 0HLL4BJ4NDJ68:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:00:07.4801442+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executed DbCommand ("22"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-03-09T09:00:07.5828249+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 603.569ms. (50a9e262)
+2019-03-09T09:00:07.6032621+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-03-09T09:00:07.6329374+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" in 760.4394ms (afa2e885)
+2019-03-09T09:00:07.6429570+02:00 0HLL4BJ4NDJ68:00000003 [INF] Request finished in 917.6768ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:00:23.7352297+02:00 0HLL4BJ4NDJ68:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/single/66   (ca22a1cb)
+2019-03-09T09:00:23.7532123+02:00 0HLL4BJ4NDJ68:00000004 [INF] Route matched with "{action = \"GetSingle\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:00:23.7559981+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle (WeddingsPlanner.Api)" with arguments (["66"]) - Validation state: Valid (4e3479ed)
+2019-03-09T09:00:23.7694264+02:00 0HLL4BJ4NDJ68:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:00:24.1902242+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__agencyId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [currentAgency].[Id], [currentAgency].[EmployeesCount], [currentAgency].[Name], [currentAgency].[Town]
+FROM [Agencies] AS [currentAgency]
+WHERE [currentAgency].[Id] = @__agencyId_0" (0723d8ff)
+2019-03-09T09:00:24.2513607+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 495.1148ms. (50a9e262)
+2019-03-09T09:00:24.2519369+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-03-09T09:00:24.2528421+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle (WeddingsPlanner.Api)" in 499.3252ms (afa2e885)
+2019-03-09T09:00:24.2573939+02:00 0HLL4BJ4NDJ68:00000004 [INF] Request finished in 522.2107ms 200 application/json; charset=utf-8 (791a596a)
