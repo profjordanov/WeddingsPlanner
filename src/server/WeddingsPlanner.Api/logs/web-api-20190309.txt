@@ -1,0 +1,441 @@
+2019-03-09T08:54:37.7724611+02:00 0HLL4BGC606K4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-09T08:54:37.8027717+02:00 0HLL4BGC606K4:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-09T08:54:37.9731198+02:00 0HLL4BGC606K4:00000001 [INF] Request finished in 206.9384ms 200 text/html (791a596a)
+2019-03-09T08:54:38.5727953+02:00 0HLL4BGC606K4:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-09T08:54:39.2886904+02:00 0HLL4BGC606K4:00000002 [INF] Request finished in 715.9328ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-09T08:59:34.7189113+02:00 0HLL4BJ4NDJ68:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-09T08:59:34.7505130+02:00 0HLL4BJ4NDJ68:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-09T08:59:34.9075152+02:00 0HLL4BJ4NDJ68:00000001 [INF] Request finished in 193.8018ms 200 text/html (791a596a)
+2019-03-09T08:59:35.4435447+02:00 0HLL4BJ4NDJ68:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-09T08:59:36.0437282+02:00 0HLL4BJ4NDJ68:00000002 [INF] Request finished in 600.3145ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-09T09:00:06.7252272+02:00 0HLL4BJ4NDJ68:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Agencies application/json-patch+json 65 (ca22a1cb)
+2019-03-09T09:00:06.8658622+02:00 0HLL4BJ4NDJ68:00000003 [INF] Route matched with "{action = \"Post\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:00:06.9710298+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Data.Entities.Agency"]) - Validation state: Valid (4e3479ed)
+2019-03-09T09:00:07.0103422+02:00 0HLL4BJ4NDJ68:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:00:07.4801442+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executed DbCommand ("22"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-03-09T09:00:07.5828249+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 603.569ms. (50a9e262)
+2019-03-09T09:00:07.6032621+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-03-09T09:00:07.6329374+02:00 0HLL4BJ4NDJ68:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" in 760.4394ms (afa2e885)
+2019-03-09T09:00:07.6429570+02:00 0HLL4BJ4NDJ68:00000003 [INF] Request finished in 917.6768ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:00:23.7352297+02:00 0HLL4BJ4NDJ68:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/single/66   (ca22a1cb)
+2019-03-09T09:00:23.7532123+02:00 0HLL4BJ4NDJ68:00000004 [INF] Route matched with "{action = \"GetSingle\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:00:23.7559981+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle (WeddingsPlanner.Api)" with arguments (["66"]) - Validation state: Valid (4e3479ed)
+2019-03-09T09:00:23.7694264+02:00 0HLL4BJ4NDJ68:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:00:24.1902242+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__agencyId_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [currentAgency].[Id], [currentAgency].[EmployeesCount], [currentAgency].[Name], [currentAgency].[Town]
+FROM [Agencies] AS [currentAgency]
+WHERE [currentAgency].[Id] = @__agencyId_0" (0723d8ff)
+2019-03-09T09:00:24.2513607+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 495.1148ms. (50a9e262)
+2019-03-09T09:00:24.2519369+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-03-09T09:00:24.2528421+02:00 0HLL4BJ4NDJ68:00000004 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetSingle (WeddingsPlanner.Api)" in 499.3252ms (afa2e885)
+2019-03-09T09:00:24.2573939+02:00 0HLL4BJ4NDJ68:00000004 [INF] Request finished in 522.2107ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:29:07.8751242+02:00 0HLL4C3L6IC6A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-09T09:29:07.9122976+02:00 0HLL4C3L6IC6A:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-09T09:29:08.0450456+02:00 0HLL4C3L6IC6A:00000001 [INF] Request finished in 175.1234ms 200 text/html (791a596a)
+2019-03-09T09:29:08.5660429+02:00 0HLL4C3L6IC6A:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-09T09:29:09.0754495+02:00 0HLL4C3L6IC6A:00000002 [INF] Request finished in 509.884ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-09T09:37:58.1386040+02:00 0HLL4C3L6IC6B:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:37:58.2701082+02:00 0HLL4C3L6IC6B:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:37:58.2911309+02:00 0HLL4C3L6IC6B:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:37:58.3334707+02:00 0HLL4C3L6IC6B:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:37:58.3587712+02:00 0HLL4C3L6IC6B:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 57.0612ms. (50a9e262)
+2019-03-09T09:37:58.3857298+02:00 0HLL4C3L6IC6B:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:37:58.9213496+02:00 0HLL4C3L6IC6B:00000001 [INF] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:37:58.9646279+02:00 0HLL4C3L6IC6B:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 687.6925ms (afa2e885)
+2019-03-09T09:37:58.9649386+02:00 0HLL4C3L6IC6B:00000001 [INF] Request finished in 826.4388ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:02.9049240+02:00 0HLL4C3L6IC6C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:02.9097733+02:00 0HLL4C3L6IC6C:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:02.9110176+02:00 0HLL4C3L6IC6C:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:02.9120206+02:00 0HLL4C3L6IC6C:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:02.9127176+02:00 0HLL4C3L6IC6C:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.504ms. (50a9e262)
+2019-03-09T09:38:02.9133878+02:00 0HLL4C3L6IC6C:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:02.9372887+02:00 0HLL4C3L6IC6C:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:02.9385774+02:00 0HLL4C3L6IC6C:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 28.4322ms (afa2e885)
+2019-03-09T09:38:02.9387344+02:00 0HLL4C3L6IC6C:00000001 [INF] Request finished in 33.9049ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:03.5180081+02:00 0HLL4C3L6IC6D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:03.5185748+02:00 0HLL4C3L6IC6D:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:03.5195939+02:00 0HLL4C3L6IC6D:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:03.5201753+02:00 0HLL4C3L6IC6D:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:03.5207050+02:00 0HLL4C3L6IC6D:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.9747ms. (50a9e262)
+2019-03-09T09:38:03.5208801+02:00 0HLL4C3L6IC6D:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:03.5226340+02:00 0HLL4C3L6IC6D:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:03.5239994+02:00 0HLL4C3L6IC6D:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 4.7281ms (afa2e885)
+2019-03-09T09:38:03.5243327+02:00 0HLL4C3L6IC6D:00000001 [INF] Request finished in 6.2974ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:24.5874416+02:00 0HLL4C3L6IC6E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:24.5882339+02:00 0HLL4C3L6IC6E:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:24.5886720+02:00 0HLL4C3L6IC6E:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:24.5894811+02:00 0HLL4C3L6IC6E:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:24.5900535+02:00 0HLL4C3L6IC6E:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.2048ms. (50a9e262)
+2019-03-09T09:38:24.5902544+02:00 0HLL4C3L6IC6E:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:24.5937523+02:00 0HLL4C3L6IC6E:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:24.5950274+02:00 0HLL4C3L6IC6E:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 6.6451ms (afa2e885)
+2019-03-09T09:38:24.5952115+02:00 0HLL4C3L6IC6E:00000001 [INF] Request finished in 7.8861ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:26.1019676+02:00 0HLL4C3L6IC6F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:26.1027488+02:00 0HLL4C3L6IC6F:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:26.1031733+02:00 0HLL4C3L6IC6F:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:26.1037075+02:00 0HLL4C3L6IC6F:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:26.1041678+02:00 0HLL4C3L6IC6F:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.8485ms. (50a9e262)
+2019-03-09T09:38:26.1043978+02:00 0HLL4C3L6IC6F:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:26.1064731+02:00 0HLL4C3L6IC6F:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:26.1073101+02:00 0HLL4C3L6IC6F:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 4.399ms (afa2e885)
+2019-03-09T09:38:26.1075521+02:00 0HLL4C3L6IC6F:00000001 [INF] Request finished in 5.8898ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:30.7158852+02:00 0HLL4C3L6IC6G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:30.7163651+02:00 0HLL4C3L6IC6G:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:30.7171303+02:00 0HLL4C3L6IC6G:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:30.7182653+02:00 0HLL4C3L6IC6G:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:30.7187181+02:00 0HLL4C3L6IC6G:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.4349ms. (50a9e262)
+2019-03-09T09:38:30.7188853+02:00 0HLL4C3L6IC6G:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:30.7205587+02:00 0HLL4C3L6IC6G:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:30.7216891+02:00 0HLL4C3L6IC6G:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 5.1571ms (afa2e885)
+2019-03-09T09:38:30.7220828+02:00 0HLL4C3L6IC6G:00000001 [INF] Request finished in 6.1483ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:31.7413340+02:00 0HLL4C3L6IC6H:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:31.7426371+02:00 0HLL4C3L6IC6H:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:31.7432679+02:00 0HLL4C3L6IC6H:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:31.7448586+02:00 0HLL4C3L6IC6H:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:31.7468861+02:00 0HLL4C3L6IC6H:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3.2792ms. (50a9e262)
+2019-03-09T09:38:31.7474010+02:00 0HLL4C3L6IC6H:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:31.7492678+02:00 0HLL4C3L6IC6H:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:31.7504365+02:00 0HLL4C3L6IC6H:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 7.4402ms (afa2e885)
+2019-03-09T09:38:31.7507218+02:00 0HLL4C3L6IC6H:00000001 [INF] Request finished in 9.4209ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:33.3942915+02:00 0HLL4C3L6IC6I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:33.4021892+02:00 0HLL4C3L6IC6I:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:33.4025241+02:00 0HLL4C3L6IC6I:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:33.4037326+02:00 0HLL4C3L6IC6I:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:33.4042138+02:00 0HLL4C3L6IC6I:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.5615ms. (50a9e262)
+2019-03-09T09:38:33.4044020+02:00 0HLL4C3L6IC6I:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:33.4087571+02:00 0HLL4C3L6IC6I:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:33.4097191+02:00 0HLL4C3L6IC6I:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 7.3839ms (afa2e885)
+2019-03-09T09:38:33.4099594+02:00 0HLL4C3L6IC6I:00000001 [INF] Request finished in 15.8586ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:34.7409650+02:00 0HLL4C3L6IC6J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:34.7413661+02:00 0HLL4C3L6IC6J:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:34.7418169+02:00 0HLL4C3L6IC6J:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:34.7424785+02:00 0HLL4C3L6IC6J:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:34.7432165+02:00 0HLL4C3L6IC6J:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.1621ms. (50a9e262)
+2019-03-09T09:38:34.7436689+02:00 0HLL4C3L6IC6J:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:34.7453250+02:00 0HLL4C3L6IC6J:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:34.7467509+02:00 0HLL4C3L6IC6J:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 5.1888ms (afa2e885)
+2019-03-09T09:38:34.7469379+02:00 0HLL4C3L6IC6J:00000001 [INF] Request finished in 6.0566ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:37.4780612+02:00 0HLL4C3L6IC6K:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:37.4786875+02:00 0HLL4C3L6IC6K:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:37.4791210+02:00 0HLL4C3L6IC6K:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:37.4796301+02:00 0HLL4C3L6IC6K:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:37.4800324+02:00 0HLL4C3L6IC6K:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.7922ms. (50a9e262)
+2019-03-09T09:38:37.4802054+02:00 0HLL4C3L6IC6K:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:37.4816601+02:00 0HLL4C3L6IC6K:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:37.4831596+02:00 0HLL4C3L6IC6K:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 4.129ms (afa2e885)
+2019-03-09T09:38:37.4855787+02:00 0HLL4C3L6IC6K:00000001 [INF] Request finished in 7.121ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:38.4401714+02:00 0HLL4C3L6IC6L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:38.4415707+02:00 0HLL4C3L6IC6L:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:38.4419820+02:00 0HLL4C3L6IC6L:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:38.4424731+02:00 0HLL4C3L6IC6L:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:38.4429506+02:00 0HLL4C3L6IC6L:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.8654ms. (50a9e262)
+2019-03-09T09:38:38.4431100+02:00 0HLL4C3L6IC6L:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:38.4446275+02:00 0HLL4C3L6IC6L:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:38.4456902+02:00 0HLL4C3L6IC6L:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 3.9169ms (afa2e885)
+2019-03-09T09:38:38.4458715+02:00 0HLL4C3L6IC6L:00000001 [INF] Request finished in 5.778ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:38.9589267+02:00 0HLL4C3L6IC6M:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:38.9592797+02:00 0HLL4C3L6IC6M:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:38.9596738+02:00 0HLL4C3L6IC6M:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:38.9601529+02:00 0HLL4C3L6IC6M:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:38.9606345+02:00 0HLL4C3L6IC6M:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.8452ms. (50a9e262)
+2019-03-09T09:38:38.9607869+02:00 0HLL4C3L6IC6M:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:38.9622786+02:00 0HLL4C3L6IC6M:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:38.9633228+02:00 0HLL4C3L6IC6M:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 3.9157ms (afa2e885)
+2019-03-09T09:38:38.9639223+02:00 0HLL4C3L6IC6M:00000001 [INF] Request finished in 4.9993ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:39.3399859+02:00 0HLL4C3L6IC6N:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:39.3403862+02:00 0HLL4C3L6IC6N:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:39.3408460+02:00 0HLL4C3L6IC6N:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:39.3412758+02:00 0HLL4C3L6IC6N:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:39.3417036+02:00 0HLL4C3L6IC6N:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.7618ms. (50a9e262)
+2019-03-09T09:38:39.3419716+02:00 0HLL4C3L6IC6N:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:39.3432315+02:00 0HLL4C3L6IC6N:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:39.3440377+02:00 0HLL4C3L6IC6N:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 3.4694ms (afa2e885)
+2019-03-09T09:38:39.3441996+02:00 0HLL4C3L6IC6N:00000001 [INF] Request finished in 4.2749ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:39.6866635+02:00 0HLL4C3L6IC6O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:39.6871369+02:00 0HLL4C3L6IC6O:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:39.6877402+02:00 0HLL4C3L6IC6O:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:39.6882082+02:00 0HLL4C3L6IC6O:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:39.6887042+02:00 0HLL4C3L6IC6O:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.8674ms. (50a9e262)
+2019-03-09T09:38:39.6889240+02:00 0HLL4C3L6IC6O:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:39.6915766+02:00 0HLL4C3L6IC6O:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:39.6925168+02:00 0HLL4C3L6IC6O:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 4.9825ms (afa2e885)
+2019-03-09T09:38:39.6927588+02:00 0HLL4C3L6IC6O:00000001 [INF] Request finished in 6.1454ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:43.9188187+02:00 0HLL4C3L6IC6P:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:43.9192391+02:00 0HLL4C3L6IC6P:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:43.9196405+02:00 0HLL4C3L6IC6P:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:43.9201567+02:00 0HLL4C3L6IC6P:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:43.9206559+02:00 0HLL4C3L6IC6P:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.8641ms. (50a9e262)
+2019-03-09T09:38:43.9209798+02:00 0HLL4C3L6IC6P:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:43.9283362+02:00 0HLL4C3L6IC6P:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:43.9291811+02:00 0HLL4C3L6IC6P:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 9.7936ms (afa2e885)
+2019-03-09T09:38:43.9293841+02:00 0HLL4C3L6IC6P:00000001 [INF] Request finished in 10.6582ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:45.0181297+02:00 0HLL4C3L6IC6Q:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:45.0186516+02:00 0HLL4C3L6IC6Q:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:45.0194644+02:00 0HLL4C3L6IC6Q:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:45.0200964+02:00 0HLL4C3L6IC6Q:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:45.0214295+02:00 0HLL4C3L6IC6Q:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.3967ms. (50a9e262)
+2019-03-09T09:38:45.0217644+02:00 0HLL4C3L6IC6Q:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:45.0243142+02:00 0HLL4C3L6IC6Q:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:45.0251291+02:00 0HLL4C3L6IC6Q:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 6.3505ms (afa2e885)
+2019-03-09T09:38:45.0253671+02:00 0HLL4C3L6IC6Q:00000001 [INF] Request finished in 7.3535ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:46.1786208+02:00 0HLL4C3L6IC6R:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:46.1790174+02:00 0HLL4C3L6IC6R:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:46.1795409+02:00 0HLL4C3L6IC6R:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:46.1810362+02:00 0HLL4C3L6IC6R:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:46.1821421+02:00 0HLL4C3L6IC6R:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.4396ms. (50a9e262)
+2019-03-09T09:38:46.1827182+02:00 0HLL4C3L6IC6R:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:46.1855224+02:00 0HLL4C3L6IC6R:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:46.1865723+02:00 0HLL4C3L6IC6R:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 7.4238ms (afa2e885)
+2019-03-09T09:38:46.1867568+02:00 0HLL4C3L6IC6R:00000001 [INF] Request finished in 8.2013ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:38:46.8319617+02:00 0HLL4C3L6IC6S:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:38:46.8322749+02:00 0HLL4C3L6IC6S:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:38:46.8326459+02:00 0HLL4C3L6IC6S:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:38:46.8330663+02:00 0HLL4C3L6IC6S:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:38:46.8335553+02:00 0HLL4C3L6IC6S:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.8013ms. (50a9e262)
+2019-03-09T09:38:46.8337287+02:00 0HLL4C3L6IC6S:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:38:46.8360250+02:00 0HLL4C3L6IC6S:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:38:46.8374456+02:00 0HLL4C3L6IC6S:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 4.9652ms (afa2e885)
+2019-03-09T09:38:46.8378392+02:00 0HLL4C3L6IC6S:00000001 [INF] Request finished in 5.8656ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:39:10.8498355+02:00 0HLL4C3L6IC6T:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:39:10.8502460+02:00 0HLL4C3L6IC6T:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:39:10.8507058+02:00 0HLL4C3L6IC6T:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:39:10.8513362+02:00 0HLL4C3L6IC6T:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:39:10.8520738+02:00 0HLL4C3L6IC6T:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.2032ms. (50a9e262)
+2019-03-09T09:39:10.8523236+02:00 0HLL4C3L6IC6T:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:39:10.8555039+02:00 0HLL4C3L6IC6T:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:39:10.8563590+02:00 0HLL4C3L6IC6T:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 5.9408ms (afa2e885)
+2019-03-09T09:39:10.8565353+02:00 0HLL4C3L6IC6T:00000001 [INF] Request finished in 6.8255ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:39:46.8645764+02:00 0HLL4C3L6IC6U:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:39:46.8650066+02:00 0HLL4C3L6IC6U:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:39:46.8655659+02:00 0HLL4C3L6IC6U:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:39:46.8664021+02:00 0HLL4C3L6IC6U:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:39:46.8680376+02:00 0HLL4C3L6IC6U:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.2155ms. (50a9e262)
+2019-03-09T09:39:46.8695413+02:00 0HLL4C3L6IC6U:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:39:46.8740331+02:00 0HLL4C3L6IC6U:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:39:46.8750255+02:00 0HLL4C3L6IC6U:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 9.8454ms (afa2e885)
+2019-03-09T09:39:46.8752593+02:00 0HLL4C3L6IC6U:00000001 [INF] Request finished in 10.7975ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:42:07.4924721+02:00 0HLL4CATDA9VG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-09T09:42:07.5328052+02:00 0HLL4CATDA9VG:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-09T09:42:07.7044029+02:00 0HLL4CATDA9VG:00000001 [INF] Request finished in 218.119ms 200 text/html (791a596a)
+2019-03-09T09:42:08.4706221+02:00 0HLL4CATDA9VG:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-09T09:42:09.3651800+02:00 0HLL4CATDA9VG:00000002 [INF] Request finished in 923.8695ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-09T09:42:11.7046660+02:00 0HLL4CATDA9VH:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:42:11.9144127+02:00 0HLL4CATDA9VH:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:42:11.9473196+02:00 0HLL4CATDA9VH:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:42:15.6414493+02:00 0HLL4CATDA9VH:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:42:15.6899448+02:00 0HLL4CATDA9VH:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3714.6664ms. (50a9e262)
+2019-03-09T09:42:15.7416727+02:00 0HLL4CATDA9VH:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:42:16.3109003+02:00 0HLL4CATDA9VH:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:42:16.3743552+02:00 0HLL4CATDA9VH:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 4444.0954ms (afa2e885)
+2019-03-09T09:42:16.3911397+02:00 0HLL4CATDA9VH:00000001 [INF] Request finished in 4675.8158ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:43:17.4872447+02:00 0HLL4CATDA9VI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:43:17.5176691+02:00 0HLL4CATDA9VI:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:43:17.5275331+02:00 0HLL4CATDA9VI:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:43:19.3678112+02:00 0HLL4CATDA9VI:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:43:19.4091052+02:00 0HLL4CATDA9VI:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1856.6183ms. (50a9e262)
+2019-03-09T09:43:19.4493980+02:00 0HLL4CATDA9VI:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:43:19.5802150+02:00 0HLL4CATDA9VI:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:43:19.6077342+02:00 0HLL4CATDA9VI:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 2073.7175ms (afa2e885)
+2019-03-09T09:43:19.6256183+02:00 0HLL4CATDA9VI:00000001 [INF] Request finished in 2135.3968ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:43:27.8777258+02:00 0HLL4CATDA9VJ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:43:27.8871027+02:00 0HLL4CATDA9VJ:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:43:27.8965491+02:00 0HLL4CATDA9VJ:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:43:29.4365631+02:00 0HLL4CATDA9VJ:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:43:29.4489547+02:00 0HLL4CATDA9VJ:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1538.4264ms. (50a9e262)
+2019-03-09T09:43:29.4554987+02:00 0HLL4CATDA9VJ:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:43:29.4663863+02:00 0HLL4CATDA9VJ:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:43:29.4764787+02:00 0HLL4CATDA9VJ:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 1581.1442ms (afa2e885)
+2019-03-09T09:43:29.4915607+02:00 0HLL4CATDA9VJ:00000001 [INF] Request finished in 1606.6987ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:45:01.6232431+02:00 0HLL4CATDA9VK:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:45:01.6293964+02:00 0HLL4CATDA9VK:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:45:01.6366879+02:00 0HLL4CATDA9VK:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:45:03.7931572+02:00 0HLL4CATDA9VK:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:45:04.3871294+02:00 0HLL4CATDA9VK:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2539.3617ms. (50a9e262)
+2019-03-09T09:45:04.4449428+02:00 0HLL4CATDA9VK:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:45:04.5155873+02:00 0HLL4CATDA9VK:00000001 [INF] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:45:04.5559632+02:00 0HLL4CATDA9VK:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 2887.3789ms (afa2e885)
+2019-03-09T09:45:04.5912921+02:00 0HLL4CATDA9VK:00000001 [INF] Request finished in 2949.5361ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:45:20.7335650+02:00 0HLL4CATDA9VL:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:45:20.7425065+02:00 0HLL4CATDA9VL:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:45:20.7493702+02:00 0HLL4CATDA9VL:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:45:22.6373532+02:00 0HLL4CATDA9VL:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:45:22.6494099+02:00 0HLL4CATDA9VL:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1889.3284ms. (50a9e262)
+2019-03-09T09:45:22.6629980+02:00 0HLL4CATDA9VL:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:45:22.6770950+02:00 0HLL4CATDA9VL:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:45:22.7047839+02:00 0HLL4CATDA9VL:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 1937.8111ms (afa2e885)
+2019-03-09T09:45:22.7792003+02:00 0HLL4CATDA9VL:00000001 [INF] Request finished in 2029.9732ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:46:08.6475377+02:00 0HLL4CD5CUF2F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-09T09:46:08.6810691+02:00 0HLL4CD5CUF2F:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-09T09:46:08.7846900+02:00 0HLL4CD5CUF2F:00000001 [INF] Request finished in 144.7734ms 200 text/html (791a596a)
+2019-03-09T09:46:09.2273776+02:00 0HLL4CD5CUF2F:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-09T09:46:09.7524574+02:00 0HLL4CD5CUF2F:00000002 [INF] Request finished in 525.0921ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-09T09:46:21.0906621+02:00 0HLL4CD5CUF2G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:46:21.2421703+02:00 0HLL4CD5CUF2G:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:46:21.2655776+02:00 0HLL4CD5CUF2G:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:46:21.2802532+02:00 0HLL4CD5CUF2G:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:46:21.3023583+02:00 0HLL4CD5CUF2G:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 28.4083ms. (50a9e262)
+2019-03-09T09:46:21.3135315+02:00 0HLL4CD5CUF2G:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:46:21.6977541+02:00 0HLL4CD5CUF2G:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:46:21.7442081+02:00 0HLL4CD5CUF2G:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 494.7088ms (afa2e885)
+2019-03-09T09:46:21.7444908+02:00 0HLL4CD5CUF2G:00000001 [INF] Request finished in 653.972ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:46:27.6699674+02:00 0HLL4CD5CUF2H:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:46:27.6724679+02:00 0HLL4CD5CUF2H:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:46:27.6731295+02:00 0HLL4CD5CUF2H:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:46:27.6746101+02:00 0HLL4CD5CUF2H:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:46:27.6751513+02:00 0HLL4CD5CUF2H:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.8721ms. (50a9e262)
+2019-03-09T09:46:27.6759045+02:00 0HLL4CD5CUF2H:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:46:27.6981059+02:00 0HLL4CD5CUF2H:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:46:27.6994977+02:00 0HLL4CD5CUF2H:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 26.8361ms (afa2e885)
+2019-03-09T09:46:27.6996554+02:00 0HLL4CD5CUF2H:00000001 [INF] Request finished in 29.8421ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:46:28.1180477+02:00 0HLL4CD5CUF2I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:46:28.1184410+02:00 0HLL4CD5CUF2I:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:46:28.1187052+02:00 0HLL4CD5CUF2I:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:46:28.1191433+02:00 0HLL4CD5CUF2I:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:46:28.1199355+02:00 0HLL4CD5CUF2I:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.0963ms. (50a9e262)
+2019-03-09T09:46:28.1211058+02:00 0HLL4CD5CUF2I:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:46:28.1233561+02:00 0HLL4CD5CUF2I:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:46:28.1247853+02:00 0HLL4CD5CUF2I:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 6.221ms (afa2e885)
+2019-03-09T09:46:28.1249644+02:00 0HLL4CD5CUF2I:00000001 [INF] Request finished in 7.0433ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:46:29.0122518+02:00 0HLL4CD5CUF2J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:46:29.0125879+02:00 0HLL4CD5CUF2J:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:46:29.0129056+02:00 0HLL4CD5CUF2J:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:46:29.0134607+02:00 0HLL4CD5CUF2J:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:46:29.0138577+02:00 0HLL4CD5CUF2J:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.7939ms. (50a9e262)
+2019-03-09T09:46:29.0140262+02:00 0HLL4CD5CUF2J:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:46:29.0155298+02:00 0HLL4CD5CUF2J:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:46:29.0162719+02:00 0HLL4CD5CUF2J:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 3.5718ms (afa2e885)
+2019-03-09T09:46:29.0164585+02:00 0HLL4CD5CUF2J:00000001 [INF] Request finished in 4.295ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:54:05.2328857+02:00 0HLL4CHJDPCUD:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-09T09:54:05.2609095+02:00 0HLL4CHJDPCUD:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-09T09:54:05.4126189+02:00 0HLL4CHJDPCUD:00000001 [INF] Request finished in 200.9236ms 200 text/html (791a596a)
+2019-03-09T09:54:06.1006678+02:00 0HLL4CHJDPCUD:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-09T09:54:06.9321862+02:00 0HLL4CHJDPCUD:00000002 [INF] Request finished in 831.5097ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-09T09:57:34.2870812+02:00 0HLL4CHJDPCUE:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:57:34.3922053+02:00 0HLL4CHJDPCUE:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:57:34.4157728+02:00 0HLL4CHJDPCUE:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:57:34.4287262+02:00 0HLL4CHJDPCUE:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:57:34.4505746+02:00 0HLL4CHJDPCUE:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 27.9354ms. (50a9e262)
+2019-03-09T09:57:34.4642696+02:00 0HLL4CHJDPCUE:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:57:34.8256325+02:00 0HLL4CHJDPCUE:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:57:34.8691973+02:00 0HLL4CHJDPCUE:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 470.1981ms (afa2e885)
+2019-03-09T09:57:34.8694989+02:00 0HLL4CHJDPCUE:00000001 [INF] Request finished in 582.5644ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:57:41.1635602+02:00 0HLL4CHJDPCUF:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:57:41.1651579+02:00 0HLL4CHJDPCUF:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:57:41.1665834+02:00 0HLL4CHJDPCUF:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:57:41.1678627+02:00 0HLL4CHJDPCUF:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:57:41.1687527+02:00 0HLL4CHJDPCUF:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.928ms. (50a9e262)
+2019-03-09T09:57:41.1694086+02:00 0HLL4CHJDPCUF:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:57:41.1952647+02:00 0HLL4CHJDPCUF:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:57:41.1965710+02:00 0HLL4CHJDPCUF:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 31.2105ms (afa2e885)
+2019-03-09T09:57:41.1967477+02:00 0HLL4CHJDPCUF:00000001 [INF] Request finished in 33.5676ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-09T09:57:42.5705775+02:00 0HLL4CHJDPCUG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-09T09:57:42.5709954+02:00 0HLL4CHJDPCUG:00000001 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-09T09:57:42.5713702+02:00 0HLL4CHJDPCUG:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-09T09:57:42.5719233+02:00 0HLL4CHJDPCUG:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-09T09:57:42.5722176+02:00 0HLL4CHJDPCUG:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 0.7302ms. (50a9e262)
+2019-03-09T09:57:42.5724349+02:00 0HLL4CHJDPCUG:00000001 [INF] Executing ObjectResult, writing value of type '"System.Linq.Parallel.QueryExecutionOption`1[[WeddingsPlanner.Core.Models.Agencies.AgencyServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-09T09:57:42.5748286+02:00 0HLL4CHJDPCUG:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [agency].[Name], [agency].[Town], [agency].[EmployeesCount]
+FROM [Agencies] AS [agency]
+ORDER BY [agency].[EmployeesCount] DESC, [agency].[Name]" (0723d8ff)
+2019-03-09T09:57:42.5757758+02:00 0HLL4CHJDPCUG:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 4.6295ms (afa2e885)
+2019-03-09T09:57:42.5759480+02:00 0HLL4CHJDPCUG:00000001 [INF] Request finished in 5.5081ms 200 application/json; charset=utf-8 (791a596a)
