@@ -9,6 +9,8 @@
         document.addEventListener( 'resume', onResume.bind( this ), false );
 
         $("#get-agencies-btn").click(getAllAgencies);
+        $("#add-new-agency-btn").click(loadAgenciesAddPage);
+        $("#add-agency-btn").click(addNewAgency);
     };
 
     function onPause() {
