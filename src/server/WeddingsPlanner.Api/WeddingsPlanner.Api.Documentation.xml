@@ -18,6 +18,14 @@
             <response code="200">Valid ID.</response>
             <response code="400">Invalid ID.</response>
         </member>
+        <member name="M:WeddingsPlanner.Api.Controllers.AgenciesController.GetByName(System.String)">
+            <summary>
+            Gets <see cref="T:WeddingsPlanner.Data.Entities.Agency"/> by Name.
+            </summary>
+            <param name="agencyName"></param>
+            <response code="200">Valid Agency Name.</response>
+            <response code="400">Invalid Agency Name..</response>
+        </member>
         <member name="M:WeddingsPlanner.Api.Controllers.AgenciesController.Post(WeddingsPlanner.Data.Entities.Agency)">
             <summary>
             Creates an agency.

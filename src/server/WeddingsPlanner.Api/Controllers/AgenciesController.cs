@@ -47,6 +47,20 @@ namespace WeddingsPlanner.Api.Controllers
             .Match(Ok, Error);
 
         /// <summary>
+        /// Gets <see cref="Agency"/> by Name.
+        /// </summary>
+        /// <param name="agencyName"></param>
+        /// <response code="200">Valid Agency Name.</response>
+        /// <response code="400">Invalid Agency Name..</response>
+        [HttpGet]
+        [Route("by-name/{agencyName}")]
+        [ProducesResponseType(typeof(Agency), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetByName([FromRoute] string agencyName) =>
+            (await _agenciesService.GetFirstByNameAsync(agencyName))
+            .Match(Ok, Error);
+
+        /// <summary>
         /// Creates an agency.
         /// </summary>
         /// <param name="agency"><seealso cref="Agency"/></param>
