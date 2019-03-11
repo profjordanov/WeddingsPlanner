@@ -16,6 +16,8 @@ namespace WeddingsPlanner.Core.Services
 
         Task<Option<Agency, Error>> GetSingleAsync(int id);
 
+        Task<Option<Agency, Error>> GetFirstByNameAsync(string name);
+
         Task<Option<Agency, Error>> UpdateAsync(Agency agencyToUpdate);
 
         Task<Option<Agency, Error>> DeleteAsync(Agency agencyToDelete);

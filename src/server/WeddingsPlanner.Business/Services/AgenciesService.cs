@@ -43,6 +43,9 @@ namespace WeddingsPlanner.Business.Services
         public Task<Option<Agency, Error>> GetSingleAsync(int id) =>
             EnsureExistsByIdAsync(id).FlatMapAsync(async agency => agency.Some<Agency, Error>());
 
+        public Task<Option<Agency, Error>> GetFirstByNameAsync(string name) =>
+            FirstIfExistsByNameAsync(name).FlatMapAsync(async agency => agency.Some<Agency, Error>());
+
         public Task<Option<Agency, Error>> AddAsync(Agency agency) =>
             ValidateInputModel(agency).FlatMapAsync(async agencyToMap =>
             {
@@ -101,6 +104,13 @@ namespace WeddingsPlanner.Business.Services
                 .Agencies
                 .SingleOrDefaultAsync(currentAgency => currentAgency.Id == agencyId)
                 .SomeNotNull(new Error($"{nameof(Agency)} with ID:{agencyId} do not exists!"));
+
+        private Task<Option<Agency, Error>> FirstIfExistsByNameAsync(string agencyName) =>
+            DbContext
+                .Agencies
+                .FirstOrDefaultAsync(currentAgency => currentAgency.Name == agencyName)
+                .SomeNotNull(new Error(
+                    $"{nameof(Agency)} with {nameof(Agency.Name)}:{agencyName} do not exists!"));
 
         private Task<Option<Agency, Error>> ValidateInputModelAsync(Agency agency) =>
             Task.Run(() => ValidateInputModel(agency));
