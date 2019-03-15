@@ -24,8 +24,6 @@ function addNewAgency() {
         town: agencyTown
     };
 
-    alert(requestData);
-
     $.ajax({
         type: "POST",
 		url: baseUrl,
@@ -36,7 +34,8 @@ function addNewAgency() {
             alert("Successfully added!");
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
-            alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            alert("Status: " + textStatus);
+            alert("Error: " + errorThrown);
         }  
     });
 }
