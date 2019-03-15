@@ -168,3 +168,255 @@ WHERE [currentAgency].[Name] = @__agencyName_0" (0723d8ff)
 2019-03-15T15:35:19.4877357+02:00 0HLL99BE7Q4TJ:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
 2019-03-15T15:35:19.4879382+02:00 0HLL99BE7Q4TJ:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" in 2.5708ms (afa2e885)
 2019-03-15T15:35:19.4881897+02:00 0HLL99BE7Q4TJ:00000001 [INF] Request finished in 3.3889ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:38:09.5952011+02:00 0HLL99BE7Q4TK:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 59 (ca22a1cb)
+2019-03-15T15:38:09.6027976+02:00 0HLL99BE7Q4TK:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:38:09.6055613+02:00 0HLL99BE7Q4TK:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:38:09.6126368+02:00 0HLL99BE7Q4TK:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:38:09.6230941+02:00 0HLL99BE7Q4TK:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:38:09.6716352+02:00 0HLL99BE7Q4TK:00000001 [INF] Executing JsonResult, writing value of type '"System.ArgumentOutOfRangeException"'. (2f513669)
+2019-03-15T15:38:09.7185175+02:00 0HLL99BE7Q4TK:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 115.5965ms (afa2e885)
+2019-03-15T15:38:09.7186756+02:00 0HLL99BE7Q4TK:00000001 [INF] Request finished in 123.5033ms 500 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:39:37.0750818+02:00 0HLL99EL0H9GK:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-15T15:39:37.1074549+02:00 0HLL99EL0H9GK:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-15T15:39:37.1796185+02:00 0HLL99EL0H9GK:00000001 [INF] Request finished in 107.5271ms 200 text/html (791a596a)
+2019-03-15T15:39:37.7221177+02:00 0HLL99EL0H9GK:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-15T15:39:37.7899791+02:00 0HLL99EL0H9GM:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map   (ca22a1cb)
+2019-03-15T15:39:37.7971502+02:00 0HLL99EL0H9GN:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map   (ca22a1cb)
+2019-03-15T15:39:38.0590072+02:00 0HLL99EL0H9GN:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:39:38.0900621+02:00 0HLL99EL0H9GN:00000001 [INF] Request finished in 315.3424ms 200 text/plain (791a596a)
+2019-03-15T15:39:38.1442623+02:00 0HLL99EL0H9GM:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:39:38.1568412+02:00 0HLL99EL0H9GM:00000001 [INF] Request finished in 375.4335ms 200 text/plain (791a596a)
+2019-03-15T15:39:38.3420186+02:00 0HLL99EL0H9GK:00000002 [INF] Request finished in 620.0185ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-15T15:39:53.9144394+02:00 0HLL99EL0H9GK:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 60 (ca22a1cb)
+2019-03-15T15:39:54.0098228+02:00 0HLL99EL0H9GK:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:39:54.0704327+02:00 0HLL99EL0H9GK:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:39:54.1000792+02:00 0HLL99EL0H9GK:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:39:54.2230315+02:00 0HLL99EL0H9GK:00000003 [INF] Executed DbCommand ("15"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:39:54.2805605+02:00 0HLL99EL0H9GK:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 199.7212ms. (50a9e262)
+2019-03-15T15:39:54.3045722+02:00 0HLL99EL0H9GK:00000003 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-15T15:39:54.3251220+02:00 0HLL99EL0H9GK:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 307.2036ms (afa2e885)
+2019-03-15T15:39:54.3333342+02:00 0HLL99EL0H9GK:00000003 [INF] Request finished in 418.3691ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:40:00.4107977+02:00 0HLL99EL0H9GK:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 59 (ca22a1cb)
+2019-03-15T15:40:00.4165511+02:00 0HLL99EL0H9GK:00000004 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:40:00.4236341+02:00 0HLL99EL0H9GK:00000004 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:40:00.4293683+02:00 0HLL99EL0H9GK:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:40:00.4388127+02:00 0HLL99EL0H9GK:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:40:00.6766053+02:00 0HLL99EL0H9GK:00000004 [INF] Executing JsonResult, writing value of type '"System.ArgumentOutOfRangeException"'. (2f513669)
+2019-03-15T15:40:00.7437504+02:00 0HLL99EL0H9GK:00000004 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 319.3218ms (afa2e885)
+2019-03-15T15:40:00.7504035+02:00 0HLL99EL0H9GK:00000004 [INF] Request finished in 337.1411ms 500 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:40:43.4456483+02:00 0HLL99F8PCS3L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-15T15:40:43.4632007+02:00 0HLL99F8PCS3L:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-15T15:40:43.5205581+02:00 0HLL99F8PCS3L:00000001 [INF] Request finished in 77.4128ms 200 text/html (791a596a)
+2019-03-15T15:40:43.7105460+02:00 0HLL99F8PCS3L:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-15T15:40:43.7610823+02:00 0HLL99F8PCS3N:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map   (ca22a1cb)
+2019-03-15T15:40:43.7640470+02:00 0HLL99F8PCS3O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map   (ca22a1cb)
+2019-03-15T15:40:43.8321300+02:00 0HLL99F8PCS3O:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:40:43.8435964+02:00 0HLL99F8PCS3O:00000001 [INF] Request finished in 80.0855ms 200 text/plain (791a596a)
+2019-03-15T15:40:43.9469898+02:00 0HLL99F8PCS3N:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:40:44.0277831+02:00 0HLL99F8PCS3N:00000001 [INF] Request finished in 276.4448ms 200 text/plain (791a596a)
+2019-03-15T15:40:44.1277439+02:00 0HLL99F8PCS3L:00000002 [INF] Request finished in 417.3424ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-15T15:40:52.6448716+02:00 0HLL99F8PCS3L:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 59 (ca22a1cb)
+2019-03-15T15:40:52.7490600+02:00 0HLL99F8PCS3L:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:40:52.8156854+02:00 0HLL99F8PCS3L:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:40:52.8289856+02:00 0HLL99F8PCS3L:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:40:53.0124809+02:00 0HLL99F8PCS3L:00000003 [INF] Executed DbCommand ("21"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:40:53.2570744+02:00 0HLL99F8PCS3L:00000003 [INF] Executing JsonResult, writing value of type '"System.ArgumentOutOfRangeException"'. (2f513669)
+2019-03-15T15:40:53.3165867+02:00 0HLL99F8PCS3L:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 558.4358ms (afa2e885)
+2019-03-15T15:40:53.3229538+02:00 0HLL99F8PCS3L:00000003 [INF] Request finished in 681.825ms 500 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:41:27.8344095+02:00 0HLL99F8PCS3L:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/register application/json-patch+json 102 (ca22a1cb)
+2019-03-15T15:41:27.8526836+02:00 0HLL99F8PCS3L:00000004 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:41:27.8655616+02:00 0HLL99F8PCS3L:00000004 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:41:27.8973684+02:00 0HLL99F8PCS3L:00000004 [WRN] User "(null)" password validation failed: "PasswordRequiresUpper". (2f223212)
+2019-03-15T15:41:27.9090635+02:00 0HLL99F8PCS3L:00000004 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 35.9418ms. (50a9e262)
+2019-03-15T15:41:27.9205355+02:00 0HLL99F8PCS3L:00000004 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-15T15:41:27.9343347+02:00 0HLL99F8PCS3L:00000004 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 74.8703ms (afa2e885)
+2019-03-15T15:41:27.9385158+02:00 0HLL99F8PCS3L:00000004 [INF] Request finished in 104.504ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:41:33.1365129+02:00 0HLL99F8PCS3L:00000005 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/register application/json-patch+json 103 (ca22a1cb)
+2019-03-15T15:41:33.1402998+02:00 0HLL99F8PCS3L:00000005 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:41:33.1455689+02:00 0HLL99F8PCS3L:00000005 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:41:33.1744449+02:00 0HLL99F8PCS3L:00000005 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:41:33.1928078+02:00 0HLL99F8PCS3L:00000005 [INF] Executed DbCommand ("5"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-03-15T15:41:33.2858723+02:00 0HLL99F8PCS3L:00000005 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RegistrationDate], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-03-15T15:41:33.3115983+02:00 0HLL99F8PCS3L:00000005 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 162.2882ms. (50a9e262)
+2019-03-15T15:41:33.3188372+02:00 0HLL99F8PCS3L:00000005 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.UserModel"'. (8a1b66c8)
+2019-03-15T15:41:33.3305281+02:00 0HLL99F8PCS3L:00000005 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 185.1557ms (afa2e885)
+2019-03-15T15:41:33.3363356+02:00 0HLL99F8PCS3L:00000005 [INF] Request finished in 198.5191ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:41:55.9730694+02:00 0HLL99F8PCS3L:00000006 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 59 (ca22a1cb)
+2019-03-15T15:41:55.9776786+02:00 0HLL99F8PCS3L:00000006 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:41:55.9821355+02:00 0HLL99F8PCS3L:00000006 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:41:55.9873734+02:00 0HLL99F8PCS3L:00000006 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:41:55.9959639+02:00 0HLL99F8PCS3L:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:41:56.0096748+02:00 0HLL99F8PCS3L:00000006 [WRN] Invalid password for user "5594424f-877f-4758-994f-8796855523e0". (c2dce6c7)
+2019-03-15T15:41:56.0148147+02:00 0HLL99F8PCS3L:00000006 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 29.0881ms. (50a9e262)
+2019-03-15T15:41:56.0203335+02:00 0HLL99F8PCS3L:00000006 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-15T15:41:56.0249064+02:00 0HLL99F8PCS3L:00000006 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 42.7904ms (afa2e885)
+2019-03-15T15:41:56.0293056+02:00 0HLL99F8PCS3L:00000006 [INF] Request finished in 56.48ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:42:27.7788742+02:00 0HLL99F8PCS3L:00000007 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 58 (ca22a1cb)
+2019-03-15T15:42:27.7836577+02:00 0HLL99F8PCS3L:00000007 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:42:27.7880855+02:00 0HLL99F8PCS3L:00000007 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:42:27.7942629+02:00 0HLL99F8PCS3L:00000007 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:42:27.8034228+02:00 0HLL99F8PCS3L:00000007 [INF] Executed DbCommand ("3"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:42:27.8909221+02:00 0HLL99F8PCS3L:00000007 [INF] Executing JsonResult, writing value of type '"System.ArgumentOutOfRangeException"'. (2f513669)
+2019-03-15T15:42:27.8974850+02:00 0HLL99F8PCS3L:00000007 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 109.4834ms (afa2e885)
+2019-03-15T15:42:27.9039338+02:00 0HLL99F8PCS3L:00000007 [INF] Request finished in 124.4203ms 500 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:50:21.4492872+02:00 0HLL99KL027H2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-15T15:50:21.4702522+02:00 0HLL99KL027H2:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-15T15:50:21.5267276+02:00 0HLL99KL027H2:00000001 [INF] Request finished in 97.8117ms 200 text/html (791a596a)
+2019-03-15T15:50:21.7863419+02:00 0HLL99KL027H2:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-15T15:50:21.8290783+02:00 0HLL99KL027H4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map   (ca22a1cb)
+2019-03-15T15:50:21.8424826+02:00 0HLL99KL027H5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map   (ca22a1cb)
+2019-03-15T15:50:21.9378131+02:00 0HLL99KL027H5:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:50:21.9538369+02:00 0HLL99KL027H5:00000001 [INF] Request finished in 110.895ms 200 text/plain (791a596a)
+2019-03-15T15:50:22.0502437+02:00 0HLL99KL027H4:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:50:22.0562225+02:00 0HLL99KL027H4:00000001 [INF] Request finished in 228.3295ms 200 text/plain (791a596a)
+2019-03-15T15:50:22.2064731+02:00 0HLL99KL027H2:00000002 [INF] Request finished in 417.553ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-15T15:51:05.1384167+02:00 0HLL99KL027H2:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/register application/json-patch+json 117 (ca22a1cb)
+2019-03-15T15:51:05.2520140+02:00 0HLL99KL027H2:00000003 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:51:05.3127173+02:00 0HLL99KL027H2:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:51:05.3754953+02:00 0HLL99KL027H2:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:51:05.5107468+02:00 0HLL99KL027H2:00000003 [INF] Executed DbCommand ("16"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-03-15T15:51:05.6656433+02:00 0HLL99KL027H2:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RegistrationDate], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-03-15T15:51:05.7932969+02:00 0HLL99KL027H2:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 454.0441ms. (50a9e262)
+2019-03-15T15:51:05.8227524+02:00 0HLL99KL027H2:00000003 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.UserModel"'. (8a1b66c8)
+2019-03-15T15:51:05.8444509+02:00 0HLL99KL027H2:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 585.5129ms (afa2e885)
+2019-03-15T15:51:05.8543867+02:00 0HLL99KL027H2:00000003 [INF] Request finished in 718.3512ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:51:24.3576341+02:00 0HLL99KL027H2:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 66 (ca22a1cb)
+2019-03-15T15:51:24.3689370+02:00 0HLL99KL027H2:00000004 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:51:24.3822728+02:00 0HLL99KL027H2:00000004 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:51:24.3900243+02:00 0HLL99KL027H2:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:51:24.4078717+02:00 0HLL99KL027H2:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:51:24.5902656+02:00 0HLL99KL027H2:00000004 [INF] Executing JsonResult, writing value of type '"System.ArgumentOutOfRangeException"'. (2f513669)
+2019-03-15T15:51:24.6491730+02:00 0HLL99KL027H2:00000004 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 275.6555ms (afa2e885)
+2019-03-15T15:51:24.6538682+02:00 0HLL99KL027H2:00000004 [INF] Request finished in 295.7701ms 500 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:52:42.9858197+02:00 0HLL99LV5V8HM:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-15T15:52:43.0041030+02:00 0HLL99LV5V8HM:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-15T15:52:43.0639678+02:00 0HLL99LV5V8HM:00000001 [INF] Request finished in 79.6027ms 200 text/html (791a596a)
+2019-03-15T15:52:43.2570484+02:00 0HLL99LV5V8HO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map   (ca22a1cb)
+2019-03-15T15:52:43.3551433+02:00 0HLL99LV5V8HO:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:52:43.3689671+02:00 0HLL99LV5V8HO:00000001 [INF] Request finished in 114.7539ms 200 text/plain (791a596a)
+2019-03-15T15:52:43.6897897+02:00 0HLL99LV5V8HP:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map   (ca22a1cb)
+2019-03-15T15:52:43.7148637+02:00 0HLL99LV5V8HP:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:52:43.7185412+02:00 0HLL99LV5V8HP:00000001 [INF] Request finished in 29.9498ms 200 text/plain (791a596a)
+2019-03-15T15:52:43.8120245+02:00 0HLL99LV5V8HM:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-15T15:52:44.0882080+02:00 0HLL99LV5V8HM:00000002 [INF] Request finished in 275.5209ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-15T15:53:00.0522608+02:00 0HLL99LV5V8HM:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/register application/json-patch+json 105 (ca22a1cb)
+2019-03-15T15:53:00.1436161+02:00 0HLL99LV5V8HM:00000003 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:53:00.2018441+02:00 0HLL99LV5V8HM:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:53:00.2657110+02:00 0HLL99LV5V8HM:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:53:00.3898242+02:00 0HLL99LV5V8HM:00000003 [INF] Executed DbCommand ("15"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-03-15T15:53:00.5557483+02:00 0HLL99LV5V8HM:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RegistrationDate], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-03-15T15:53:00.5944097+02:00 0HLL99LV5V8HM:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 383.4386ms. (50a9e262)
+2019-03-15T15:53:00.6157164+02:00 0HLL99LV5V8HM:00000003 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.UserModel"'. (8a1b66c8)
+2019-03-15T15:53:00.6423672+02:00 0HLL99LV5V8HM:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 489.8901ms (afa2e885)
+2019-03-15T15:53:00.6493829+02:00 0HLL99LV5V8HM:00000003 [INF] Request finished in 596.6372ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:53:23.7728583+02:00 0HLL99LV5V8HM:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 61 (ca22a1cb)
+2019-03-15T15:53:23.7881000+02:00 0HLL99LV5V8HM:00000004 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:53:23.8037062+02:00 0HLL99LV5V8HM:00000004 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:53:26.7725731+02:00 0HLL99LV5V8HM:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:53:26.8498057+02:00 0HLL99LV5V8HM:00000004 [INF] Executed DbCommand ("62"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:53:54.0999128+02:00 0HLL99LV5V8HM:00000004 [INF] Executing JsonResult, writing value of type '"System.ArgumentOutOfRangeException"'. (2f513669)
+2019-03-15T15:53:54.1147330+02:00 0HLL99LV5V8HM:00000004 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 30318.5532ms (afa2e885)
+2019-03-15T15:53:54.1511185+02:00 0HLL99LV5V8HM:00000004 [INF] Request finished in 30356.0118ms 500 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:55:27.4010366+02:00 0HLL99LV5V8HM:00000005 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 61 (ca22a1cb)
+2019-03-15T15:55:31.2561951+02:00 0HLL99LV5V8HM:00000005 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:55:31.2834283+02:00 0HLL99LV5V8HM:00000005 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:55:33.3006909+02:00 0HLL99LV5V8HM:00000005 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:55:33.3877992+02:00 0HLL99LV5V8HM:00000005 [INF] Executed DbCommand ("55"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:55:39.3614947+02:00 0HLL99LV5V8HM:00000005 [INF] Executing JsonResult, writing value of type '"System.ArgumentOutOfRangeException"'. (2f513669)
+2019-03-15T15:55:39.3671617+02:00 0HLL99LV5V8HM:00000005 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 8095.2724ms (afa2e885)
+2019-03-15T15:55:39.3723590+02:00 0HLL99LV5V8HM:00000005 [INF] Request finished in 11970.334ms 500 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:55:57.0050836+02:00 0HLL99LV5V8HM:00000006 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 61 (ca22a1cb)
+2019-03-15T15:55:57.0098356+02:00 0HLL99LV5V8HM:00000006 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:55:57.0150943+02:00 0HLL99LV5V8HM:00000006 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:55:58.8107971+02:00 0HLL99LV5V8HM:00000006 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:55:58.8772246+02:00 0HLL99LV5V8HM:00000006 [INF] Executed DbCommand ("36"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:56:09.4309111+02:00 0HLL99LV5V8HM:00000006 [INF] Executing JsonResult, writing value of type '"System.ArgumentOutOfRangeException"'. (2f513669)
+2019-03-15T15:56:09.4369473+02:00 0HLL99LV5V8HM:00000006 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 12421.521ms (afa2e885)
+2019-03-15T15:56:09.4418015+02:00 0HLL99LV5V8HM:00000006 [INF] Request finished in 12435.2503ms 500 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:57:58.9398832+02:00 0HLL99OTBFR0C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-15T15:57:58.9590920+02:00 0HLL99OTBFR0C:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-15T15:57:59.0197711+02:00 0HLL99OTBFR0C:00000001 [INF] Request finished in 86.4149ms 200 text/html (791a596a)
+2019-03-15T15:57:59.2806125+02:00 0HLL99OTBFR0E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map   (ca22a1cb)
+2019-03-15T15:57:59.3639295+02:00 0HLL99OTBFR0E:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:57:59.3881627+02:00 0HLL99OTBFR0E:00000001 [INF] Request finished in 102.9473ms 200 text/plain (791a596a)
+2019-03-15T15:57:59.6496595+02:00 0HLL99OTBFR0F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map   (ca22a1cb)
+2019-03-15T15:57:59.6729596+02:00 0HLL99OTBFR0F:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-03-15T15:57:59.6839482+02:00 0HLL99OTBFR0F:00000001 [INF] Request finished in 27.4661ms 200 text/plain (791a596a)
+2019-03-15T15:57:59.7744381+02:00 0HLL99OTBFR0C:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-15T15:58:00.0334325+02:00 0HLL99OTBFR0C:00000002 [INF] Request finished in 259.8178ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-15T15:58:28.1323906+02:00 0HLL99OTBFR0C:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/register application/json-patch+json 111 (ca22a1cb)
+2019-03-15T15:58:28.2290315+02:00 0HLL99OTBFR0C:00000003 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:58:28.2949509+02:00 0HLL99OTBFR0C:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:58:28.3598460+02:00 0HLL99OTBFR0C:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:58:28.4876318+02:00 0HLL99OTBFR0C:00000003 [INF] Executed DbCommand ("16"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-03-15T15:58:28.6401801+02:00 0HLL99OTBFR0C:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RegistrationDate], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-03-15T15:58:28.6747708+02:00 0HLL99OTBFR0C:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 372.0797ms. (50a9e262)
+2019-03-15T15:58:28.6937940+02:00 0HLL99OTBFR0C:00000003 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.UserModel"'. (8a1b66c8)
+2019-03-15T15:58:28.7170612+02:00 0HLL99OTBFR0C:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 479.264ms (afa2e885)
+2019-03-15T15:58:28.7270435+02:00 0HLL99OTBFR0C:00000003 [INF] Request finished in 594.3581ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-15T15:59:00.4263640+02:00 0HLL99OTBFR0C:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 62 (ca22a1cb)
+2019-03-15T15:59:00.4417321+02:00 0HLL99OTBFR0C:00000004 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T15:59:00.4563757+02:00 0HLL99OTBFR0C:00000004 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-15T15:59:02.4696999+02:00 0HLL99OTBFR0C:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T15:59:02.5510052+02:00 0HLL99OTBFR0C:00000004 [INF] Executed DbCommand ("23"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-15T15:59:03.2832489+02:00 0HLL99OTBFR0C:00000004 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2822.1952ms. (50a9e262)
+2019-03-15T15:59:03.2878852+02:00 0HLL99OTBFR0C:00000004 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-15T15:59:03.3028137+02:00 0HLL99OTBFR0C:00000004 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 2846.9196ms (afa2e885)
+2019-03-15T15:59:03.3112514+02:00 0HLL99OTBFR0C:00000004 [INF] Request finished in 2883.7274ms 200 application/json; charset=utf-8 (791a596a)
