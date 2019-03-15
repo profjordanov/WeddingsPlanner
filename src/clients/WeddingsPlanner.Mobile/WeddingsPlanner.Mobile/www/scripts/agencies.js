@@ -1,9 +1,9 @@
 ﻿//API
-const baseUrl = "http://localhost:5000/api/agencies";
+const baseAgenciesUrl = "http://localhost:5000/api/agencies";
 
 function getAllAgencies() {
     const agencyName = $('#agency-name-input').val();
-    const queryString = baseUrl+ "/by-name/" + agencyName;
+    const queryString = baseAgenciesUrl+ "/by-name/" + agencyName;
     $.getJSON(queryString, function (results) {
         showAgenciesData(results);
     }).fail(function (jqXHR) {
@@ -26,7 +26,7 @@ function addNewAgency() {
 
     $.ajax({
         type: "POST",
-		url: baseUrl,
+        url: baseAgenciesUrl,
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(requestData),

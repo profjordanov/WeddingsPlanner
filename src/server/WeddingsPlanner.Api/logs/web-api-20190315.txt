@@ -689,3 +689,40 @@ WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
 2019-03-15T23:36:35.9349642+02:00 0HLL9HKFRFVGF:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
 2019-03-15T23:36:35.9353044+02:00 0HLL9HKFRFVGF:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 21.1074ms (afa2e885)
 2019-03-15T23:36:35.9361107+02:00 0HLL9HKFRFVGF:00000001 [INF] Request finished in 22.6603ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-15T23:48:13.5698934+02:00 0HLL9HVLHFD58:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-15T23:48:13.6032589+02:00 0HLL9HVLHFD58:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-15T23:48:13.7211123+02:00 0HLL9HVLHFD58:00000001 [INF] Request finished in 157.2167ms 200 text/html (791a596a)
+2019-03-15T23:48:14.5871368+02:00 0HLL9HVLHFD58:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-15T23:48:15.5700492+02:00 0HLL9HVLHFD58:00000002 [INF] Request finished in 982.9792ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-15T23:48:34.1265335+02:00 0HLL9HVLHFD59:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/agencies application/json 63 (ca22a1cb)
+2019-03-15T23:48:34.2630579+02:00 0HLL9HVLHFD59:00000001 [INF] Route matched with "{action = \"Post\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T23:48:34.3434448+02:00 0HLL9HVLHFD59:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Data.Entities.Agency"]) - Validation state: Valid (4e3479ed)
+2019-03-15T23:48:34.3752532+02:00 0HLL9HVLHFD59:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T23:48:34.7690016+02:00 0HLL9HVLHFD59:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-03-15T23:48:34.8596038+02:00 0HLL9HVLHFD59:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 511.139ms. (50a9e262)
+2019-03-15T23:48:34.8782432+02:00 0HLL9HVLHFD59:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-03-15T23:48:34.9031710+02:00 0HLL9HVLHFD59:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" in 634.872ms (afa2e885)
+2019-03-15T23:48:34.9145262+02:00 0HLL9HVLHFD59:00000001 [INF] Request finished in 788.0703ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-15T23:48:40.1681261+02:00 0HLL9HVLHFD5A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/agencies/by-name/DakaTEST33   (ca22a1cb)
+2019-03-15T23:48:40.1786488+02:00 0HLL9HVLHFD5A:00000001 [INF] Route matched with "{action = \"GetByName\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T23:48:40.1820776+02:00 0HLL9HVLHFD5A:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" with arguments (["DakaTEST33"]) - Validation state: Valid (4e3479ed)
+2019-03-15T23:48:40.1951390+02:00 0HLL9HVLHFD5A:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-15T23:48:40.6340013+02:00 0HLL9HVLHFD5A:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__agencyName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [currentAgency].[Id], [currentAgency].[EmployeesCount], [currentAgency].[Name], [currentAgency].[Town]
+FROM [Agencies] AS [currentAgency]
+WHERE [currentAgency].[Name] = @__agencyName_0" (0723d8ff)
+2019-03-15T23:48:40.6902990+02:00 0HLL9HVLHFD5A:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 507.9588ms. (50a9e262)
+2019-03-15T23:48:40.6910088+02:00 0HLL9HVLHFD5A:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-03-15T23:48:40.6919124+02:00 0HLL9HVLHFD5A:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" in 512.8423ms (afa2e885)
+2019-03-15T23:48:40.6929824+02:00 0HLL9HVLHFD5A:00000001 [INF] Request finished in 524.6303ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-15T23:48:48.0928290+02:00 0HLL9HVLHFD5B:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 31 (ca22a1cb)
+2019-03-15T23:48:48.1025372+02:00 0HLL9HVLHFD5B:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-15T23:48:48.1296018+02:00 0HLL9HVLHFD5B:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-15T23:48:48.1337079+02:00 0HLL9HVLHFD5B:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 30.3948ms (afa2e885)
+2019-03-15T23:48:48.1382022+02:00 0HLL9HVLHFD5B:00000001 [INF] Request finished in 45.6033ms 400 application/json; charset=utf-8 (791a596a)
