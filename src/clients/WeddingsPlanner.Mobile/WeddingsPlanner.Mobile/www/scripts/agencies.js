@@ -28,7 +28,8 @@ function addNewAgency() {
 
     $.ajax({
         type: "POST",
-        url: baseUrl,
+		url: baseUrl,
+        contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(requestData),
         success: function() {
