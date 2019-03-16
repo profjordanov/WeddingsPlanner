@@ -1,0 +1,550 @@
+2019-03-16T08:03:37.9555469+02:00 0HLL9QKGPAM0J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-16T08:03:37.9822009+02:00 0HLL9QKGPAM0J:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-16T08:03:38.1957747+02:00 0HLL9QKGPAM0J:00000001 [INF] Request finished in 244.8989ms 200 text/html (791a596a)
+2019-03-16T08:03:38.8708361+02:00 0HLL9QKGPAM0J:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-16T08:03:39.6500690+02:00 0HLL9QKGPAM0J:00000002 [INF] Request finished in 779.3422ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-16T08:05:05.3674665+02:00 0HLL9QKGPAM0J:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Weddings/all-guest-lists   (ca22a1cb)
+2019-03-16T08:05:05.5022543+02:00 0HLL9QKGPAM0J:00000003 [INF] Route matched with "{action = \"AllGuestLists\", controller = \"Weddings\"}". Executing action "WeddingsPlanner.Api.Controllers.WeddingsController.AllGuestLists (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:05:05.5241527+02:00 0HLL9QKGPAM0J:00000003 [INF] Executing action method "WeddingsPlanner.Api.Controllers.WeddingsController.AllGuestLists (WeddingsPlanner.Api)" - Validation state: Valid (dad538d7)
+2019-03-16T08:05:05.5405962+02:00 0HLL9QKGPAM0J:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:05:05.7929013+02:00 0HLL9QKGPAM0J:00000003 [WRN] The Include operation for navigation '"[wedding].Invitations.Guest"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-03-16T08:05:06.4840608+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [wedding.Bridegroom].[Id], [wedding.Bridegroom].[Birthdate], [wedding.Bridegroom].[Email], [wedding.Bridegroom].[FirstName], [wedding.Bridegroom].[Gender], [wedding.Bridegroom].[LastName], [wedding.Bridegroom].[MiddleNameInitial], [wedding.Bridegroom].[Phone], [wedding.Bride].[Id], [wedding.Bride].[Birthdate], [wedding.Bride].[Email], [wedding.Bride].[FirstName], [wedding.Bride].[Gender], [wedding.Bride].[LastName], [wedding.Bride].[MiddleNameInitial], [wedding.Bride].[Phone], [wedding.Agency].[Name], [wedding.Agency].[Town], (
+    SELECT COUNT(*)
+    FROM [Invitations] AS [i1]
+    WHERE [wedding].[Id] = [i1].[WeddingId]
+) AS [InvitedGuests], (
+    SELECT COUNT(*)
+    FROM [Invitations] AS [i2]
+    WHERE ([i2].[Family] = 1) AND ([wedding].[Id] = [i2].[WeddingId])
+) AS [BrideGuests], (
+    SELECT COUNT(*)
+    FROM [Invitations] AS [i3]
+    WHERE ([i3].[IsAttending] = 1) AND ([wedding].[Id] = [i3].[WeddingId])
+) AS [AttendingGuests], [wedding].[Id]
+FROM [Weddings] AS [wedding]
+INNER JOIN [Agencies] AS [wedding.Agency] ON [wedding].[AgencyId] = [wedding.Agency].[Id]
+LEFT JOIN [People] AS [wedding.Bridegroom] ON [wedding].[BridegroomId] = [wedding.Bridegroom].[Id]
+LEFT JOIN [People] AS [wedding.Bride] ON [wedding].[BrideId] = [wedding.Bride].[Id]
+ORDER BY (
+    SELECT COUNT(*)
+    FROM [Invitations] AS [i]
+    WHERE [wedding].[Id] = [i].[WeddingId]
+) DESC, (
+    SELECT COUNT(*)
+    FROM [Invitations] AS [i0]
+    WHERE ([i0].[IsAttending] = 1) AND ([wedding].[Id] = [i0].[WeddingId])
+)" (0723d8ff)
+2019-03-16T08:05:06.6248091+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed action method "WeddingsPlanner.Api.Controllers.WeddingsController.AllGuestLists (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1095.327ms. (50a9e262)
+2019-03-16T08:05:06.6441176+02:00 0HLL9QKGPAM0J:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[WeddingsPlanner.Core.Models.Weddings.WeddingsGuestListServiceModel, WeddingsPlanner.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-03-16T08:05:06.6979176+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("5"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7218766+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7231180+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7249133+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7259242+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7268796+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7298917+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7310045+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7322579+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7334446+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7345521+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7356003+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7367645+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7377841+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7387370+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7396497+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7405525+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7416279+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7425454+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7436382+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7446663+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7454774+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7464917+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7479459+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7497367+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7509843+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7519739+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7529243+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7537667+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7549844+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7561070+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7571692+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7582788+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7593726+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7606042+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7616484+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7626827+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7636788+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7648487+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7660059+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7671774+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7708676+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7719894+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7731413+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7740691+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7749731+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7758760+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7767648+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7776381+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7787571+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Guest].[Id], [i.Guest].[Birthdate], [i.Guest].[Email], [i.Guest].[FirstName], [i.Guest].[Gender], [i.Guest].[LastName], [i.Guest].[MiddleNameInitial], [i.Guest].[Phone]
+FROM [Invitations] AS [i4]
+INNER JOIN [People] AS [i.Guest] ON [i4].[GuestId] = [i.Guest].[Id]
+WHERE ([i4].[IsAttending] = 1) AND (@_outer_Id = [i4].[WeddingId])" (0723d8ff)
+2019-03-16T08:05:06.7990011+02:00 0HLL9QKGPAM0J:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.WeddingsController.AllGuestLists (WeddingsPlanner.Api)" in 1289.8295ms (afa2e885)
+2019-03-16T08:05:06.8157908+02:00 0HLL9QKGPAM0J:00000003 [INF] Request finished in 1448.4254ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:09:29.5343130+02:00 0HLL9QKGPAM0K:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 54 (ca22a1cb)
+2019-03-16T08:09:29.5548645+02:00 0HLL9QKGPAM0K:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:09:29.6176146+02:00 0HLL9QKGPAM0K:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:09:29.6323017+02:00 0HLL9QKGPAM0K:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:09:29.7049117+02:00 0HLL9QKGPAM0K:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:09:29.8773596+02:00 0HLL9QKGPAM0K:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 259.514ms. (50a9e262)
+2019-03-16T08:09:29.8786943+02:00 0HLL9QKGPAM0K:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-16T08:09:29.8802805+02:00 0HLL9QKGPAM0K:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 325.2315ms (afa2e885)
+2019-03-16T08:09:29.8837040+02:00 0HLL9QKGPAM0K:00000001 [INF] Request finished in 348.5189ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:20:20.1287142+02:00 0HLL9QKGPAM0L:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 54 (ca22a1cb)
+2019-03-16T08:20:20.1295899+02:00 0HLL9QKGPAM0L:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:20:20.1330240+02:00 0HLL9QKGPAM0L:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:20:20.1344015+02:00 0HLL9QKGPAM0L:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:20:21.4012408+02:00 0HLL9QKGPAM0L:00000001 [INF] Executed DbCommand ("12"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:20:21.4210131+02:00 0HLL9QKGPAM0L:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1287.7975ms. (50a9e262)
+2019-03-16T08:20:21.4213151+02:00 0HLL9QKGPAM0L:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-16T08:20:21.4215900+02:00 0HLL9QKGPAM0L:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 1291.8328ms (afa2e885)
+2019-03-16T08:20:21.4218806+02:00 0HLL9QKGPAM0L:00000001 [INF] Request finished in 1293.3915ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:29:48.3903142+02:00 0HLL9QKGPAM0M:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/register application/json-patch+json 108 (ca22a1cb)
+2019-03-16T08:29:48.4008545+02:00 0HLL9QKGPAM0M:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:29:48.4151425+02:00 0HLL9QKGPAM0M:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:29:48.5294690+02:00 0HLL9QKGPAM0M:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:29:48.6313747+02:00 0HLL9QKGPAM0M:00000001 [INF] Executed DbCommand ("22"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-03-16T08:29:48.9064316+02:00 0HLL9QKGPAM0M:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RegistrationDate], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-03-16T08:29:48.9475287+02:00 0HLL9QKGPAM0M:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 531.8548ms. (50a9e262)
+2019-03-16T08:29:48.9477646+02:00 0HLL9QKGPAM0M:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.UserModel"'. (8a1b66c8)
+2019-03-16T08:29:48.9606686+02:00 0HLL9QKGPAM0M:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 558.7765ms (afa2e885)
+2019-03-16T08:29:48.9608972+02:00 0HLL9QKGPAM0M:00000001 [INF] Request finished in 570.7658ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:33:29.2619820+02:00 0HLL9QKGPAM0N:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/register application/json 91 (ca22a1cb)
+2019-03-16T08:33:29.2626358+02:00 0HLL9QKGPAM0N:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:33:29.2637811+02:00 0HLL9QKGPAM0N:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:33:29.2780449+02:00 0HLL9QKGPAM0N:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:33:29.2797342+02:00 0HLL9QKGPAM0N:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-03-16T08:33:29.2840860+02:00 0HLL9QKGPAM0N:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RegistrationDate], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-03-16T08:33:29.2868346+02:00 0HLL9QKGPAM0N:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 22.8842ms. (50a9e262)
+2019-03-16T08:33:29.2870709+02:00 0HLL9QKGPAM0N:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.UserModel"'. (8a1b66c8)
+2019-03-16T08:33:29.2880292+02:00 0HLL9QKGPAM0N:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 25.0786ms (afa2e885)
+2019-03-16T08:33:29.2882092+02:00 0HLL9QKGPAM0N:00000001 [INF] Request finished in 26.456ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:33:37.8046633+02:00 0HLL9QKGPAM0O:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 48 (ca22a1cb)
+2019-03-16T08:33:37.8053121+02:00 0HLL9QKGPAM0O:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:33:37.8073286+02:00 0HLL9QKGPAM0O:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:33:37.8081475+02:00 0HLL9QKGPAM0O:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:33:37.8129640+02:00 0HLL9QKGPAM0O:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:33:37.8254502+02:00 0HLL9QKGPAM0O:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 17.7969ms. (50a9e262)
+2019-03-16T08:33:37.8256639+02:00 0HLL9QKGPAM0O:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-16T08:33:37.8260538+02:00 0HLL9QKGPAM0O:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 20.1474ms (afa2e885)
+2019-03-16T08:33:37.8290581+02:00 0HLL9QKGPAM0O:00000001 [INF] Request finished in 22.484ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:34:12.0820491+02:00 0HLL9QKGPAM0P:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 51 (ca22a1cb)
+2019-03-16T08:34:12.0834544+02:00 0HLL9QKGPAM0P:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:34:12.0868729+02:00 0HLL9QKGPAM0P:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:34:12.0876266+02:00 0HLL9QKGPAM0P:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:34:12.0898029+02:00 0HLL9QKGPAM0P:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:34:12.0928976+02:00 0HLL9QKGPAM0P:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 5.73ms. (50a9e262)
+2019-03-16T08:34:12.0932165+02:00 0HLL9QKGPAM0P:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:34:12.0968381+02:00 0HLL9QKGPAM0P:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 13.0326ms (afa2e885)
+2019-03-16T08:34:12.0973127+02:00 0HLL9QKGPAM0P:00000001 [INF] Request finished in 15.4419ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:34:36.1816881+02:00 0HLL9QKGPAM0Q:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/Users/login application/json-patch+json 45 (ca22a1cb)
+2019-03-16T08:34:36.1821820+02:00 0HLL9QKGPAM0Q:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:34:36.1882185+02:00 0HLL9QKGPAM0Q:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:34:36.1892167+02:00 0HLL9QKGPAM0Q:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 6.4988ms (afa2e885)
+2019-03-16T08:34:36.1896843+02:00 0HLL9QKGPAM0Q:00000001 [INF] Request finished in 8.0587ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:36:27.5173662+02:00 0HLL9QKGPAM0R:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 51 (ca22a1cb)
+2019-03-16T08:36:27.5180197+02:00 0HLL9QKGPAM0R:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:36:27.5191160+02:00 0HLL9QKGPAM0R:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:36:27.5198408+02:00 0HLL9QKGPAM0R:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:36:27.5222058+02:00 0HLL9QKGPAM0R:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:36:27.5227465+02:00 0HLL9QKGPAM0R:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 3.4998ms. (50a9e262)
+2019-03-16T08:36:27.5230453+02:00 0HLL9QKGPAM0R:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:36:27.5234858+02:00 0HLL9QKGPAM0R:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 5.3227ms (afa2e885)
+2019-03-16T08:36:27.5241388+02:00 0HLL9QKGPAM0R:00000001 [INF] Request finished in 6.7002ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:37:26.1185523+02:00 0HLL9QKGPAM0S:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 50 (ca22a1cb)
+2019-03-16T08:37:26.1191305+02:00 0HLL9QKGPAM0S:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:37:26.1210352+02:00 0HLL9QKGPAM0S:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:37:26.1218180+02:00 0HLL9QKGPAM0S:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:37:26.1248951+02:00 0HLL9QKGPAM0S:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:37:26.1252423+02:00 0HLL9QKGPAM0S:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 4.0566ms. (50a9e262)
+2019-03-16T08:37:26.1254589+02:00 0HLL9QKGPAM0S:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:37:26.1257342+02:00 0HLL9QKGPAM0S:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 6.4474ms (afa2e885)
+2019-03-16T08:37:26.1273014+02:00 0HLL9QKGPAM0S:00000001 [INF] Request finished in 7.7665ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:40:41.6666854+02:00 0HLL9QKGPAM0T:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 51 (ca22a1cb)
+2019-03-16T08:40:41.6677366+02:00 0HLL9QKGPAM0T:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:40:41.6688057+02:00 0HLL9QKGPAM0T:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:40:41.6695792+02:00 0HLL9QKGPAM0T:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:40:41.6729862+02:00 0HLL9QKGPAM0T:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:40:41.6735146+02:00 0HLL9QKGPAM0T:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 4.424ms. (50a9e262)
+2019-03-16T08:40:41.6737398+02:00 0HLL9QKGPAM0T:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:40:41.6740772+02:00 0HLL9QKGPAM0T:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 6.1487ms (afa2e885)
+2019-03-16T08:40:41.6743907+02:00 0HLL9QKGPAM0T:00000001 [INF] Request finished in 7.8758ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:42:14.8184389+02:00 0HLL9QKGPAM0U:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 51 (ca22a1cb)
+2019-03-16T08:42:14.8189497+02:00 0HLL9QKGPAM0U:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:42:14.8202597+02:00 0HLL9QKGPAM0U:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:42:14.8210536+02:00 0HLL9QKGPAM0U:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:42:14.8233535+02:00 0HLL9QKGPAM0U:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:42:14.8239116+02:00 0HLL9QKGPAM0U:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 3.2936ms. (50a9e262)
+2019-03-16T08:42:14.8243833+02:00 0HLL9QKGPAM0U:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:42:14.8249837+02:00 0HLL9QKGPAM0U:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 5.5105ms (afa2e885)
+2019-03-16T08:42:14.8301274+02:00 0HLL9QKGPAM0U:00000001 [INF] Request finished in 8.5119ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:43:13.4313356+02:00 0HLL9QKGPAM0V:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 50 (ca22a1cb)
+2019-03-16T08:43:13.4320441+02:00 0HLL9QKGPAM0V:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:43:13.4330360+02:00 0HLL9QKGPAM0V:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:43:13.4336504+02:00 0HLL9QKGPAM0V:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:43:13.4367233+02:00 0HLL9QKGPAM0V:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:43:13.4375711+02:00 0HLL9QKGPAM0V:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 4.3944ms. (50a9e262)
+2019-03-16T08:43:13.4378928+02:00 0HLL9QKGPAM0V:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:43:13.4385302+02:00 0HLL9QKGPAM0V:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 6.0525ms (afa2e885)
+2019-03-16T08:43:13.4393701+02:00 0HLL9QKGPAM0V:00000001 [INF] Request finished in 7.9272ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:43:54.5253802+02:00 0HLL9QKGPAM10:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 50 (ca22a1cb)
+2019-03-16T08:43:54.5257693+02:00 0HLL9QKGPAM10:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:43:54.5266109+02:00 0HLL9QKGPAM10:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:43:54.5270979+02:00 0HLL9QKGPAM10:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:43:54.5288394+02:00 0HLL9QKGPAM10:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:43:54.5291871+02:00 0HLL9QKGPAM10:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 2.4659ms. (50a9e262)
+2019-03-16T08:43:54.5294271+02:00 0HLL9QKGPAM10:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:43:54.5300180+02:00 0HLL9QKGPAM10:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 3.9095ms (afa2e885)
+2019-03-16T08:43:54.5305152+02:00 0HLL9QKGPAM10:00000001 [INF] Request finished in 5.2467ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:46:38.3039709+02:00 0HLL9QKGPAM11:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 50 (ca22a1cb)
+2019-03-16T08:46:38.3044874+02:00 0HLL9QKGPAM11:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:46:38.3056224+02:00 0HLL9QKGPAM11:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:46:38.3062228+02:00 0HLL9QKGPAM11:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:46:38.3089431+02:00 0HLL9QKGPAM11:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:46:38.3093840+02:00 0HLL9QKGPAM11:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 3.6091ms. (50a9e262)
+2019-03-16T08:46:38.3096191+02:00 0HLL9QKGPAM11:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:46:38.3109024+02:00 0HLL9QKGPAM11:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 5.9843ms (afa2e885)
+2019-03-16T08:46:38.3148173+02:00 0HLL9QKGPAM11:00000001 [INF] Request finished in 10.9467ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:49:39.8357555+02:00 0HLL9QKGPAM12:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/register application/json 82 (ca22a1cb)
+2019-03-16T08:49:39.8375952+02:00 0HLL9QKGPAM12:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:49:39.8395224+02:00 0HLL9QKGPAM12:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:49:39.8528662+02:00 0HLL9QKGPAM12:00000001 [WRN] User "(null)" password validation failed: "PasswordTooShort;PasswordRequiresNonAlphanumeric;PasswordRequiresLower;PasswordRequiresUpper". (2f223212)
+2019-03-16T08:49:39.8561145+02:00 0HLL9QKGPAM12:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 16.2173ms. (50a9e262)
+2019-03-16T08:49:39.8571588+02:00 0HLL9QKGPAM12:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:49:39.8582037+02:00 0HLL9QKGPAM12:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 20.38ms (afa2e885)
+2019-03-16T08:49:39.8590190+02:00 0HLL9QKGPAM12:00000001 [INF] Request finished in 22.7638ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:50:07.1405498+02:00 0HLL9QKGPAM13:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/register application/json 92 (ca22a1cb)
+2019-03-16T08:50:07.1410425+02:00 0HLL9QKGPAM13:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:50:07.1424171+02:00 0HLL9QKGPAM13:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.RegisterUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:50:07.1603057+02:00 0HLL9QKGPAM13:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:50:07.2462381+02:00 0HLL9QKGPAM13:00000001 [INF] Executed DbCommand ("16"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-03-16T08:50:07.2515486+02:00 0HLL9QKGPAM13:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RegistrationDate], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-03-16T08:50:07.2522513+02:00 0HLL9QKGPAM13:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 109.4556ms. (50a9e262)
+2019-03-16T08:50:07.2524288+02:00 0HLL9QKGPAM13:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.UserModel"'. (8a1b66c8)
+2019-03-16T08:50:07.2530538+02:00 0HLL9QKGPAM13:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Register (WeddingsPlanner.Api)" in 111.8957ms (afa2e885)
+2019-03-16T08:50:07.2532761+02:00 0HLL9QKGPAM13:00000001 [INF] Request finished in 112.9103ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:50:17.8015197+02:00 0HLL9QKGPAM14:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 56 (ca22a1cb)
+2019-03-16T08:50:17.8020831+02:00 0HLL9QKGPAM14:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:50:17.8030927+02:00 0HLL9QKGPAM14:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:50:17.8037017+02:00 0HLL9QKGPAM14:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:50:17.8099630+02:00 0HLL9QKGPAM14:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:50:17.8103320+02:00 0HLL9QKGPAM14:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 7.1ms. (50a9e262)
+2019-03-16T08:50:17.8105769+02:00 0HLL9QKGPAM14:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:50:17.8113056+02:00 0HLL9QKGPAM14:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 8.9126ms (afa2e885)
+2019-03-16T08:50:17.8118053+02:00 0HLL9QKGPAM14:00000001 [INF] Request finished in 10.2752ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:50:22.9950573+02:00 0HLL9QKGPAM15:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 57 (ca22a1cb)
+2019-03-16T08:50:22.9955097+02:00 0HLL9QKGPAM15:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:50:22.9971826+02:00 0HLL9QKGPAM15:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:50:22.9979700+02:00 0HLL9QKGPAM15:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:50:23.0004380+02:00 0HLL9QKGPAM15:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:50:23.0009003+02:00 0HLL9QKGPAM15:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 3.5841ms. (50a9e262)
+2019-03-16T08:50:23.0013178+02:00 0HLL9QKGPAM15:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-03-16T08:50:23.0022355+02:00 0HLL9QKGPAM15:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 6.5769ms (afa2e885)
+2019-03-16T08:50:23.0027174+02:00 0HLL9QKGPAM15:00000001 [INF] Request finished in 7.7641ms 400 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:50:29.1155954+02:00 0HLL9QKGPAM16:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 53 (ca22a1cb)
+2019-03-16T08:50:29.1162807+02:00 0HLL9QKGPAM16:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:50:29.1171474+02:00 0HLL9QKGPAM16:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T08:50:29.1181936+02:00 0HLL9QKGPAM16:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T08:50:29.1199861+02:00 0HLL9QKGPAM16:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T08:50:29.1366304+02:00 0HLL9QKGPAM16:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 19.2487ms. (50a9e262)
+2019-03-16T08:50:29.1368938+02:00 0HLL9QKGPAM16:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-16T08:50:29.1372073+02:00 0HLL9QKGPAM16:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 20.7601ms (afa2e885)
+2019-03-16T08:50:29.1380444+02:00 0HLL9QKGPAM16:00000001 [INF] Request finished in 22.2937ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-16T08:52:41.2847241+02:00 0HLL9RFTV9ODH:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-16T08:52:41.3533165+02:00 0HLL9RFTV9ODH:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-16T08:52:41.4880415+02:00 0HLL9RFTV9ODH:00000001 [INF] Request finished in 207.5597ms 200 text/html (791a596a)
+2019-03-16T08:52:42.0879422+02:00 0HLL9RFTV9ODH:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-16T08:52:42.9430024+02:00 0HLL9RFTV9ODH:00000002 [INF] Request finished in 855.1583ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-16T08:53:05.2754392+02:00 0HLL9RFTV9ODH:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Agencies/all   (ca22a1cb)
+2019-03-16T08:53:05.4029984+02:00 0HLL9RFTV9ODH:00000003 [INF] Route matched with "{action = \"GetAll\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:53:05.4379984+02:00 0HLL9RFTV9ODH:00000003 [INF] Authorization failed. (b15dd539)
+2019-03-16T08:53:05.4537477+02:00 0HLL9RFTV9ODH:00000003 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2019-03-16T08:53:05.4668786+02:00 0HLL9RFTV9ODH:00000003 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2019-03-16T08:53:05.4813064+02:00 0HLL9RFTV9ODH:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2019-03-16T08:53:05.4872127+02:00 0HLL9RFTV9ODH:00000003 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetAll (WeddingsPlanner.Api)" in 77.8978ms (afa2e885)
+2019-03-16T08:53:05.4886545+02:00 0HLL9RFTV9ODH:00000003 [INF] Request finished in 213.2532ms 401  (791a596a)
+2019-03-16T08:53:50.5112993+02:00 0HLL9RFTV9ODI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/agencies/by-name/A-One Weddings & Events   (ca22a1cb)
+2019-03-16T08:53:50.5322193+02:00 0HLL9RFTV9ODI:00000001 [INF] Route matched with "{action = \"GetByName\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:53:50.5329466+02:00 0HLL9RFTV9ODI:00000001 [INF] Authorization failed. (b15dd539)
+2019-03-16T08:53:50.5332026+02:00 0HLL9RFTV9ODI:00000001 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2019-03-16T08:53:50.5334776+02:00 0HLL9RFTV9ODI:00000001 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2019-03-16T08:53:50.5340418+02:00 0HLL9RFTV9ODI:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2019-03-16T08:53:50.5343722+02:00 0HLL9RFTV9ODI:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" in 1.9815ms (afa2e885)
+2019-03-16T08:53:50.5347322+02:00 0HLL9RFTV9ODI:00000001 [INF] Request finished in 23.5561ms 401  (791a596a)
+2019-03-16T08:54:06.4722790+02:00 0HLL9RFTV9ODJ:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/agencies application/json 59 (ca22a1cb)
+2019-03-16T08:54:06.4806320+02:00 0HLL9RFTV9ODJ:00000001 [INF] Route matched with "{action = \"Post\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T08:54:06.4809033+02:00 0HLL9RFTV9ODJ:00000001 [INF] Authorization failed. (b15dd539)
+2019-03-16T08:54:06.4810393+02:00 0HLL9RFTV9ODJ:00000001 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2019-03-16T08:54:06.4813072+02:00 0HLL9RFTV9ODJ:00000001 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2019-03-16T08:54:06.4818533+02:00 0HLL9RFTV9ODJ:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2019-03-16T08:54:06.4821459+02:00 0HLL9RFTV9ODJ:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" in 1.2689ms (afa2e885)
+2019-03-16T08:54:06.4825314+02:00 0HLL9RFTV9ODJ:00000001 [INF] Request finished in 10.1844ms 401  (791a596a)
+2019-03-16T08:54:06.5067704+02:00  [INF] Connection id ""0HLL9RFTV9ODJ"", Request id ""0HLL9RFTV9ODJ:00000001"": the application completed without reading the entire request body. (54ac9468)
