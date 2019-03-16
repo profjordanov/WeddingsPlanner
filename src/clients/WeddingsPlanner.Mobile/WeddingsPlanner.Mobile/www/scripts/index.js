@@ -14,7 +14,7 @@
         $("#login-btn").click(login);
         $("#goto-register-btn").click(loadRegisterPage);
         $("#register-btn").click(register);
-
+        $("#logout-btn").click(logout);
     };
 
     function onPause() {

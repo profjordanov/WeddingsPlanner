@@ -1132,3 +1132,56 @@ WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
 2019-03-16T09:30:45.3538561+02:00 0HLL9S2J5T79L:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
 2019-03-16T09:30:45.3550794+02:00 0HLL9S2J5T79L:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" in 14.6447ms (afa2e885)
 2019-03-16T09:30:45.3553313+02:00 0HLL9S2J5T79L:00000001 [INF] Request finished in 16.9557ms 201 application/json; charset=utf-8 (791a596a)
+2019-03-16T09:37:37.0807825+02:00 0HLL9S90MMVTJ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-03-16T09:37:37.1155205+02:00 0HLL9S90MMVTJ:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-03-16T09:37:37.2159103+02:00 0HLL9S90MMVTJ:00000001 [INF] Request finished in 140.5844ms 200 text/html (791a596a)
+2019-03-16T09:37:37.9446223+02:00 0HLL9S90MMVTJ:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-03-16T09:37:38.8477669+02:00 0HLL9S90MMVTJ:00000002 [INF] Request finished in 903.3423ms 200 application/json;charset=utf-8 (791a596a)
+2019-03-16T09:37:47.6198628+02:00 0HLL9S90MMVTL:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 55 (ca22a1cb)
+2019-03-16T09:37:47.7430361+02:00 0HLL9S90MMVTL:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T09:37:47.8249492+02:00 0HLL9S90MMVTL:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T09:37:47.8441676+02:00 0HLL9S90MMVTL:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T09:37:48.4119216+02:00 0HLL9S90MMVTL:00000001 [INF] Executed DbCommand ("36"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T09:37:48.6739523+02:00 0HLL9S90MMVTL:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 844.1092ms. (50a9e262)
+2019-03-16T09:37:48.6924433+02:00 0HLL9S90MMVTL:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-16T09:37:48.7106540+02:00 0HLL9S90MMVTL:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 960.2326ms (afa2e885)
+2019-03-16T09:37:48.7224182+02:00 0HLL9S90MMVTL:00000001 [INF] Request finished in 1102.5035ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-16T09:38:40.6792434+02:00 0HLL9S90MMVTM:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 55 (ca22a1cb)
+2019-03-16T09:38:40.6826080+02:00 0HLL9S90MMVTM:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T09:38:40.6855545+02:00 0HLL9S90MMVTM:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T09:38:40.6863381+02:00 0HLL9S90MMVTM:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T09:38:40.7048098+02:00 0HLL9S90MMVTM:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T09:38:40.7235502+02:00 0HLL9S90MMVTM:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 37.6251ms. (50a9e262)
+2019-03-16T09:38:40.7245804+02:00 0HLL9S90MMVTM:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-16T09:38:40.7259287+02:00 0HLL9S90MMVTM:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 42.9922ms (afa2e885)
+2019-03-16T09:38:40.7265886+02:00 0HLL9S90MMVTM:00000001 [INF] Request finished in 47.4077ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-16T09:39:54.8010081+02:00 0HLL9S90MMVTN:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 55 (ca22a1cb)
+2019-03-16T09:39:54.8015386+02:00 0HLL9S90MMVTN:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T09:39:54.8024421+02:00 0HLL9S90MMVTN:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T09:39:54.8030491+02:00 0HLL9S90MMVTN:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T09:39:54.8072595+02:00 0HLL9S90MMVTN:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T09:39:54.8328781+02:00 0HLL9S90MMVTN:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 30.2851ms. (50a9e262)
+2019-03-16T09:39:54.8333067+02:00 0HLL9S90MMVTN:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-16T09:39:54.8338865+02:00 0HLL9S90MMVTN:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 32.2168ms (afa2e885)
+2019-03-16T09:39:54.8345296+02:00 0HLL9S90MMVTN:00000001 [INF] Request finished in 33.7348ms 200 application/json; charset=utf-8 (791a596a)
+2019-03-16T09:40:08.7260796+02:00 0HLL9S90MMVTO:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 55 (ca22a1cb)
+2019-03-16T09:40:08.7265821+02:00 0HLL9S90MMVTO:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-03-16T09:40:08.7278954+02:00 0HLL9S90MMVTO:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-03-16T09:40:08.7285472+02:00 0HLL9S90MMVTO:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-03-16T09:40:08.7316789+02:00 0HLL9S90MMVTO:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-03-16T09:40:08.7503946+02:00 0HLL9S90MMVTO:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 22.3015ms. (50a9e262)
+2019-03-16T09:40:08.7506145+02:00 0HLL9S90MMVTO:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-03-16T09:40:08.7508573+02:00 0HLL9S90MMVTO:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 24.1236ms (afa2e885)
+2019-03-16T09:40:08.7512029+02:00 0HLL9S90MMVTO:00000001 [INF] Request finished in 25.3083ms 200 application/json; charset=utf-8 (791a596a)

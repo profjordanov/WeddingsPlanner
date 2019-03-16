@@ -61,6 +61,11 @@ function register() {
     });
 }
 
+function logout() {
+    localStorage.clear();
+    loadLoginPage();
+}
+
 function loadAgenciesPage() {
     const agenciesPage = $("#agencies-page");
     $.mobile.pageContainer.pagecontainer("change", agenciesPage, {});
