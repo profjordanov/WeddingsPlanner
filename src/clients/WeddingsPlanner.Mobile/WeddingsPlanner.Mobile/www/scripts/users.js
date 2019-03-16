@@ -70,4 +70,3 @@ function loadLoginPage() {
     const userLoginPage = $("#users-login-page");
     $.mobile.pageContainer.pagecontainer("change", userLoginPage, {});
 }
-
