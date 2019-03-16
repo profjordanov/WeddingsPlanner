@@ -11,6 +11,9 @@
         $("#get-agencies-btn").click(getAllAgencies);
         $("#add-new-agency-btn").click(loadAgenciesAddPage);
         $("#add-agency-btn").click(addNewAgency);
+        $("#load-login-page-btn").click(loadLoginPage);
+        $("#login-btn").click(login);
+
     };
 
     function onPause() {

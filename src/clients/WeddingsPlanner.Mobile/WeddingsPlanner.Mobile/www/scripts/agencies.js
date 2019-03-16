@@ -1,9 +1,9 @@
 ﻿//API
-const baseUrl = "http://localhost:5000/api/agencies";
+const baseAgenciesUrl = "http://localhost:5000/api/agencies";
 
 function getAllAgencies() {
     const agencyName = $('#agency-name-input').val();
-    const queryString = baseUrl+ "/by-name/" + agencyName;
+    const queryString = baseAgenciesUrl+ "/by-name/" + agencyName;
     $.getJSON(queryString, function (results) {
         showAgenciesData(results);
     }).fail(function (jqXHR) {
@@ -24,11 +24,9 @@ function addNewAgency() {
         town: agencyTown
     };
 
-    alert(requestData);
-
     $.ajax({
         type: "POST",
-		url: baseUrl,
+        url: baseAgenciesUrl,
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(requestData),
@@ -36,7 +34,8 @@ function addNewAgency() {
             alert("Successfully added!");
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
-            alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            alert("Status: " + textStatus);
+            alert("Error: " + errorThrown);
         }  
     });
 }

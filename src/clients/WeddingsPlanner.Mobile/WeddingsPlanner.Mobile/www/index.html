@@ -12,70 +12,97 @@
 </head>
 <body>
 
-<div data-role="page" id="agencies-page">
+    <div data-role="page" id="agencies-page">
 
-    <div data-role="header" class="header">
-        <h1 id="app-title">Weddings Planner App</h1>
-        <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
-    </div>
-
-    <div role="main" class="ui-content">
-        <form>
-            <label for="agency-name">Find agency by its name:</label>
-            <input id="agency-name-input" name="agency-name" placeholder="eg. Exceptional Events" required />
-            <button id="get-agencies-btn" data-role="button" data-icon="search">Find</button>
-        </form>
-        
-        <button id="add-new-agency-btn" data-role="button" data-icon="save">Add New Agency</button>
-
-        <ul id="agencies-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
-            <li>Name: <span id="name"></span> </li>
-            <li>Employees Count: <span id="employees-count"></span></li>
-            <li>Town: <span id="town"></span></li>
-        </ul>
-
-        <div id="error-msg" class="not-displayed">
+        <div data-role="header" class="header">
+            <h1 id="app-title">Weddings Planner App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
         </div>
 
-    </div>
+        <div role="main" class="ui-content">
+            <form>
+                <label for="agency-name">Find agency by its name:</label>
+                <input id="agency-name-input" name="agency-name" placeholder="eg. Exceptional Events" required />
+                <button id="get-agencies-btn" data-role="button" data-icon="search">Find</button>
+            </form>
 
-    <footer data-role="footer" data-position="fixed">
-        <h4>Weddings Planner</h4>
-    </footer>
+            <button id="add-new-agency-btn" data-role="button" data-icon="plus">Add New Agency</button>
+            <button id="load-login-page-btn" data-role="button" data-icon="arrow-r">Login</button>
 
-</div>
 
-<div data-role="page" id="agencies-add-page">
+            <ul id="agencies-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
+                <li>Name: <span id="name"></span> </li>
+                <li>Employees Count: <span id="employees-count"></span></li>
+                <li>Town: <span id="town"></span></li>
+            </ul>
 
-    <div data-role="header" class="header">
-        <h1 id="app-title">Weddings Planner App</h1>
-        <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
-    </div>
+            <div id="error-msg" class="not-displayed">
+            </div>
 
-    <div role="main" class="ui-content">
-        <div>
-            <label for="add-agency-name">Name:</label>
-            <input id="add-agency-name" name="add-agency-name" required />
-            
-            <label for="add-agency-employees-count">Employees count:</label>
-            <input id="add-agency-employees-count" name="add-agency-employees-count" required />
-            
-            <label for="add-agency-town">Town:</label>
-            <input id="add-agency-town" name="add-agency-town" required />
-
-            <button id="add-agency-btn" data-role="button" data-icon="save">+Save</button>
         </div>
 
-        <div id="add-agency-error-msg" class="not-displayed">
-        </div>
+        <footer data-role="footer" data-position="fixed">
+            <h4>Weddings Planner</h4>
+        </footer>
 
     </div>
 
-    <footer data-role="footer" data-position="fixed">
-        <h4>Weddings Planner</h4>
-    </footer>
+    <div data-role="page" id="agencies-add-page">
 
-</div>
+        <div data-role="header" class="header">
+            <h1 id="app-title">Weddings Planner App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div>
+                <label for="add-agency-name">Name:</label>
+                <input id="add-agency-name" name="add-agency-name" required />
+
+                <label for="add-agency-employees-count">Employees count:</label>
+                <input id="add-agency-employees-count" name="add-agency-employees-count" required />
+
+                <label for="add-agency-town">Town:</label>
+                <input id="add-agency-town" name="add-agency-town" required />
+
+                <button id="add-agency-btn" data-role="button" data-icon="plus">Save</button>
+            </div>
+
+            <div id="add-agency-error-msg" class="not-displayed">
+            </div>
+
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>Weddings Planner</h4>
+        </footer>
+
+    </div>
+
+    <div data-role="page" id="users-login-page">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">Weddings Planner App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <div>
+                <label for="user-email">Email:</label>
+                <input id="user-email" name="user-email" required />
+
+                <label for="user-password">Password:</label>
+                <input id="user-password" name="user-password" type="password" required />
+
+                <button id="login-btn" data-role="button" data-icon="arrow-r">Login</button>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>Weddings Planner</h4>
+        </footer>
+
+    </div>
 
     <script src="scripts/jquery-1.8.0.min.js"></script>
     <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
@@ -83,6 +110,7 @@
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
     <script type="text/javascript" src="scripts/agencies.js"></script>
+    <script type="text/javascript" src="scripts/users.js"></script>
 
 </body>
 </html>
