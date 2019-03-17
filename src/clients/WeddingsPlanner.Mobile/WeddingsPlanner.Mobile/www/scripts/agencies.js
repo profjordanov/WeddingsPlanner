@@ -1,14 +1,28 @@
 ﻿//API
 const baseAgenciesUrl = "http://localhost:5000/api/agencies";
 
-function getAllAgencies() {
+function getAgencyByName() {
     const agencyName = $('#agency-name-input').val();
-    const queryString = baseAgenciesUrl+ "/by-name/" + agencyName;
-    $.getJSON(queryString, function (results) {
-        showAgenciesData(results);
-    }).fail(function (jqXHR) {
-        $('#error-msg').show();
-        $('#error-msg').text("Error retrieving data. " + jqXHR.statusText);
+    const queryString = baseAgenciesUrl + "/by-name/" + agencyName;
+
+    $.ajax({
+        type: "GET",
+        url: queryString,
+        beforeSend: function (xhr) {
+            if (localStorage.token) {
+                xhr.setRequestHeader("Authorization", "Bearer " + localStorage.token);
+            } else {
+                alert("You are unauthorized to accomplish this action!");
+                return false;
+            }
+        },
+        success: function (results) {
+            showAgenciesData(results);
+        },
+        error: function (jqXHR) {
+            $('#error-msg').show();
+            $('#error-msg').text("Error retrieving data. " + jqXHR.statusText);
+        }
     });
     return false;
 }
@@ -27,17 +41,27 @@ function addNewAgency() {
     $.ajax({
         type: "POST",
         url: baseAgenciesUrl,
+        beforeSend: function (xhr) {
+            if (localStorage.token) {
+                xhr.setRequestHeader("Authorization", "Bearer " + localStorage.token);
+            } else {
+                alert("You are unauthorized to accomplish this action!");
+                return false;
+            }
+        },
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(requestData),
-        success: function() {
+        success: function () {
             alert("Successfully added!");
         },
-        error:function(XMLHttpRequest, textStatus, errorThrown) {
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert("Status: " + textStatus);
             alert("Error: " + errorThrown);
-        }  
+        }
     });
+
+    return true;
 }
 
 function loadAgenciesAddPage() {

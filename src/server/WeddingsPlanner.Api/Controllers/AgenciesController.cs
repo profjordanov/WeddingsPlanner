@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using WeddingsPlanner.Api.Controllers._Base;
 using WeddingsPlanner.Core;
 using WeddingsPlanner.Core.Models.Agencies;
@@ -11,6 +12,7 @@ using WeddingsPlanner.Data.Entities;
 
 namespace WeddingsPlanner.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AgenciesController : ApiController

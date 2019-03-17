@@ -12,11 +12,80 @@
 </head>
 <body>
 
+    <!--Region Login-->
+    <div data-role="page" id="users-login-page">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">Weddings Planner App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h1>Welcome to Weddings Planner!</h1>
+            <div>
+                <label for="user-email">Email:</label>
+                <input id="user-email" name="user-email" required />
+
+                <label for="user-password">Password:</label>
+                <input id="user-password" name="user-password" type="password" required />
+
+                <button id="login-btn" data-role="button" data-icon="arrow-r">Login</button>
+
+                <p>
+                    If you don't have an account:
+                    <button id="goto-register-btn" data-role="button" data-icon="tag">Register</button>
+                </p>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>Weddings Planner</h4>
+        </footer>
+
+    </div>
+    <!--END Region Login-->
+    <!--Region User Register-->
+    <div data-role="page" id="users-register-page">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">Weddings Planner App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+
+        </div>
+
+        <div role="main" class="ui-content">
+            <h1>Register to our amazing application!</h1>
+            <div>
+                <label for="add-user-firstName">First Name:</label>
+                <input id="add-user-firstName" name="add-user-firstName" required />
+
+                <label for="add-user-lastName">Last Name:</label>
+                <input id="add-user-lastName" name="add-user-lastName" required />
+
+                <label for="add-user-email">Email:</label>
+                <input id="add-user-email" name="add-user-email" required />
+
+                <label for="add-user-password">Password:</label>
+                <input id="add-user-password" name="add-user-password" type="password" required />
+
+                <button id="register-btn" data-role="button" data-icon="star">Register</button>
+            </div>
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>Weddings Planner</h4>
+        </footer>
+
+    </div>
+    <!--END Region User Register-->
+    <!--Region Main Agencies-->
     <div data-role="page" id="agencies-page">
 
         <div data-role="header" class="header">
             <h1 id="app-title">Weddings Planner App</h1>
             <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+            <button id="logout-btn" class="ui-btn ui-btn-right ui-btn-corner-all ui-icon-arrow-r ui-btn-icon-notext">Logout</button>
+
         </div>
 
         <div role="main" class="ui-content">
@@ -27,8 +96,6 @@
             </form>
 
             <button id="add-new-agency-btn" data-role="button" data-icon="plus">Add New Agency</button>
-            <button id="load-login-page-btn" data-role="button" data-icon="arrow-r">Login</button>
-
 
             <ul id="agencies-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
                 <li>Name: <span id="name"></span> </li>
@@ -46,12 +113,15 @@
         </footer>
 
     </div>
-
+    <!--END Region Main Agencies-->
+    <!--Region Add Agencies-->
     <div data-role="page" id="agencies-add-page">
 
         <div data-role="header" class="header">
             <h1 id="app-title">Weddings Planner App</h1>
             <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+            <button id="logout-btn" class="ui-btn ui-btn-right ui-btn-corner-all ui-icon-arrow-r ui-btn-icon-notext">Logout</button>
+
         </div>
 
         <div role="main" class="ui-content">
@@ -78,37 +148,14 @@
         </footer>
 
     </div>
-
-    <div data-role="page" id="users-login-page">
-
-        <div data-role="header" class="header">
-            <h1 id="app-title">Weddings Planner App</h1>
-            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
-        </div>
-
-        <div role="main" class="ui-content">
-            <div>
-                <label for="user-email">Email:</label>
-                <input id="user-email" name="user-email" required />
-
-                <label for="user-password">Password:</label>
-                <input id="user-password" name="user-password" type="password" required />
-
-                <button id="login-btn" data-role="button" data-icon="arrow-r">Login</button>
-            </div>
-        </div>
-
-        <footer data-role="footer" data-position="fixed">
-            <h4>Weddings Planner</h4>
-        </footer>
-
-    </div>
+    <!--END Region Add Agencies-->
 
     <script src="scripts/jquery-1.8.0.min.js"></script>
     <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/responseError.js"></script>
     <script type="text/javascript" src="scripts/agencies.js"></script>
     <script type="text/javascript" src="scripts/users.js"></script>
 

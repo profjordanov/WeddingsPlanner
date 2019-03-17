@@ -8,12 +8,13 @@
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener( 'resume', onResume.bind( this ), false );
 
-        $("#get-agencies-btn").click(getAllAgencies);
+        $("#get-agencies-btn").click(getAgencyByName);
         $("#add-new-agency-btn").click(loadAgenciesAddPage);
         $("#add-agency-btn").click(addNewAgency);
-        $("#load-login-page-btn").click(loadLoginPage);
         $("#login-btn").click(login);
-
+        $("#goto-register-btn").click(loadRegisterPage);
+        $("#register-btn").click(register);
+        $("#logout-btn").click(logout);
     };
 
     function onPause() {
