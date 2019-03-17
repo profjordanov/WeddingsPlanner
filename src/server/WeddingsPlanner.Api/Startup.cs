@@ -64,8 +64,15 @@ namespace WeddingsPlanner.Api
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ApplicationDbContext dbContext)
+        public void Configure(
+            IApplicationBuilder app,
+            IHostingEnvironment env,
+            ILoggerFactory loggerFactory,
+            ApplicationDbContext dbContext)
         {
+            // Database migrations
+            app.UseDatabaseMigration();
+
             if (env.IsDevelopment())
             {
                 dbContext.Database.EnsureCreated();
