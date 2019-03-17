@@ -91,26 +91,26 @@ namespace WeddingsPlanner.Business.Services
                 .SingleOrDefaultAsync(currentAgency => currentAgency.Id == agency.Id &&
                                                        currentAgency.Name == agency.Name &&
                                                        currentAgency.Town == agency.Town)
-                .SomeNotNull(new Error($"Such an {nameof(Agency)} do not exists!"));
+                .SomeNotNull(new Error($"Such an {nameof(Agency)} does not exists!"));
 
         private Task<Option<Agency, Error>> EnsureExistsByModelIdAsync(Agency agency) =>
             DbContext
                 .Agencies
                 .SingleOrDefaultAsync(currentAgency => currentAgency.Id == agency.Id)
-                .SomeNotNull(new Error($"{nameof(Agency)} with ID:{agency.Id} do not exists!"));
+                .SomeNotNull(new Error($"{nameof(Agency)} with ID:{agency.Id} does not exists!"));
 
         private Task<Option<Agency, Error>> EnsureExistsByIdAsync(int agencyId) =>
             DbContext
                 .Agencies
                 .SingleOrDefaultAsync(currentAgency => currentAgency.Id == agencyId)
-                .SomeNotNull(new Error($"{nameof(Agency)} with ID:{agencyId} do not exists!"));
+                .SomeNotNull(new Error($"{nameof(Agency)} with ID:{agencyId} does not exists!"));
 
         private Task<Option<Agency, Error>> FirstIfExistsByNameAsync(string agencyName) =>
             DbContext
                 .Agencies
                 .FirstOrDefaultAsync(currentAgency => currentAgency.Name == agencyName)
                 .SomeNotNull(new Error(
-                    $"{nameof(Agency)} with {nameof(Agency.Name)}:{agencyName} do not exists!"));
+                    $"{nameof(Agency)} with {nameof(Agency.Name)}:{agencyName} does not exists!"));
 
         private Task<Option<Agency, Error>> ValidateInputModelAsync(Agency agency) =>
             Task.Run(() => ValidateInputModel(agency));

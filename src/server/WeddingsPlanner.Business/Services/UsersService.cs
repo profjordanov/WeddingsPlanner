@@ -31,7 +31,7 @@ namespace WeddingsPlanner.Business.Services
         public async Task<Option<JwtModel, Error>> Login(LoginUserModel model)
         {
             var loginResult = await (await UserManager.FindByEmailAsync(model.Email))
-                .SomeNotNull(new Error("Such a user does not exist!"))
+                .SomeNotNull(new Error("Such an user does not exist!"))
                 .FilterAsync(
                     async user => await UserManager.CheckPasswordAsync(user, model.Password),
                     new Error("Invalid credentials."));
