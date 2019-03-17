@@ -7,6 +7,10 @@ form {
     padding-bottom: 5px;
 }
 
+.hide{
+    display:none;  
+}
+
 #agency-name-input {
     font-size: 25px;
 }

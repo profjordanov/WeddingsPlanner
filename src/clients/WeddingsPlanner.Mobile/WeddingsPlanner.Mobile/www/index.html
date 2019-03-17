@@ -98,15 +98,18 @@
             <button id="add-new-agency-btn" data-role="button" data-icon="plus">Add New Agency</button>
 
             <ul id="agencies-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
+                <li class="hide"><span id="current-agency-id"></span></li>
                 <li>Name: <span id="name"></span> </li>
                 <li>Employees Count: <span id="employees-count"></span></li>
                 <li>Town: <span id="town"></span></li>
-                <li><button id="edit-btn" data-role="button" data-icon="edit"></button></li>
+                <li>
+                    <button id="edit-current-agency-btn" data-role="button" data-icon="edit">Edit</button>
+                    <button id="delete-current-agency-btn" data-role="button" data-icon="delete">Delete</button>
+                </li>
             </ul>
 
             <div id="error-msg" class="not-displayed">
-            </div>
-
+            </div>           
         </div>
 
         <footer data-role="footer" data-position="fixed">
