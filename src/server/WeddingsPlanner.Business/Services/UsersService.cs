@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Optional;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using WeddingsPlanner.Business.Extensions;
 using WeddingsPlanner.Core;
@@ -33,15 +31,20 @@ namespace WeddingsPlanner.Business.Services
         public async Task<Option<JwtModel, Error>> Login(LoginUserModel model)
         {
             var loginResult = await (await UserManager.FindByEmailAsync(model.Email))
-                .SomeNotNull()
-                .FilterAsync(async user => await UserManager.CheckPasswordAsync(user, model.Password));
+                .SomeNotNull(new Error("Such an user does not exist!"))
+                .FilterAsync(
+                    async user => await UserManager.CheckPasswordAsync(user, model.Password),
+                    new Error("Invalid credentials."));
 
-            return loginResult.Match(
-                user => new JwtModel
-                {
-                    TokenString = JwtFactory.GenerateEncodedToken(user.Id, user.Email, new List<Claim>())
-                }.Some<JwtModel, Error>(),
-                () => Option.None<JwtModel, Error>(new Error("Invalid credentials.")));
+            return await loginResult.FlatMapAsync(async user =>
+            {
+                var claims = await UserManager.GetClaimsAsync(user);
+                return new JwtModel(
+                    JwtFactory.GenerateEncodedToken(
+                        userId: user.Id,
+                        email: user.Email,
+                        additionalClaims: claims)).Some<JwtModel, Error>();
+            });
         }
 
         public async Task<Option<UserModel, Error>> Register(RegisterUserModel model)

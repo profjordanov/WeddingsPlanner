@@ -15,6 +15,7 @@
         $("#goto-register-btn").click(loadRegisterPage);
         $("#register-btn").click(register);
         $("#logout-btn").click(logout);
+        $("#delete-current-agency-btn").click(confirmCurrentAgencyDelete);
     };
 
     function onPause() {

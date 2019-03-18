@@ -1,14 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using WeddingsPlanner.Api.Controllers._Base;
 using WeddingsPlanner.Core;
 using WeddingsPlanner.Core.Models.Agencies;
 using WeddingsPlanner.Core.Services;
 using WeddingsPlanner.Data.Entities;
+using static WeddingsPlanner.Api.GlobalConstants;
 
 namespace WeddingsPlanner.Api.Controllers
 {
@@ -87,6 +88,7 @@ namespace WeddingsPlanner.Api.Controllers
         /// invalid agency name or town.
         /// </response>
         [HttpPut]
+        [Authorize(Roles = AdministratorRoleName)]
         [ProducesResponseType(typeof(Agency), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Error), (int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Put([FromBody] Agency agency) =>
@@ -103,6 +105,7 @@ namespace WeddingsPlanner.Api.Controllers
         /// Cannot find agency with current ID or name and town.
         /// </response>
         [HttpDelete]
+        [Authorize(Roles = AdministratorRoleName)]
         [ProducesResponseType(typeof(Agency), (int) HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Error), (int) HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Delete([FromBody] Agency agency) =>

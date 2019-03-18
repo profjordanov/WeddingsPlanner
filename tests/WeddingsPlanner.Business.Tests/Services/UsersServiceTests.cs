@@ -47,6 +47,9 @@ namespace WeddingsPlanner.Business.Tests.Services
                 .GenerateEncodedToken(expectedUser.Id, expectedUser.Email, new List<Claim>()))
                 .Returns(expectedJwt);
 
+            _userManagerMock.Setup(userManager => userManager.GetClaimsAsync(expectedUser))
+                .ReturnsAsync(() => new List<Claim>());
+
             // Act
             var result = await _usersService.Login(model);
 
