@@ -6,4 +6,12 @@ Application for monitoring marriages around Bulgaria.
 - [x] .NET Core Web API v2.1
 - [x] EntityFramework Core with SQL Server and ASP.NET Identity
 - [x] Apache Cordova
-- [x] jQuery mobile
+- [x] jQuery Mobile
+
+### Test Suite
+- [x] SQL Database Integration Testing
+- [x] Arrange Act Assert Pattern
+- [x] xUnit
+- [x] Autofixture
+- [x] Moq
+- [x] Shouldly
