@@ -15,3 +15,12 @@ Application for monitoring marriages around Bulgaria.
 - [x] Autofixture
 - [x] Moq
 - [x] Shouldly
+
+
+## Features:
+
+### Web API
+- [x] AutoMapper
+- [x] File logging with Serilog
+- [x] JWT authentication/authorization
+- [x] Stylecop
