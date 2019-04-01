@@ -24,3 +24,21 @@ Application for monitoring marriages around Bulgaria.
 - [x] File logging with Serilog
 - [x] JWT authentication/authorization
 - [x] Stylecop
+- [x] Neat folder structure
+
+```
+├───src
+|   |___clients
+|       ├───jQuery.Client
+|       ├───WeddingsPlanner.Mobile
+│   ├───configuration
+│   └───server
+│       ├───WeddingsPlanner.Api
+│       ├───WeddingsPlanner.Business
+│       ├───WeddingsPlanner.Core
+│       ├───WeddingsPlanner.Data
+│       └───WeddingsPlanner.Data.EntityFramework
+└───tests
+    └───WeddingsPlanner.Business.Tests
+
+```
