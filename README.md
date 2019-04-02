@@ -42,3 +42,8 @@ Application for monitoring marriages around Bulgaria.
     └───WeddingsPlanner.Business.Tests
 
 ```
+- [x] Global Model Errors Handler <br>
+- [x] Global Environment-Dependent Exception Handler <br>
+- [x] Neatly organized solution structure <br>
+- [x] Thin Controllers <br>
+- [x] Robust service layer using the [Either](http://optional-github.com) monad. <br>
