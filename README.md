@@ -45,5 +45,19 @@ Application for monitoring marriages around Bulgaria.
 - [x] Global Model Errors Handler <br>
 - [x] Global Environment-Dependent Exception Handler <br>
 - [x] Neatly organized solution structure <br>
-- [x] Thin Controllers <br>
+
+```
+- [x] Thin Controllers
+
+```csharp
+/// POST: /Account/Login
+/// <summary>
+/// Login.
+/// </summary>
+[HttpPost]
+public async Task<IActionResult> Login(CredentialsModel model)
+    => (await _usersService.LoginAsync(model))
+        .Match(RedirectToLocal, ErrorLogin);
+```
+
 - [x] Robust service layer using the [Either](http://optional-github.com) monad. <br>
