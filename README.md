@@ -45,8 +45,6 @@ Application for monitoring marriages around Bulgaria.
 - [x] Global Model Errors Handler <br>
 - [x] Global Environment-Dependent Exception Handler <br>
 - [x] Neatly organized solution structure <br>
-
-```
 - [x] Thin Controllers
 
 ```csharp
