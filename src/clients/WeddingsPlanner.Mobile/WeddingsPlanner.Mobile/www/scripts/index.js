@@ -16,6 +16,9 @@
         $("#register-btn").click(register);
         $("#logout-btn").click(logout);
         $("#delete-current-agency-btn").click(confirmCurrentAgencyDelete);
+        // Camera Plugin
+        $("#agency-pic-btn").click(getAgencyPicture);
+
     };
 
     function onPause() {

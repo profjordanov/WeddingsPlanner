@@ -1,0 +1,5 @@
+2019-04-05T00:51:34.5440097+03:00 0HLLP8UQ8T7IB:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-04-05T00:51:34.5885660+03:00 0HLLP8UQ8T7IB:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-04-05T00:51:34.7765367+03:00 0HLLP8UQ8T7IB:00000001 [INF] Request finished in 245.7569ms 200 text/html (791a596a)
+2019-04-05T00:51:35.9458213+03:00 0HLLP8UQ8T7IB:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-04-05T00:51:36.6672405+03:00 0HLLP8UQ8T7IB:00000002 [INF] Request finished in 721.4409ms 200 application/json;charset=utf-8 (791a596a)
