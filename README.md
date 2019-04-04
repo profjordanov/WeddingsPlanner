@@ -59,3 +59,4 @@ public async Task<IActionResult> Login(CredentialsModel model)
 ```
 
 - [x] Robust service layer using the [Either](http://optional-github.com) monad. <br>
+
