@@ -31,11 +31,13 @@ function addNewAgency() {
     const agencyName = $("#add-agency-name").val();
     const agencyEmployeesCount = $("#add-agency-employees-count").val();
     const agencyTown = $("#add-agency-town").val();
+    const agencyImage = $("#base64-agency-pic").val();
 
     const requestData = {
         name: agencyName,
         employeesCount: agencyEmployeesCount,
-        town: agencyTown
+        town: agencyTown,
+        base64Image: agencyImage
     };
 
     $.ajax({
@@ -54,6 +56,7 @@ function addNewAgency() {
         data: JSON.stringify(requestData),
         success: function () {
             alert("Successfully added!");
+            loadAgenciesMainPage();
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert("Status: " + textStatus);
@@ -102,7 +105,8 @@ function deleteCurrentAgency() {
         dataType: "json",
         data: JSON.stringify(requestData),
         success: function () {
-            alert(agencyName + "successfully deleted!");
+            alert(agencyName + " successfully deleted!");
+            $("#agencies-data").hide();
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert("Status: " + textStatus);
@@ -118,6 +122,11 @@ function loadAgenciesAddPage() {
     $.mobile.pageContainer.pagecontainer("change", addAgenciesPage, {});
 }
 
+function loadAgenciesMainPage() {
+    const agenciesPage = $("#agencies-page");
+    $.mobile.pageContainer.pagecontainer("change", agenciesPage, {});
+}
+
 function showAgenciesData(agency) {
     $("#error-msg").hide();
     $("#agencies-data").show();
@@ -126,4 +135,5 @@ function showAgenciesData(agency) {
     $("#name").text(agency.name);
     $("#employees-count").text(agency.employeesCount);
     $("#town").text(agency.town);
+    $("#agency-img").attr("src", `data:image/jpeg;base64,${agency.base64Image}`);
 }

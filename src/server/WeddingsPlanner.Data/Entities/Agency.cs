@@ -14,6 +14,8 @@ namespace WeddingsPlanner.Data.Entities
 
         public string Town { get; set; }
 
+        public string Base64Image { get; set; }
+
         public virtual ICollection<Wedding> OrganizedWeddings { get; set; } = new HashSet<Wedding>();
     }
 }
