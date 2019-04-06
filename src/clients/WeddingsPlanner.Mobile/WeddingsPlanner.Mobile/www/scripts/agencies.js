@@ -69,6 +69,9 @@ function addNewAgency() {
 
 function confirmCurrentAgencyDelete() {
     const isConfirmed = confirm("Do you want to delete this agency?");
+    // Vibrate for 3 seconds
+    navigator.vibrate(1000);
+
     if (isConfirmed) {
         deleteCurrentAgency();
     } else {
