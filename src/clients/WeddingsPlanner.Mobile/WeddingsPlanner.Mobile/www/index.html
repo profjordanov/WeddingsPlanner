@@ -98,10 +98,13 @@
             <button id="add-new-agency-btn" data-role="button" data-icon="plus">Add New Agency</button>
 
             <ul id="agencies-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
-                <li class="hide"><span id="current-agency-id"></span></li>
+                <li class="hide"><span class="hide" id="current-agency-id"></span></li>
                 <li>Name: <span id="name"></span> </li>
                 <li>Employees Count: <span id="employees-count"></span></li>
                 <li>Town: <span id="town"></span></li>
+                <li> 
+                    <img id="agency-img" src="" alt="agency-img" width="50" height="50"/>
+                </li>
                 <li>
                     <button id="edit-current-agency-btn" data-role="button" data-icon="edit">Edit</button>
                     <button id="delete-current-agency-btn" data-role="button" data-icon="delete">Delete</button>
@@ -139,10 +142,9 @@
                 <label for="add-agency-town">Town:</label>
                 <input id="add-agency-town" name="add-agency-town" required />
 
-                <label for="add-agency-town">Make picture:</label>
+                <label>Make picture:</label>
                 <input id="base64-agency-pic" type="hidden" value="" />
                 <button id="agency-pic-btn" data-role="button" data-icon="camera">Camera</button>
-
 
                 <button id="add-agency-btn" data-role="button" data-icon="plus">Save</button>
             </div>
