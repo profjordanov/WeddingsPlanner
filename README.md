@@ -1,6 +1,7 @@
 # WeddingsPlanner
 Application for monitoring marriages around Bulgaria.
 
+
 ## Technology Stack:
 - [x] C# 7.1
 - [x] .NET Core Web API v2.1
@@ -59,4 +60,14 @@ public async Task<IActionResult> Login(CredentialsModel model)
 ```
 
 - [x] Robust service layer using the [Either](http://optional-github.com) monad. <br>
+
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+1. You'll need version `2.1.4` of the [`.NET Core SDK`](https://dotnet.microsoft.com/download).
+
+2. If not, you'll need to have [SQLServer](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) either installed locally or at least have some instance available to set up the connection strings.
+
+3. For the mobile application, you will need [`NodeJS`](https://nodejs.org/en/).
 
