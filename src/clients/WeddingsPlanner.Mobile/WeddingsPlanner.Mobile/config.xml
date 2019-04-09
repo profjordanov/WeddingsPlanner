@@ -106,4 +106,6 @@
     <splash src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" height="1920" />
   </platform>
   <plugin name="cordova-plugin-camera" spec="~2.4.1" />
+  <plugin name="cordova-plugin-vibration" spec="~3.1.0" />
+  <plugin name="cordova-plugin-statusbar" spec="~2.4.2" />
 </widget>
