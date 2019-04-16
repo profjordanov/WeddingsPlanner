@@ -71,4 +71,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 3. For the mobile application, you will need [`NodeJS`](https://nodejs.org/en/).
 
+### Running Using Visual Studio
+
+1. Download it via `CLONE OR DOWNLOAD BUTTON`
+2. Unzip the project
+3. Open the `.sln` file using Visual Studio
+4. Set up the connection strings inside `WeddingsPlanner.Api/appsettings.Development.json` (or leave the set)
+5. Execute `Update-Database` inside the `Package Manager Console`
+6. Run the FamousQuoteQuiz.Api
+7. Go to src/client/WeddingsPlanner.Mobile
+8. Open it via Visual Studio
 
