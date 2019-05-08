@@ -1,0 +1,147 @@
+2019-04-09T16:16:05.7156713+03:00 0HLLSTM1FAGVU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-04-09T16:16:05.9309365+03:00 0HLLSTM1FAGVU:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-04-09T16:16:06.0521275+03:00 0HLLSTM1FAGVU:00000001 [INF] Request finished in 368.8311ms 200 text/html (791a596a)
+2019-04-09T16:16:06.5759583+03:00 0HLLSTM1FAH00:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map   (ca22a1cb)
+2019-04-09T16:16:06.9517919+03:00 0HLLSTM1FAH00:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-04-09T16:16:07.4592923+03:00 0HLLSTM1FAH01:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map   (ca22a1cb)
+2019-04-09T16:16:07.4721871+03:00 0HLLSTM1FAH00:00000001 [INF] Request finished in 813.7868ms 200 text/plain (791a596a)
+2019-04-09T16:16:07.5143733+03:00 0HLLSTM1FAH01:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-04-09T16:16:07.5210068+03:00 0HLLSTM1FAH01:00000001 [INF] Request finished in 136.2197ms 200 text/plain (791a596a)
+2019-04-09T16:16:07.6687965+03:00 0HLLSTM1FAGVU:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-04-09T16:16:08.0554583+03:00 0HLLSTM1FAGVU:00000002 [INF] Request finished in 425.2299ms 200 application/json;charset=utf-8 (791a596a)
+2019-04-09T16:19:50.8755121+03:00 0HLLSTM1FAH02:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 57 (ca22a1cb)
+2019-04-09T16:19:50.9670994+03:00 0HLLSTM1FAH02:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-04-09T16:19:51.0303259+03:00 0HLLSTM1FAH02:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-04-09T16:19:55.0795254+03:00 0HLLSTM1FAH02:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-04-09T16:19:55.1599666+03:00 0HLLSTM1FAH02:00000001 [INF] Executed DbCommand ("47"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-04-09T16:19:55.2627619+03:00 0HLLSTM1FAH02:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-04-09T16:19:56.2930789+03:00 0HLLSTM1FAH02:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 5255.7253ms. (50a9e262)
+2019-04-09T16:19:56.3205396+03:00 0HLLSTM1FAH02:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-04-09T16:19:56.3481307+03:00 0HLLSTM1FAH02:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 5368.7857ms (afa2e885)
+2019-04-09T16:19:56.3664636+03:00 0HLLSTM1FAH02:00000001 [INF] Request finished in 5479.4094ms 200 application/json; charset=utf-8 (791a596a)
+2019-04-09T16:27:08.7979393+03:00 0HLLSTS7RE7OR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html   (ca22a1cb)
+2019-04-09T16:27:08.8132561+03:00 0HLLSTS7RE7OR:00000001 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-04-09T16:27:08.8770425+03:00 0HLLSTS7RE7OR:00000001 [INF] Request finished in 79.5092ms 200 text/html (791a596a)
+2019-04-09T16:27:09.1950849+03:00 0HLLSTS7RE7OT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-bundle.js.map   (ca22a1cb)
+2019-04-09T16:27:09.3533409+03:00 0HLLSTS7RE7OT:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-04-09T16:27:09.3614644+03:00 0HLLSTS7RE7OT:00000001 [INF] Request finished in 167.552ms 200 text/plain (791a596a)
+2019-04-09T16:27:09.6016466+03:00 0HLLSTS7RE7OU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger-ui-standalone-preset.js.map   (ca22a1cb)
+2019-04-09T16:27:09.6328523+03:00 0HLLSTS7RE7OU:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js.map"'. Physical path: '"N/A"' (27b0a520)
+2019-04-09T16:27:09.6368035+03:00 0HLLSTS7RE7OU:00000001 [INF] Request finished in 34.5653ms 200 text/plain (791a596a)
+2019-04-09T16:27:09.7287751+03:00 0HLLSTS7RE7OR:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json   (ca22a1cb)
+2019-04-09T16:27:09.9987436+03:00 0HLLSTS7RE7OR:00000002 [INF] Request finished in 270.625ms 200 application/json;charset=utf-8 (791a596a)
+2019-04-09T16:28:01.4935171+03:00 0HLLSTS7RE7OV:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/users/login application/json 57 (ca22a1cb)
+2019-04-09T16:28:01.5819822+03:00 0HLLSTS7RE7OV:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Users\"}". Executing action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" (a44c0341)
+2019-04-09T16:28:01.6410739+03:00 0HLLSTS7RE7OV:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Core.Models.LoginUserModel"]) - Validation state: Valid (4e3479ed)
+2019-04-09T16:28:01.6493586+03:00 0HLLSTS7RE7OV:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-04-09T16:28:01.7239941+03:00 0HLLSTS7RE7OV:00000001 [INF] Executed DbCommand ("44"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[RegistrationDate], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-04-09T16:28:01.7815427+03:00 0HLLSTS7RE7OV:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-04-09T16:28:01.8300917+03:00 0HLLSTS7RE7OV:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 181.888ms. (50a9e262)
+2019-04-09T16:28:01.8480714+03:00 0HLLSTS7RE7OV:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Models.JwtModel"'. (8a1b66c8)
+2019-04-09T16:28:01.8637840+03:00 0HLLSTS7RE7OV:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.UsersController.Login (WeddingsPlanner.Api)" in 272.9308ms (afa2e885)
+2019-04-09T16:28:01.8740904+03:00 0HLLSTS7RE7OV:00000001 [INF] Request finished in 376.2552ms 200 application/json; charset=utf-8 (791a596a)
+2019-04-09T16:29:05.8805764+03:00 0HLLSTS7RE7P0:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/agencies application/json 77 (ca22a1cb)
+2019-04-09T16:29:05.9489944+03:00 0HLLSTS7RE7P0:00000001 [INF] Successfully validated the token. (60169667)
+2019-04-09T16:29:05.9597563+03:00 0HLLSTS7RE7P0:00000001 [INF] Route matched with "{action = \"Post\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" (a44c0341)
+2019-04-09T16:29:05.9724091+03:00 0HLLSTS7RE7P0:00000001 [INF] Authorization was successful. (0d575a54)
+2019-04-09T16:29:05.9840091+03:00 0HLLSTS7RE7P0:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Data.Entities.Agency"]) - Validation state: Valid (4e3479ed)
+2019-04-09T16:29:06.0067014+03:00 0HLLSTS7RE7P0:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-04-09T16:29:06.0343345+03:00 0HLLSTS7RE7P0:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Agencies] ([Base64Image], [EmployeesCount], [Name], [Town])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Agencies]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-04-09T16:29:06.0464039+03:00 0HLLSTS7RE7P0:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 57.5608ms. (50a9e262)
+2019-04-09T16:29:06.0516196+03:00 0HLLSTS7RE7P0:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-04-09T16:29:06.0666495+03:00 0HLLSTS7RE7P0:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.Post (WeddingsPlanner.Api)" in 100.4645ms (afa2e885)
+2019-04-09T16:29:06.0942811+03:00 0HLLSTS7RE7P0:00000001 [INF] Request finished in 189.8607ms 201 application/json; charset=utf-8 (791a596a)
+2019-04-09T16:29:10.1951707+03:00 0HLLSTS7RE7P1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/agencies/by-name/Jordan   (ca22a1cb)
+2019-04-09T16:29:10.1990275+03:00 0HLLSTS7RE7P1:00000001 [INF] Successfully validated the token. (60169667)
+2019-04-09T16:29:10.2069795+03:00 0HLLSTS7RE7P1:00000001 [INF] Route matched with "{action = \"GetByName\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" (a44c0341)
+2019-04-09T16:29:10.2113709+03:00 0HLLSTS7RE7P1:00000001 [INF] Authorization was successful. (0d575a54)
+2019-04-09T16:29:10.2165923+03:00 0HLLSTS7RE7P1:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" with arguments (["Jordan"]) - Validation state: Valid (4e3479ed)
+2019-04-09T16:29:10.2239396+03:00 0HLLSTS7RE7P1:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-04-09T16:29:10.2436679+03:00 0HLLSTS7RE7P1:00000001 [INF] Executed DbCommand ("8"ms) [Parameters=["@__agencyName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [currentAgency].[Id], [currentAgency].[Base64Image], [currentAgency].[EmployeesCount], [currentAgency].[Name], [currentAgency].[Town]
+FROM [Agencies] AS [currentAgency]
+WHERE [currentAgency].[Name] = @__agencyName_0" (0723d8ff)
+2019-04-09T16:29:10.2567375+03:00 0HLLSTS7RE7P1:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 35.9487ms. (50a9e262)
+2019-04-09T16:29:10.2616997+03:00 0HLLSTS7RE7P1:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-04-09T16:29:10.2692778+03:00 0HLLSTS7RE7P1:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" in 56.9091ms (afa2e885)
+2019-04-09T16:29:10.2747499+03:00 0HLLSTS7RE7P1:00000001 [INF] Request finished in 77.9455ms 400 application/json; charset=utf-8 (791a596a)
+2019-04-09T16:29:16.3310788+03:00 0HLLSTS7RE7P2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/agencies/by-name/Jordan&Co   (ca22a1cb)
+2019-04-09T16:29:16.3345765+03:00 0HLLSTS7RE7P2:00000001 [INF] Successfully validated the token. (60169667)
+2019-04-09T16:29:16.3387090+03:00 0HLLSTS7RE7P2:00000001 [INF] Route matched with "{action = \"GetByName\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" (a44c0341)
+2019-04-09T16:29:16.3424054+03:00 0HLLSTS7RE7P2:00000001 [INF] Authorization was successful. (0d575a54)
+2019-04-09T16:29:16.3467095+03:00 0HLLSTS7RE7P2:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" with arguments (["Jordan&Co"]) - Validation state: Valid (4e3479ed)
+2019-04-09T16:29:16.3502051+03:00 0HLLSTS7RE7P2:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-04-09T16:29:16.3563489+03:00 0HLLSTS7RE7P2:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=["@__agencyName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [currentAgency].[Id], [currentAgency].[Base64Image], [currentAgency].[EmployeesCount], [currentAgency].[Name], [currentAgency].[Town]
+FROM [Agencies] AS [currentAgency]
+WHERE [currentAgency].[Name] = @__agencyName_0" (0723d8ff)
+2019-04-09T16:29:16.3706737+03:00 0HLLSTS7RE7P2:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 19.3396ms. (50a9e262)
+2019-04-09T16:29:16.3745473+03:00 0HLLSTS7RE7P2:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-04-09T16:29:16.3844651+03:00 0HLLSTS7RE7P2:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" in 36.8272ms (afa2e885)
+2019-04-09T16:29:16.4251807+03:00 0HLLSTS7RE7P2:00000001 [INF] Request finished in 76.4171ms 200 application/json; charset=utf-8 (791a596a)
+2019-04-09T16:29:29.1791062+03:00 0HLLSTS7RE7P3:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/agencies/by-name/Jordan&Co   (ca22a1cb)
+2019-04-09T16:29:29.1835012+03:00 0HLLSTS7RE7P3:00000001 [INF] Successfully validated the token. (60169667)
+2019-04-09T16:29:29.1893810+03:00 0HLLSTS7RE7P3:00000001 [INF] Route matched with "{action = \"GetByName\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" (a44c0341)
+2019-04-09T16:29:29.1939220+03:00 0HLLSTS7RE7P3:00000001 [INF] Authorization was successful. (0d575a54)
+2019-04-09T16:29:29.1994092+03:00 0HLLSTS7RE7P3:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" with arguments (["Jordan&Co"]) - Validation state: Valid (4e3479ed)
+2019-04-09T16:29:29.2048073+03:00 0HLLSTS7RE7P3:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-04-09T16:29:29.2133388+03:00 0HLLSTS7RE7P3:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__agencyName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [currentAgency].[Id], [currentAgency].[Base64Image], [currentAgency].[EmployeesCount], [currentAgency].[Name], [currentAgency].[Town]
+FROM [Agencies] AS [currentAgency]
+WHERE [currentAgency].[Name] = @__agencyName_0" (0723d8ff)
+2019-04-09T16:29:29.2178073+03:00 0HLLSTS7RE7P3:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 14.0935ms. (50a9e262)
+2019-04-09T16:29:29.2243623+03:00 0HLLSTS7RE7P3:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-04-09T16:29:29.2287133+03:00 0HLLSTS7RE7P3:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" in 35.1693ms (afa2e885)
+2019-04-09T16:29:29.2333465+03:00 0HLLSTS7RE7P3:00000001 [INF] Request finished in 53.8149ms 200 application/json; charset=utf-8 (791a596a)
+2019-04-09T16:29:32.8909509+03:00 0HLLSTS7RE7P4:00000001 [INF] Request starting HTTP/1.1 DELETE http://localhost:5000/api/agencies application/json 69 (ca22a1cb)
+2019-04-09T16:29:32.9073365+03:00 0HLLSTS7RE7P4:00000001 [INF] Successfully validated the token. (60169667)
+2019-04-09T16:29:32.9164529+03:00 0HLLSTS7RE7P4:00000001 [INF] Route matched with "{action = \"Delete\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.Delete (WeddingsPlanner.Api)" (a44c0341)
+2019-04-09T16:29:32.9208549+03:00 0HLLSTS7RE7P4:00000001 [INF] Authorization was successful. (0d575a54)
+2019-04-09T16:29:32.9260811+03:00 0HLLSTS7RE7P4:00000001 [INF] Authorization was successful. (0d575a54)
+2019-04-09T16:29:32.9333935+03:00 0HLLSTS7RE7P4:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.Delete (WeddingsPlanner.Api)" with arguments (["WeddingsPlanner.Data.Entities.Agency"]) - Validation state: Valid (4e3479ed)
+2019-04-09T16:29:32.9398617+03:00 0HLLSTS7RE7P4:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-04-09T16:29:32.9507933+03:00 0HLLSTS7RE7P4:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__agency_Id_0='?' (DbType = Int32), @__agency_Name_1='?' (Size = 4000), @__agency_Town_2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [currentAgency].[Id], [currentAgency].[Base64Image], [currentAgency].[EmployeesCount], [currentAgency].[Name], [currentAgency].[Town]
+FROM [Agencies] AS [currentAgency]
+WHERE (([currentAgency].[Id] = @__agency_Id_0) AND ([currentAgency].[Name] = @__agency_Name_1)) AND ([currentAgency].[Town] = @__agency_Town_2)" (0723d8ff)
+2019-04-09T16:29:32.9681474+03:00 0HLLSTS7RE7P4:00000001 [INF] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Agencies]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-04-09T16:29:32.9741115+03:00 0HLLSTS7RE7P4:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.Delete (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 36.9291ms. (50a9e262)
+2019-04-09T16:29:32.9777985+03:00 0HLLSTS7RE7P4:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Data.Entities.Agency"'. (8a1b66c8)
+2019-04-09T16:29:32.9847556+03:00 0HLLSTS7RE7P4:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.Delete (WeddingsPlanner.Api)" in 62.822ms (afa2e885)
+2019-04-09T16:29:32.9999023+03:00 0HLLSTS7RE7P4:00000001 [INF] Request finished in 107.9068ms 200 application/json; charset=utf-8 (791a596a)
+2019-04-09T16:29:37.1216460+03:00 0HLLSTS7RE7P5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/agencies/by-name/Jordan&Co   (ca22a1cb)
+2019-04-09T16:29:37.1260684+03:00 0HLLSTS7RE7P5:00000001 [INF] Successfully validated the token. (60169667)
+2019-04-09T16:29:37.1310827+03:00 0HLLSTS7RE7P5:00000001 [INF] Route matched with "{action = \"GetByName\", controller = \"Agencies\"}". Executing action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" (a44c0341)
+2019-04-09T16:29:37.1354101+03:00 0HLLSTS7RE7P5:00000001 [INF] Authorization was successful. (0d575a54)
+2019-04-09T16:29:37.1394505+03:00 0HLLSTS7RE7P5:00000001 [INF] Executing action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" with arguments (["Jordan&Co"]) - Validation state: Valid (4e3479ed)
+2019-04-09T16:29:37.1439994+03:00 0HLLSTS7RE7P5:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-04-09T16:29:37.1496762+03:00 0HLLSTS7RE7P5:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__agencyName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [currentAgency].[Id], [currentAgency].[Base64Image], [currentAgency].[EmployeesCount], [currentAgency].[Name], [currentAgency].[Town]
+FROM [Agencies] AS [currentAgency]
+WHERE [currentAgency].[Name] = @__agencyName_0" (0723d8ff)
+2019-04-09T16:29:37.1534641+03:00 0HLLSTS7RE7P5:00000001 [INF] Executed action method "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)", returned result "Microsoft.AspNetCore.Mvc.BadRequestObjectResult" in 10.703ms. (50a9e262)
+2019-04-09T16:29:37.1570084+03:00 0HLLSTS7RE7P5:00000001 [INF] Executing ObjectResult, writing value of type '"WeddingsPlanner.Core.Error"'. (8a1b66c8)
+2019-04-09T16:29:37.1607848+03:00 0HLLSTS7RE7P5:00000001 [INF] Executed action "WeddingsPlanner.Api.Controllers.AgenciesController.GetByName (WeddingsPlanner.Api)" in 25.2583ms (afa2e885)
+2019-04-09T16:29:37.1672913+03:00 0HLLSTS7RE7P5:00000001 [INF] Request finished in 44.0595ms 400 application/json; charset=utf-8 (791a596a)
